@@ -1,0 +1,45 @@
+Log file D:\Myeongjin\projects\SensorTestProejct\log\D600_00000000493995B0.log created on 2020-02-20 at 10:37:53 AM
+System Logging Level = 2
+15817: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+15829: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+16224: Searching 1 ports
+Trying to open COM7 at 921600 baud
+Sending command +++AT
+Read "ÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2j'r9 üôö"õúÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2k!r:¡ıóöõùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2lr;¢üô÷õûÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2mr<£ûõù"öùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2nr=¤ıõ÷ öøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2o	r>¥üôøöøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2pr?¦üô÷õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2pır@§üõø"õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2q÷rA¨ûõö!öúÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2rñrB©ûóõöøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2sërCªûò÷ö÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2tårD«üôöõùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2ußrE¬û÷öøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2vÙrF­üñ÷öøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2wÓrG®ûóøö÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2xÍrH¯ûõ÷õøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2yÇrI°üò÷õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2zÁrJ±ıô÷õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2{»rK²ûò÷õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2|µrL³ûñ÷õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2}¯rM´ıô÷ö÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2~©rNµıñöõùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2£rO¶ûôöõùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2€rP·ûò÷öùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2—rQ¸ûóö öøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2‚‘rR¹üô÷öøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2ƒ‹rSºûô÷õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2„…rT»üô÷#õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2…rU¼ûô÷"÷ùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2†yrV½ûô÷öøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2‡srW¾üôöõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2ˆmrX¿üóö õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2‰grYÀüó÷ õùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2ŠarZÁûõ÷öøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2‹[r[Âûòööùÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2ŒUr\Ãüô÷öøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2Or]Äûóö"õøÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2Ir^Åüñ÷õ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ,ÂNşşşşşşşşşşşşşşÿÿÿÿA’2C"  from port 7
+Possible sensor data detected; sending Reset command...
+Successfully sent message 0x12 with 1 bytes at 16.576s (0 remain)
+Possible sensor data detected; sending Scan Stop command...
+Successfully sent message 0x10 with 2 bytes at 16.603s (0 remain)
+Trying to flush the incoming buffer...Finished flushing buffer after 0 readsSending command +++
+17130: Found port 921600 at baudrate 921600
+17138: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 17158
+4: Parsing string OK in state Reset
+13: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+39: Resetting setup timeout at 17199 changing from Reset to Connect
+10:  Done parsing command in Reset
+17: Parsing string ERROR in state Connect
+26: Could not connect to D6x0
+ERROR: Error connecting to the PPS electronics module over Bluetooth.
+Check that the module is powered on, in range, that the battery is charged,
+and that the Bluetooth address is 00019525dfd8
+(The Bluetooth address is printed on the back of the electronics.)
+37: Resetting setup timeout at 17238 changing from Connect to Error
+9:  Done parsing command in Connect
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Finished escape sequence. Now disconnecting hardware
+Sending command ATH
+Sending command ATH
+Sending command ATH
+Sending command ATH
+Sending command ATH
+Sending command ATH
+Failed receiving disconnect confirmation
+1616: Deleting D600 Object

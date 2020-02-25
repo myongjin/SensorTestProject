@@ -1,6 +1,6 @@
 HWID	V1	V2	V3	V4	Vrow	Vcol	Name
-0	0	1	14	13	0	0	Right Index
-1	1	2	15	14	0	1	Right Middle
+3	0	1	14	13	0	0	Right Index
+1	1	2	15	14	0	1	Elem1
 2	2	3	16	15	0	2	Elem2
 3	3	4	17	16	0	3	Elem3
 4	4	5	18	17	0	4	Elem4

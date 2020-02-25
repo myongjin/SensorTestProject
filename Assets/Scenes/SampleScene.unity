@@ -468,8 +468,8 @@ MonoBehaviour:
   sensorTS2: 1
   sensorTS3: 0
   sensorTS4: 0
-  sensorPPS1: 1
-  sensorPPS2: 0
+  sensorPPS1: 0
+  sensorPPS2: 3
   sensorPPS3: -1
   sensorPPS4: -1
   sensorOffset1: 0
@@ -485,10 +485,10 @@ MonoBehaviour:
   valueA: 0.7
   pressureViz: 0
   pressureViz2: 0
-  forcePPS1Str: 
-  forcePPS2Str: 
-  forcePPS3Str: 
-  forcePPS4Str: 
+  forcePPS1: 0
+  forcePPS2: 0
+  forcePPS3: 0
+  forcePPS4: 0
   fXLocal: {x: 0, y: 0, z: 0}
 --- !u!114 &1123619051
 MonoBehaviour:

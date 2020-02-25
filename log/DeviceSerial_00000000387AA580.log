@@ -1,0 +1,17 @@
+Log file D:\Myeongjin\projects\SensorTestProject\log\DeviceSerial_00000000387AA580.log created on 2020-02-25 at 03:05:32 PM
+System Logging Level = 3
+Trying to open COM7 at 921600 (3, 0, 0, 8)
+Successfully opened port 7
+Writing 6:2b 2b 2b 41 54 0d (+++AT ) done.
+Resizing serial input buffer to 256
+Writing 4:41 54 5a 0d (ATZ ) done.
+Writing 16:41 54 44 30 30 30 31 39 35 32 35 64 66 66 65 0d (ATD00019525dffe ) done.
+Closing connection to Serial Device
+Trying to open COM7 at 921600 (3, 0, 0, 8)
+Successfully opened port 7
+Writing 3:2b 2b 2b (+++) done.
+Writing 3:2b 2b 2b (+++) done.
+Writing 3:2b 2b 2b (+++) done.
+Writing 3:2b 2b 2b (+++) done.
+Writing 3:2b 2b 2b (+++) done.
+Closing connection to Serial Device

@@ -108,10 +108,16 @@ public class LiveStream : Singleton<LiveStream>
 	 * UI
 	 */
     string timestampRecordStr;
-    public string forcePPS1Str;
-    public string forcePPS2Str;
-    public string forcePPS3Str;
-    public string forcePPS4Str;
+    private string forcePPS1Str;
+    private string forcePPS2Str;
+    private string forcePPS3Str;
+    private string forcePPS4Str;
+
+
+    public float forcePPS1;
+    public float forcePPS2;
+    public float forcePPS3;
+    public float forcePPS4;
 
 
     /**
@@ -226,6 +232,8 @@ public class LiveStream : Singleton<LiveStream>
             this.sensorFinger4.SetActive(true);
             this.sensors.Add(3, this.sensorPPS4);
         }
+
+
         this.sensorsPtr = new Vector4[4];
         this.sensorsHndl = GCHandle.Alloc(this.sensorsPtr, GCHandleType.Pinned);
         for (int s = 0; s < 4; s++)
@@ -332,15 +340,16 @@ public class LiveStream : Singleton<LiveStream>
 
             //Debug////////////////////////////
 
-            pressureViz = this.recordNodeTsPtr[sensorPPS1].w * 4.448f;
-            pressureViz2 = this.recordNodeTsPtr[sensorPPS2].w * 4.448f;
+            //this index is not the force sensor index at all
+            //pressureViz = this.recordNodeTsPtr[sensorPPS1].w * 4.448f;
+            //pressureViz2 = this.recordNodeTsPtr[sensorPPS2].w * 4.448f;
 
 
 
             ///////////////////////////////////
             foreach (KeyValuePair<int, int> pair in sensors)
             {
-                //Debug.Log(pair.Key);
+                //Debug.Log("Pair.Key: " + pair.Key + " Pair.Value: " + pair.Value);
 
                 this.fQ.x = this.recordNodeQPtr[pair.Key].x;
                 this.fQ.y = this.recordNodeQPtr[pair.Key].y;
@@ -376,13 +385,13 @@ public class LiveStream : Singleton<LiveStream>
                 this.fingersGO[pair.Key].transform.position = this.fingersGO[pair.Key].transform.position - offset * qmy;
 
                 // UI
-                string force = (this.recordNodeTsPtr[pair.Key].w * 4.448f).ToString("F1");
+                float force = (this.recordNodeTsPtr[pair.Key].w * 4.448f);
                 switch (pair.Key)
                 {
-                    case 0: this.forcePPS1Str = force; break;
-                    case 1: this.forcePPS2Str = force; break;
-                    case 2: this.forcePPS3Str = force; break;
-                    case 3: this.forcePPS4Str = force; break;
+                    case 0: this.forcePPS1 = force; break;
+                    case 1: this.forcePPS2 = force; break;
+                    case 2: this.forcePPS3 = force; break;
+                    case 3: this.forcePPS4 = force; break;
                 };
 
                 

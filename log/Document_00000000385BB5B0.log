@@ -1,7 +1,7 @@
-Log file D:\Myeongjin\projects\SensorTestProejct\log\Document_000000004A1DE090.log created on 2020-02-20 at 10:43:13 AM
-System Logging Level = 2
-Creating default base document 000000004A1DE090
-Creating new document 000000004A1DE090 from D:\Myeongjin\projects\SensorTestProejct\setup\Quadratec_FingerTPS.cfg
+Log file D:\Myeongjin\projects\SensorTestProject\log\Document_00000000385BB5B0.log created on 2020-02-25 at 03:05:31 PM
+System Logging Level = 3
+Creating default base document 00000000385BB5B0
+Creating new document 00000000385BB5B0 from D:\Myeongjin\projects\SensorTestProject\setup\Quadratec_FingerTPS.cfg
 Parameter::load returned 12
 Loading user settings from Quadratec_FingerTPS-set.txt...
 Starting hardware creation process for 1 devices
@@ -9,7 +9,7 @@ CfgBufferSizes size = 1
 Creating a new LiveBuffer with 10000 frames...Using protection size of 20...success.
 Setting datalog interval of 0
 Creating hardware of type D600...success.
-Loading scales for Buffer 0 from Quadratec_FingerTPS-cal.txt...success with D:\Myeongjin\projects\SensorTestProejct\setup\Quadratec_FingerTPS-cal.txt
+Loading scales for Buffer 0 from Quadratec_FingerTPS-cal.txt...success with D:\Myeongjin\projects\SensorTestProject\setup\Quadratec_FingerTPS-cal.txt
 Adding new buffer to buffergroup.
 Loading extraction lists from Quadratec_FingerTPS-ext.txt...error.
 Loading 2D vertices from #12 1...success.
@@ -21,11 +21,11 @@ Using 2D vertex info for default 3D display
 Creating new selection object...done.
 Setting up calibrated ViewScale...done.
 Finding maximum raw output...using 32767
-Device is calibrated.
+Device is not calibrated.
 Setting up calibrated units...done.
 Adding filters to incoming data buffers...
 done.
 Starting data acquisition...done.
 Finished creating new Capture Document
-Destroying Capture document 000000004A1DE090
+Destroying Capture document 00000000385BB5B0
 Stopping all running hardware...done.

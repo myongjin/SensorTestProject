@@ -1,0 +1,54 @@
+Log file D:\Myeongjin\projects\SensorTestProject\log\D600_0000000000B99DD0.log created on 2020-02-25 at 03:23:22 PM
+System Logging Level = 3
+15971: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+15992: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+16593: Searching 1 ports
+Trying to open COM7 at 921600 baud
+Sending command +++AT
+Read "н»FaюQюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тoЧо»FZюP	юяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тpСпјF`яQ	ьяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тqЛр»F^эQьяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тrЕс»F_яN	юяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тsїтєFaюK"  from port 7
+Possible sensor data detected; sending Reset command...
+Successfully sent message 0x12 with 1 bytes at 16.774s (0 remain)
+Possible sensor data detected; sending Scan Stop command...
+Successfully sent message 0x10 with 2 bytes at 16.807s (0 remain)
+Trying to flush the incoming buffer...Finished flushing buffer after 3 readsSending command +++
+17354: Found port 921600 at baudrate 921600
+17362: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 17388
+11: Parsing string юяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тt№у»FaюTюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тuі ф»F`ьMюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тv­!х№F[юNюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тw§"цєFZяKюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тxЎ#ч№F`ьM	эяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тy›$ш№F\ьLьяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тz•%щ»F\эLюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т{Џ&ъ»F^юIюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т|‰'ыєFZяKэяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т}ѓ(ь№FYFяяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т~})	јF\юJюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т‹/6 in state Reset
+Didn't find Reset success message OK in юяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тt№у»FaюTюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тuі ф»F`ьMюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тv­!х№F[юNюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тw§"цєFZяKюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тxЎ#ч№F`ьM	эяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тy›$ш№F\ьLьяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тz•%щ»F\эLюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т{Џ&ъ»F^юIюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т|‰'ыєFZяKэяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т}ѓ(ь№FYFяяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т~})	јF\юJюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т‹/6
+31:  Done parsing command in Reset
+40: Parsing string јF^эK	юяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тЊ)7»FWJэяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тЌ#8»FVяCюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тЋ9јF[юF	юяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тЏ:»FZHюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тђ;јFVяEьяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т‘<єFXюFюяяяяяяяяяяяяяяя,Вююююююююююююююяя in state Reset
+Didn't find Reset success message OK in јF^эK	юяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тЊ)7»FWJэяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тЌ#8»FVяCюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тЋ9јF[юF	юяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тЏ:»FZHюяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6тђ;јFVяEьяяяяяяяяяяяяяяя,ВююююююююююююююяяяяA6т‘<єFXюFюяяяяяяяяяяяяяяя,Вююююююююююююююяя
+60:  Done parsing command in Reset
+69: Parsing string OK in state Reset
+80: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+108: Resetting setup timeout at 17499 changing from Reset to Connect
+13:  Done parsing command in Reset
+22: Parsing string яяA in state Connect
+Didn't find CONNECT in яяA
+42:  Done parsing command in Connect
+51: Parsing string ERROR in state Connect
+62: Could not connect to D6x0
+ERROR: Error connecting to the PPS electronics module over Bluetooth.
+Check that the module is powered on, in range, that the battery is charged,
+and that the Bluetooth address is 00019525dfd8
+(The Bluetooth address is printed on the back of the electronics.)
+71: Resetting setup timeout at 17573 changing from Connect to Error
+10:  Done parsing command in Connect
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Finished escape sequence. Now disconnecting hardware
+Sending command ATH
+Sending command ATH
+Sending command ATH
+Sending command ATH
+Sending command ATH
+Sending command ATH
+Failed receiving disconnect confirmation
+1499: Deleting D600 Object

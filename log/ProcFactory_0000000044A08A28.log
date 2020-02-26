@@ -1,4 +1,4 @@
-Log file D:\Myeongjin\projects\SensorTestProject\log\ProcFactory_0000000039E68A28.log created on 2020-02-25 at 03:05:31 PM
+Log file D:\Myeongjin\projects\SensorTestProject\log\ProcFactory_0000000044A08A28.log created on 2020-02-25 at 03:23:22 PM
 System Logging Level = 3
 Searching D:\Myeongjin\projects\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\*.dll for processing plugins.
 Trying to load FilterBaselineDriftLib.dll...success.
@@ -46,8 +46,8 @@ Name = FilterExpDecay; Config = 2 12 0 1 2 3 4 5 6 7 8 9 10 11
 Getting builder...success.
 Building processor for FilterExpDecay...successfully built 12 nodes.
 After adding new ones, total processor list is 12
-Creating processor from ProcScale  00000000385BE330 0 2 0 1 
-Name = ProcScale; Config = 00000000385BE330 0 2 0 1 
+Creating processor from ProcScale  0000000048FCE330 0 2 0 1 
+Name = ProcScale; Config = 0000000048FCE330 0 2 0 1 
 Getting builder...success.
 Building processor for ProcScale...successfully built 2 nodes.
 After adding new ones, total processor list is 2

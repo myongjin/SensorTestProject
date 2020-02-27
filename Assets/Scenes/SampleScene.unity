@@ -468,8 +468,8 @@ MonoBehaviour:
   sensorTS2: 1
   sensorTS3: 0
   sensorTS4: 0
-  sensorPPS1: 0
-  sensorPPS2: 3
+  sensorPPS1: 4
+  sensorPPS2: 5
   sensorPPS3: -1
   sensorPPS4: -1
   sensorOffset1: 0
@@ -814,7 +814,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1352260531}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.254, y: 0, z: 0}
+  m_LocalPosition: {x: 0.151, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1603193272}

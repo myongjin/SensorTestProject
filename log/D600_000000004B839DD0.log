@@ -1,0 +1,44 @@
+Log file D:\Myeongjin\projects\SensorTestProject\log\D600_000000004B839DD0.log created on 2020-02-27 at 11:23:49 AM
+System Logging Level = 2
+415556: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+415576: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+415834: Searching 1 ports
+Trying to open COM7 at 921600 baud
+Sending command +++AT
+Read "ERROR"  from port 7
+Matched ERROR, Connected to COM7 at 921600 baud
+416017: Found port 921600 at baudrate 921600
+416031: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 416061
+7: Parsing string ERROR in state Reset
+Didn't find Reset success message OK in ERROR
+34:  Done parsing command in Reset
+698: Parsing string OK in state Reset
+713: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dffe
+747: Resetting setup timeout at 416812 changing from Reset to Connect
+14:  Done parsing command in Reset
+92: Parsing string OK in state Connect
+Didn't find CONNECT in OK
+118:  Done parsing command in Connect
+6001: Timeout waiting to change state: 0 bytes in FIFO. ()
+ERROR: Timeout connecting to the PPS electronics module over Bluetooth.
+Check that the module is powered on, in range, that the battery is charged,
+and that the Bluetooth address is 00019525dffe
+(The Bluetooth address is printed on the back of the electronics.)
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Error receiving escape sequence confirmation!
+9372: Deleting D600 Object

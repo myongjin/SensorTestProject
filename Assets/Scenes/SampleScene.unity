@@ -468,8 +468,8 @@ MonoBehaviour:
   sensorTS2: 1
   sensorTS3: 0
   sensorTS4: 0
-  sensorPPS1: 4
-  sensorPPS2: 5
+  sensorPPS1: 0
+  sensorPPS2: 1
   sensorPPS3: -1
   sensorPPS4: -1
   sensorOffset1: 0

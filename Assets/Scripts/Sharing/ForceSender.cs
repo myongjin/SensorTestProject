@@ -13,6 +13,8 @@ public class ForceSender : Singleton<ForceSender>
 	// Use this for initialization
     private void Start ()
     {
+        // live stream exists on same component
+        // So, we can get it easily like this
         livestream = GetComponent<LiveStream>();
 		
 	}

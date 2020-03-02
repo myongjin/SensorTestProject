@@ -102,6 +102,9 @@ public class LiveStream : Singleton<LiveStream>
     public float pressureViz;
     public float pressureViz2;
 
+    private int forceSize = 0;
+    public float[] forceValues;
+
 
 
     /**
@@ -179,11 +182,12 @@ public class LiveStream : Singleton<LiveStream>
     {
         this.sensorOffset = Vector3.zero;
         Debug.Log("Awake");
+        forceSize = 0;
 
         // Debug callback
-        MyDelegate callback_delegate = new MyDelegate(CallBackFunction);
-        IntPtr intptr_delegate = Marshal.GetFunctionPointerForDelegate(callback_delegate);
-        SetDebugFunction(intptr_delegate);
+        //MyDelegate callback_delegate = new MyDelegate(CallBackFunction);
+        //IntPtr intptr_delegate = Marshal.GetFunctionPointerForDelegate(callback_delegate);
+        //SetDebugFunction(intptr_delegate);
 
         // init playbackNode
         this.fQ.Set(1.0f, 0.0f, 0.0f, 0.0f);
@@ -210,29 +214,35 @@ public class LiveStream : Singleton<LiveStream>
         this.sensors = new Dictionary<int, int>();
         if (this.sensorTS1)
         {
+            forceSize += 1;
             this.fingersGO[0] = this.sensorFinger1;
             this.sensorFinger1.SetActive(true);
             this.sensors.Add(0, this.sensorPPS1);
         }
         if (this.sensorTS2)
         {
+            forceSize += 1;
             this.fingersGO[1] = this.sensorFinger2;
             this.sensorFinger2.SetActive(true);
             this.sensors.Add(1, this.sensorPPS2);
         }
         if (this.sensorTS3)
         {
+            forceSize += 1;
             this.fingersGO[2] = this.sensorFinger3;
             this.sensorFinger3.SetActive(true);
             this.sensors.Add(2, this.sensorPPS3);
         }
         if (this.sensorTS4)
         {
+            forceSize += 1;
             this.fingersGO[3] = this.sensorFinger4;
             this.sensorFinger4.SetActive(true);
             this.sensors.Add(3, this.sensorPPS4);
         }
 
+        //initialize the size of force value array
+        forceValues = new float[forceSize];
 
         this.sensorsPtr = new Vector4[4];
         this.sensorsHndl = GCHandle.Alloc(this.sensorsPtr, GCHandleType.Pinned);
@@ -253,14 +263,16 @@ public class LiveStream : Singleton<LiveStream>
         }
 
         // initialise sensors
-        this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
-        Debug.Log("Recording_Initialise ends");
+        //this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
+        //Debug.Log("Recording_Initialise ends");
 
-        // start sensors
-        if (this.initOK)
-        {
-            LiveStream_Start();
-        }
+        //// start sensors
+        //if (this.initOK)
+        //{
+        //    LiveStream_Start();
+        //}
+
+        Debug.Log("Awake Done");
     }
 
 

@@ -20,6 +20,7 @@ public class CustomMessages : Singleton<CustomMessages>
         LaserTransform,
         BenchtopTransform,
         Force,
+        Force2,
         Prostate,
         Max
     }
@@ -168,6 +169,39 @@ public class CustomMessages : Singleton<CustomMessages>
             NetworkOutMessage msg = CreateMessage((byte)TestMessageID.Force);
 
             AppendFloat(msg, force);
+
+            // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
+            serverConnection.Broadcast(
+                msg,
+                MessagePriority.Immediate,
+                MessageReliability.UnreliableSequenced,
+                MessageChannel.Avatar);
+        }
+    }
+
+    public void SendForce(float force, float force2)
+    {
+        // If we are connected to a session, broadcast our head info
+        if (serverConnection != null && serverConnection.IsConnected())
+        {
+            // Create an outgoing network message to contain all the info we want to send
+            NetworkOutMessage msg = CreateMessage((byte)TestMessageID.Force);
+
+            AppendFloat(msg, force);
+
+            // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
+            serverConnection.Broadcast(
+                msg,
+                MessagePriority.Immediate,
+                MessageReliability.UnreliableSequenced,
+                MessageChannel.Avatar);
+
+            // Create an outgoing network message to contain all the info we want to send
+            msg.Dispose();
+      
+            msg = CreateMessage((byte)TestMessageID.Force2);
+
+            AppendFloat(msg, force2);
 
             // Send the message as a broadcast, which will cause the server to forward it to all other users in the session.
             serverConnection.Broadcast(

@@ -1,0 +1,30 @@
+Log file D:\Myeongjin\projects\SensorTestProject\log\D600_0000000049219DD0.log created on 2020-03-04 at 03:27:25 PM
+System Logging Level = 2
+16129: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+16143: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+16880: Searching 1 ports
+Trying to open COM7 at 921600 baud
+Sending command +++AT
+Read "ÿÿÿA"  from port 7
+Trying to open COM7 at 9600 baud
+Sending command +++AT
+Read "¢3™ÿ,ÂÁşşşşşşşşşşÿÿÿÿA"  from port 7
+17529: Searching 1 ports
+Trying to open COM7 at 921600 baud
+Sending command +++AT
+Read "¢-šÿ,ÂÁşşşşşşşşşşÿÿÿÿA"  from port 7
+Trying to open COM7 at 9600 baud
+Sending command +++AT
+Read "¢'›ÿ,ÂÁşşşşşşşşşşÿÿÿÿA"  from port 7
+18104: Searching 1 ports
+Trying to open COM7 at 921600 baud
+Sending command +++AT
+Read "¢!œÿ,ÂÁşşşşşşşşşşÿÿÿÿA"  from port 7
+Trying to open COM7 at 9600 baud
+Sending command +++AT
+Read "¢	ÿ,ÂÁşşşşşşşşşşÿÿÿÿA"  from port 7
+No valid COM port found for Bluetooth adapter
+ERROR: No PPS Bluetooth dongle was found connected to USB. Please check that it is plugged in.
+19011: Deleting D600 Object

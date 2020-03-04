@@ -1,0 +1,20 @@
+Log file D:\Myeongjin\projects\SensorTestProject\log\DeviceSerial_000000004921A580.log created on 2020-03-04 at 03:27:26 PM
+System Logging Level = 2
+Trying to open COM7 at 921600 (3, 0, 0, 8)
+Successfully opened port 7
+Writing 6:2b 2b 2b 41 54 0d (+++AT ) done.
+Trying to open COM7 at 9600 (3, 0, 0, 8)
+Successfully opened port 7
+Writing 6:2b 2b 2b 41 54 0d (+++AT ) done.
+Trying to open COM7 at 921600 (3, 0, 0, 8)
+Successfully opened port 7
+Writing 6:2b 2b 2b 41 54 0d (+++AT ) done.
+Trying to open COM7 at 9600 (3, 0, 0, 8)
+Successfully opened port 7
+Writing 6:2b 2b 2b 41 54 0d (+++AT ) done.
+Trying to open COM7 at 921600 (3, 0, 0, 8)
+Successfully opened port 7
+Writing 6:2b 2b 2b 41 54 0d (+++AT ) done.
+Trying to open COM7 at 9600 (3, 0, 0, 8)
+Successfully opened port 7
+Writing 6:2b 2b 2b 41 54 0d (+++AT ) done.

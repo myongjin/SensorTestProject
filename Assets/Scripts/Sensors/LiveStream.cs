@@ -73,6 +73,8 @@ public class LiveStream : Singleton<LiveStream>
     public static extern void Recording_GetRecordNode(IntPtr tsPtr, IntPtr xPtr, IntPtr qPtr);
 
 
+
+
     /**
 	 * Public members
 	 */
@@ -96,11 +98,6 @@ public class LiveStream : Singleton<LiveStream>
     public GameObject sensorFinger4;
     public GameObject landmarks;
 
-    public float size = 1.0f;
-
-    public float valueA = 0.7f;
-    public float pressureViz;
-    public float pressureViz2;
 
     private int forceSize = 0;
     public float[] forceValues;
@@ -266,10 +263,12 @@ public class LiveStream : Singleton<LiveStream>
         this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
         Debug.Log("Recording_Initialise ends");
 
+
         //// start sensors
         if (this.initOK)
         {
             LiveStream_Start();
+            //recordStart();
         }
 
         Debug.Log("Awake Done");
@@ -425,7 +424,9 @@ public class LiveStream : Singleton<LiveStream>
 
         if (initOK)
         {
+
             LiveStream_Stop();
+            //recordStop();
 
             // stop recording
             Debug.Log("Recording_Deinitialise starts");

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RecordAnimation : MonoBehaviour
 {
-    public Transform Benchtop;
+    //public Transform Benchtop;
     public AnimationClip clip;
     public bool record = false;
 
@@ -26,13 +26,11 @@ public class RecordAnimation : MonoBehaviour
 
         if (record)
         {
-            Debug.Log(Benchtop.localPosition);
-            PlayprefPositionHelper.SaveBenchtopTransform(Benchtop.localPosition, Benchtop.localRotation);
+            //PlayprefPositionHelper.SaveBenchtopTransform(Benchtop.localPosition, Benchtop.localRotation);
             m_Recorder.TakeSnapshot(Time.deltaTime);
         }
         else if (m_Recorder.isRecording)
         {
-            Debug.Log("save to clip");
             m_Recorder.SaveToClip(clip);
             m_Recorder.ResetRecording();
         }

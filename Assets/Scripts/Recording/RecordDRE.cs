@@ -7,6 +7,7 @@ public class RecordDRE : MonoBehaviour
     public bool IsRecording = false;
     public RecordAnimation recordAnimation;
     public RecordAnimation recordAnimation2;
+
     private RecordingButton recordingButton;
 
     // Use this for initialization

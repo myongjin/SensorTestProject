@@ -9,6 +9,8 @@ public class ReplayAnimation : MonoBehaviour
     [SerializeField]
     private Animator animator;
     [SerializeField]
+    private Animator animator2;
+    [SerializeField]
     private Transform benchtop;
 
     // Use this for initialization
@@ -27,12 +29,14 @@ public class ReplayAnimation : MonoBehaviour
     {
         replay = !replay;
         animator.enabled = replay;
+        animator2.enabled = replay;
 
         if (replay)
         {
             benchtop.localPosition = PlayprefPositionHelper.LoadBenchtopPosition();
             benchtop.localRotation = PlayprefPositionHelper.LoadBenchtopRotation();
             animator.Play("ReplayAnimation", -1, 0f);
+            animator2.Play("ReplayAnimation2", -1, 0f);
         }
     }
 }

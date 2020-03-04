@@ -26,11 +26,13 @@ public class RecordAnimation : MonoBehaviour
 
         if (record)
         {
+            Debug.Log(Benchtop.localPosition);
             PlayprefPositionHelper.SaveBenchtopTransform(Benchtop.localPosition, Benchtop.localRotation);
             m_Recorder.TakeSnapshot(Time.deltaTime);
         }
         else if (m_Recorder.isRecording)
         {
+            Debug.Log("save to clip");
             m_Recorder.SaveToClip(clip);
             m_Recorder.ResetRecording();
         }

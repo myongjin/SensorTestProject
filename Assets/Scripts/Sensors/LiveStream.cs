@@ -185,9 +185,9 @@ public class LiveStream : Singleton<LiveStream>
         forceSize = 0;
 
         // Debug callback
-        //MyDelegate callback_delegate = new MyDelegate(CallBackFunction);
-        //IntPtr intptr_delegate = Marshal.GetFunctionPointerForDelegate(callback_delegate);
-        //SetDebugFunction(intptr_delegate);
+        MyDelegate callback_delegate = new MyDelegate(CallBackFunction);
+        IntPtr intptr_delegate = Marshal.GetFunctionPointerForDelegate(callback_delegate);
+        SetDebugFunction(intptr_delegate);
 
         // init playbackNode
         this.fQ.Set(1.0f, 0.0f, 0.0f, 0.0f);
@@ -263,14 +263,14 @@ public class LiveStream : Singleton<LiveStream>
         }
 
         // initialise sensors
-        //this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
-        //Debug.Log("Recording_Initialise ends");
+        this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
+        Debug.Log("Recording_Initialise ends");
 
         //// start sensors
-        //if (this.initOK)
-        //{
-        //    LiveStream_Start();
-        //}
+        if (this.initOK)
+        {
+            LiveStream_Start();
+        }
 
         Debug.Log("Awake Done");
     }
@@ -397,7 +397,7 @@ public class LiveStream : Singleton<LiveStream>
                 this.fingersGO[pair.Key].transform.position = this.fingersGO[pair.Key].transform.position - offset * qmy;
 
                 // UI
-                float force = (this.recordNodeTsPtr[pair.Key].w * 4.448f);
+                float force = (this.recordNodeTsPtr[pair.Key].w);
                 switch (pair.Key)
                 {
                     case 0: this.forcePPS1 = force; break;

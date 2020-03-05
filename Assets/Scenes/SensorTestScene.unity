@@ -312,7 +312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.49999905}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &556831872
@@ -490,7 +490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -186, y: -187}
+  m_AnchoredPosition: {x: -163, y: -124}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &839775071
@@ -559,7 +559,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 839775074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 839775072}
+        m_MethodName: ToggleRecord
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 839775071}
+        m_MethodName: ToggleButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &839775074
@@ -1009,8 +1031,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -186, y: 179}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -174.5, y: 178.4}
+  m_SizeDelta: {x: 137, y: 31.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268813480
 MonoBehaviour:
@@ -1282,7 +1304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.49999905}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1326741697
@@ -1376,6 +1398,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1351450939}
   m_Script: {fileID: 11500000, guid: f07d48987bab4a2488eb00f3a4b48841, type: 3}
+--- !u!95 &1351450941 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95649323171006922, guid: 1d531b68e8b4c7a4e929f793be326df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1351450939}
 --- !u!1 &1432497275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1534,11 @@ GameObject:
 --- !u!4 &1596228463 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4082379651391262, guid: 1d531b68e8b4c7a4e929f793be326df3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1596228460}
+--- !u!95 &1596228464 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95649323171006922, guid: 1d531b68e8b4c7a4e929f793be326df3,
     type: 2}
   m_PrefabInternal: {fileID: 1596228460}
 --- !u!1 &1603193269
@@ -1658,7 +1690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.49999905}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1833063243
@@ -1732,7 +1764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5}
+  m_AnchoredPosition: {x: 0, y: -0.49999905}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1893003545
@@ -1809,8 +1841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185, y: 141}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -174, y: 141}
+  m_SizeDelta: {x: 138, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959246185
 MonoBehaviour:
@@ -1959,6 +1991,7 @@ GameObject:
   - component: {fileID: 2068085895}
   - component: {fileID: 2068085894}
   - component: {fileID: 2068085893}
+  - component: {fileID: 2068085896}
   m_Layer: 5
   m_Name: Replay
   m_TagString: Untagged
@@ -1982,7 +2015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -186, y: -232.2}
+  m_AnchoredPosition: {x: -163, y: -165}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2068085893
@@ -2023,7 +2056,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2068085894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2068085896}
+        m_MethodName: ToggleAnimator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2068085894
@@ -2059,6 +2103,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068085891}
+--- !u!114 &2068085896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2068085891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440b705a6dc753a46b09cc16690d37bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replay: 0
+  animator: {fileID: 1351450941}
+  animator2: {fileID: 1596228464}
 --- !u!1 &2094175495
 GameObject:
   m_ObjectHideFlags: 0

@@ -37,8 +37,8 @@ public class ReplayAnimation : MonoBehaviour
         {
             //benchtop.localPosition = PlayprefPositionHelper.LoadBenchtopPosition();
             //benchtop.localRotation = PlayprefPositionHelper.LoadBenchtopRotation();
-            animator.Play("ReplayAnimation", -1, 0f);
-            animator2.Play("ReplayAnimation2", -1, 0f);
+            animator.Play("ReplayAnimation 1", -1, 0f);
+            animator2.Play("ReplayAnimation 2", -1, 0f);
         }
     }
 }

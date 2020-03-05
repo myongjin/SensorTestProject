@@ -59,6 +59,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         }
 
         //record
+        //make a file
         if(isRecording && !setWritefile)
         {
             //make a text file if there is the same file, then delete it and create new one
@@ -70,24 +71,37 @@ public class DataSaveAndPlay : MonoBehaviour {
             setWritefile = true;
         }
 
+        //write down data
         if(isRecording && setWritefile)
         {
             string data = "";
 
             //data = AppendPosOriForce(data, fingerObj[0], Time.frameCount);
 
-            data = AppendPosOriForce(data, fingerObj[0], Time.frameCount);
-            data = AppendPosOriForce(data, fingerObj[1], Time.frameCount);
+            data = AppendPosOriForce(data, fingerObj[0], forceSender.Force1);
+            data = AppendPosOriForce(data, fingerObj[1], forceSender.Force2);
 
 
             //Write down
             outputFile.WriteLine(data);
         }
 
+        //when recording is stopped and there is a file to save
+        if (!isRecording && setWritefile)
+        {
+            Debug.Log("Write complete");
+            if (setWritefile)
+            {
+                outputFile.Close();
+            }
+
+            setWritefile = false;
+        }
+
 
 
         //replay
-        if(isReplaying && readFile)
+        if (isReplaying && readFile)
         {
             
             Vector3 pos;
@@ -121,8 +135,8 @@ public class DataSaveAndPlay : MonoBehaviour {
                     fingerObj[j].transform.rotation = ori;
                 }
 
-                //forceSender.Force1 = forces[0];
-                //forceSender.Force2 = forces[1];
+                forceSender.Force1 = forces[0];
+                forceSender.Force2 = forces[1];
             }
             else
             {
@@ -132,6 +146,16 @@ public class DataSaveAndPlay : MonoBehaviour {
         }    
 	}
 
+
+    public void ToggleRecording()
+    {
+        isRecording = !isRecording;
+    }
+
+    public void ToggleReplaying()
+    {
+        isReplaying = !isReplaying;
+    }
 
     private void OnDestroy()
     {

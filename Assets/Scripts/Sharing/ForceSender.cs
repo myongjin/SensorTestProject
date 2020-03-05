@@ -26,8 +26,7 @@ public class ForceSender : Singleton<ForceSender>
     {
         Force1 = livestream.forcePPS1 + offset1;
         Force2 = livestream.forcePPS2 + offset2;
-        CustomMessages.Instance.SendForce(Force1);
-        CustomMessages.Instance.SendForce(Force2);
+        CustomMessages.Instance.SendForce(Force1, Force2);
     }
 
     public void ResetForce()

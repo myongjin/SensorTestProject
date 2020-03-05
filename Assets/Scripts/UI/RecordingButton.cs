@@ -48,7 +48,7 @@ public class RecordingButton : MonoBehaviour
         }
         else
         {
-            image.color = Color.green;
+            image.color = Color.white;
             text.text = "Start Recording";
             text.color = Color.black;
         }

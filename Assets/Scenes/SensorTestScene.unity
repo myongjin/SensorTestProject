@@ -168,10 +168,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 9635b01a01b0b274c8a9334c943c6de5, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
@@ -465,7 +465,6 @@ GameObject:
   - component: {fileID: 839775075}
   - component: {fileID: 839775074}
   - component: {fileID: 839775073}
-  - component: {fileID: 839775072}
   - component: {fileID: 839775071}
   m_Layer: 5
   m_Name: Record
@@ -507,20 +506,6 @@ MonoBehaviour:
   isClicked: 0
   image: {fileID: 839775074}
   text: {fileID: 0}
---- !u!114 &839775072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 839775069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7f6a5b076107d849ad10c11064ef7f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsRecording: 0
-  recordAnimation1: {fileID: 1351450940}
-  recordAnimation2: {fileID: 1596228461}
 --- !u!114 &839775073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,8 +545,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 839775072}
-        m_MethodName: ToggleRecord
+      - m_Target: {fileID: 839775071}
+        m_MethodName: ToggleButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -571,8 +556,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 839775071}
-        m_MethodName: ToggleButton
+      - m_Target: {fileID: 1123619049}
+        m_MethodName: ToggleRecording
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -911,6 +896,7 @@ GameObject:
   - component: {fileID: 1123619048}
   - component: {fileID: 1123619053}
   - component: {fileID: 1123619051}
+  - component: {fileID: 1123619049}
   m_Layer: 0
   m_Name: SensorManager
   m_TagString: Untagged
@@ -967,6 +953,25 @@ MonoBehaviour:
   forcePPS3: 0
   forcePPS4: 0
   fXLocal: {x: 0, y: 0, z: 0}
+--- !u!114 &1123619049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1123619046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d2aefbf31bc93548b9e955b4783ca4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRecording: 0
+  isReplaying: 0
+  recordText: test
+  replayText: test
+  fingerObj:
+  - {fileID: 1971633643}
+  - {fileID: 1596228462}
+  forceSender: {fileID: 1123619053}
 --- !u!114 &1123619051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,9 +983,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bdcac4dd7d667641872172a93e015a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foregroundImage: {fileID: 127292948}
+  foregroundImage1: {fileID: 127292948}
   foregroundImage2: {fileID: 1296028806}
-  forceText: {fileID: 1268813480}
+  forceText1: {fileID: 1268813480}
   forceText2: {fileID: 1959246185}
   forceMax: 10
 --- !u!114 &1123619053
@@ -994,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7811ea06f62af7d4787c4f2775e3f3cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Force: 0
+  Force1: 0
   Force2: 0
 --- !u!1 &1268813478
 GameObject:
@@ -1185,10 +1190,10 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 9635b01a01b0b274c8a9334c943c6de5, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -1389,20 +1394,17 @@ Prefab:
       propertyPath: m_Name
       value: Finger1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 23020525144589138, guid: 1d531b68e8b4c7a4e929f793be326df3,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2eb25004229b48344b197f3824e2a647, type: 2}
+    m_RemovedComponents:
+    - {fileID: 95649323171006922, guid: 1d531b68e8b4c7a4e929f793be326df3, type: 2}
+    - {fileID: 114138810050437330, guid: 1d531b68e8b4c7a4e929f793be326df3, type: 2}
+    - {fileID: 33103451108766926, guid: 1d531b68e8b4c7a4e929f793be326df3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1d531b68e8b4c7a4e929f793be326df3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1351450940 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114138810050437330, guid: 1d531b68e8b4c7a4e929f793be326df3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1351450939}
-  m_Script: {fileID: 11500000, guid: f07d48987bab4a2488eb00f3a4b48841, type: 3}
---- !u!95 &1351450941 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95649323171006922, guid: 1d531b68e8b4c7a4e929f793be326df3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1351450939}
 --- !u!1 &1432497275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,15 +1519,21 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 7952db6b046d69b4bbd4c7830550718d, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 33103451108766926, guid: 1d531b68e8b4c7a4e929f793be326df3,
+        type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 23020525144589138, guid: 1d531b68e8b4c7a4e929f793be326df3,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ac63b36149ba3614fa6f4543201540c9, type: 2}
+    m_RemovedComponents:
+    - {fileID: 114138810050437330, guid: 1d531b68e8b4c7a4e929f793be326df3, type: 2}
+    - {fileID: 95649323171006922, guid: 1d531b68e8b4c7a4e929f793be326df3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 1d531b68e8b4c7a4e929f793be326df3, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &1596228461 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114138810050437330, guid: 1d531b68e8b4c7a4e929f793be326df3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1596228460}
-  m_Script: {fileID: 11500000, guid: f07d48987bab4a2488eb00f3a4b48841, type: 3}
 --- !u!1 &1596228462 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1999667564370566, guid: 1d531b68e8b4c7a4e929f793be326df3,
@@ -1534,11 +1542,6 @@ GameObject:
 --- !u!4 &1596228463 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4082379651391262, guid: 1d531b68e8b4c7a4e929f793be326df3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1596228460}
---- !u!95 &1596228464 stripped
-Animator:
-  m_PrefabParentObject: {fileID: 95649323171006922, guid: 1d531b68e8b4c7a4e929f793be326df3,
     type: 2}
   m_PrefabInternal: {fileID: 1596228460}
 --- !u!1 &1603193269
@@ -1716,7 +1719,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
@@ -1945,6 +1948,13 @@ GameObject:
   m_PrefabParentObject: {fileID: 1999667564370566, guid: 1d531b68e8b4c7a4e929f793be326df3,
     type: 2}
   m_PrefabInternal: {fileID: 1351450939}
+--- !u!33 &1971633646
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971633643}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1971633649 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4082379651391262, guid: 1d531b68e8b4c7a4e929f793be326df3,
@@ -1991,7 +2001,6 @@ GameObject:
   - component: {fileID: 2068085895}
   - component: {fileID: 2068085894}
   - component: {fileID: 2068085893}
-  - component: {fileID: 2068085896}
   m_Layer: 5
   m_Name: Replay
   m_TagString: Untagged
@@ -2057,8 +2066,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2068085896}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleAnimator
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1123619049}
+        m_MethodName: ToggleReplaying
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2103,20 +2123,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068085891}
---- !u!114 &2068085896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2068085891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 440b705a6dc753a46b09cc16690d37bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  replay: 0
-  animator: {fileID: 1351450941}
-  animator2: {fileID: 1596228464}
 --- !u!1 &2094175495
 GameObject:
   m_ObjectHideFlags: 0

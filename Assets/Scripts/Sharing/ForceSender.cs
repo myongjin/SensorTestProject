@@ -7,9 +7,9 @@ public class ForceSender : Singleton<ForceSender>
 {
     LiveStream livestream;
 
-    public float Force;
+    public float Force1;
     public float Force2;
-    private float offset = 0;
+    private float offset1 = 0;
     private float offset2 = 0;
 
     // Use this for initialization
@@ -24,15 +24,15 @@ public class ForceSender : Singleton<ForceSender>
 	// Update is called once per frame
     private void Update ()
     {
-        Force = livestream.forcePPS1 + offset;
+        Force1 = livestream.forcePPS1 + offset1;
         Force2 = livestream.forcePPS2 + offset2;
-        CustomMessages.Instance.SendForce(Force);
+        CustomMessages.Instance.SendForce(Force1);
         CustomMessages.Instance.SendForce(Force2);
     }
 
     public void ResetForce()
     {
-        offset = -livestream.forcePPS1;
+        offset1 = -livestream.forcePPS1;
         offset2 = -livestream.forcePPS2;
     }
 }

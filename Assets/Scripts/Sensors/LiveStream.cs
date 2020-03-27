@@ -78,7 +78,7 @@ public class LiveStream : Singleton<LiveStream>
     /**
 	 * Public members
 	 */
-    public Vector3 TranslationOffset = new Vector3(2.18f, 1.19f, 5.05f);
+    public Vector3 TranslationOffset = new Vector3(0.00f, 0.00f, 0.00f);
     public Vector3 RotationOffset;
     public bool sensorTS1 = false;
     public bool sensorTS2 = false;
@@ -99,7 +99,7 @@ public class LiveStream : Singleton<LiveStream>
     public GameObject landmarks;
 
 
-    private int forceSize = 0;
+    //private int forceSize = 0;
     public float[] forceValues;
 
 
@@ -179,7 +179,7 @@ public class LiveStream : Singleton<LiveStream>
     {
         this.sensorOffset = Vector3.zero;
         Debug.Log("Awake");
-        forceSize = 0;
+        //forceSize = 0;
 
         // Debug callback
         MyDelegate callback_delegate = new MyDelegate(CallBackFunction);
@@ -211,35 +211,35 @@ public class LiveStream : Singleton<LiveStream>
         this.sensors = new Dictionary<int, int>();
         if (this.sensorTS1)
         {
-            forceSize += 1;
+            //forceSize += 1;
             this.fingersGO[0] = this.sensorFinger1;
             this.sensorFinger1.SetActive(true);
             this.sensors.Add(0, this.sensorPPS1);
         }
         if (this.sensorTS2)
         {
-            forceSize += 1;
+            //forceSize += 1;
             this.fingersGO[1] = this.sensorFinger2;
             this.sensorFinger2.SetActive(true);
             this.sensors.Add(1, this.sensorPPS2);
         }
         if (this.sensorTS3)
         {
-            forceSize += 1;
+            //forceSize += 1;
             this.fingersGO[2] = this.sensorFinger3;
             this.sensorFinger3.SetActive(true);
             this.sensors.Add(2, this.sensorPPS3);
         }
         if (this.sensorTS4)
         {
-            forceSize += 1;
+            //forceSize += 1;
             this.fingersGO[3] = this.sensorFinger4;
             this.sensorFinger4.SetActive(true);
             this.sensors.Add(3, this.sensorPPS4);
         }
 
         //initialize the size of force value array
-        forceValues = new float[forceSize];
+        //forceValues = new float[forceSize];
 
         this.sensorsPtr = new Vector4[4];
         this.sensorsHndl = GCHandle.Alloc(this.sensorsPtr, GCHandleType.Pinned);
@@ -281,13 +281,6 @@ public class LiveStream : Singleton<LiveStream>
         Debug.Log("Start");
     }
 
-
-    // update finger height
-    /* NTU: Replace within 3D interface */
-    /*public void updateFingerHeight()
-	{
-		sensorOffset1 = fingerHeightSlider.value;
-	}*/
 
 
     private void calibrate(int _s)
@@ -337,24 +330,7 @@ public class LiveStream : Singleton<LiveStream>
 			 * UI
 			 */
             this.timestampRecordStr = this.recordNodeTsPtr[0].x.ToString("F1");
-            //this index indicates the time index.
-            //pressureViz = this.recordNodeTsPtr[0].w * 4.448f; // How this value was decided
-            //recordNodeTsPtr x,y,z,w x:time, w: force
-
-            //this.forcePPS1Str = this.recordNodeTsPtr [0].w.ToString ("F1");
-            //Debug.Log (this.forcePPS1Str);
-
-            /**
-			 * get data from sensors
-			 */
-
-
-            //Debug////////////////////////////
-
-            //this index is not the force sensor index at all
-            //pressureViz = this.recordNodeTsPtr[sensorPPS1].w * 4.448f;
-            //pressureViz2 = this.recordNodeTsPtr[sensorPPS2].w * 4.448f;
-
+           
 
 
             ///////////////////////////////////
@@ -367,7 +343,9 @@ public class LiveStream : Singleton<LiveStream>
                 this.fQ.z = this.recordNodeQPtr[pair.Key].z;
                 this.fQ.w = this.recordNodeQPtr[pair.Key].w;
 
-                this.fXLocal = (Vector3)recordNodeXPtr[pair.Key] * 0.001f + TranslationOffset * 0.01f;
+                //Do we need 0.001 scale?
+                //
+                this.fXLocal = (Vector3)recordNodeXPtr[pair.Key] + TranslationOffset * 0.01f;
 
                 // update position
                 Vector3 newLocalPosition = new Vector3(-fXLocal.y, -fXLocal.z, -fXLocal.x);
@@ -408,11 +386,6 @@ public class LiveStream : Singleton<LiveStream>
                 
 
             }
-
-            //if (pressureViz < 0.1)
-            //    pressureViz = 0.1f;
-            //if (pressureViz > 10.0f)
-            //    pressureViz = 10.0f;
         }
     }
 

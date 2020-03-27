@@ -119,6 +119,12 @@ public class LiveStream : Singleton<LiveStream>
     public float forcePPS3;
     public float forcePPS4;
 
+    // position initialization
+    public GameObject initPoint;
+    public bool initFlag = false;
+    public Vector3[] fingerTransOffset;
+
+
 
     /**
 	 * Private Members
@@ -177,6 +183,7 @@ public class LiveStream : Singleton<LiveStream>
 
     void Awake()
     {
+        int numOfActivation =0;
         this.sensorOffset = Vector3.zero;
         Debug.Log("Awake");
         //forceSize = 0;
@@ -211,28 +218,28 @@ public class LiveStream : Singleton<LiveStream>
         this.sensors = new Dictionary<int, int>();
         if (this.sensorTS1)
         {
-            //forceSize += 1;
+            numOfActivation += 1;
             this.fingersGO[0] = this.sensorFinger1;
             this.sensorFinger1.SetActive(true);
             this.sensors.Add(0, this.sensorPPS1);
         }
         if (this.sensorTS2)
         {
-            //forceSize += 1;
+            numOfActivation += 1;
             this.fingersGO[1] = this.sensorFinger2;
             this.sensorFinger2.SetActive(true);
             this.sensors.Add(1, this.sensorPPS2);
         }
         if (this.sensorTS3)
         {
-            //forceSize += 1;
+            numOfActivation += 1;
             this.fingersGO[2] = this.sensorFinger3;
             this.sensorFinger3.SetActive(true);
             this.sensors.Add(2, this.sensorPPS3);
         }
         if (this.sensorTS4)
         {
-            //forceSize += 1;
+            numOfActivation += 1;
             this.fingersGO[3] = this.sensorFinger4;
             this.sensorFinger4.SetActive(true);
             this.sensors.Add(3, this.sensorPPS4);
@@ -319,7 +326,7 @@ public class LiveStream : Singleton<LiveStream>
 	 */
     void Update()
     {
-
+        //if initilization of sensors are sucessful
         if (this.initOK)
         {
 
@@ -343,13 +350,20 @@ public class LiveStream : Singleton<LiveStream>
                 this.fQ.z = this.recordNodeQPtr[pair.Key].z;
                 this.fQ.w = this.recordNodeQPtr[pair.Key].w;
 
-                //Do we need 0.001 scale?
-                //
-                this.fXLocal = (Vector3)recordNodeXPtr[pair.Key] + TranslationOffset * 0.01f;
+                
+                
+                this.fXLocal = (Vector3)recordNodeXPtr[pair.Key];
 
                 // update position
                 Vector3 newLocalPosition = new Vector3(-fXLocal.y, -fXLocal.z, -fXLocal.x);
-                this.fingersGO[pair.Key].transform.localPosition = newLocalPosition;
+
+                //offset
+                if(initFlag)
+                {
+                    TranslationOffset = -newLocalPosition + initPoint.transform.position;
+                    initFlag = false;
+                }
+                this.fingersGO[pair.Key].transform.localPosition = newLocalPosition + TranslationOffset;
 
                 // update orientation
                 Quaternion sQ = new Quaternion(-fQ.y, -fQ.z, -fQ.x, fQ.w);

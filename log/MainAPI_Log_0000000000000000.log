@@ -70,3 +70,11 @@ Local Root Folder: F:\Unity projects\SensorTestProject
 Setup Folder: F:\Unity projects\SensorTestProject\setup\
 Log Folder: F:\Unity projects\SensorTestProject\log\
 Given Version: 1.0.0.0
+Root Folder: F:\Unity projects\SensorTestProject\Assets\Plugins\x86_64\
+HwPlugins Folder: F:\Unity projects\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
+ProcPlugins Folder: F:\Unity projects\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\
+Given Local Root Folder: 
+Local Root Folder: F:\Unity projects\SensorTestProject
+Setup Folder: F:\Unity projects\SensorTestProject\setup\
+Log Folder: F:\Unity projects\SensorTestProject\log\
+Given Version: 1.0.0.0

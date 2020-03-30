@@ -354,38 +354,29 @@ public class LiveStream : Singleton<LiveStream>
                 
                 this.fXLocal = (Vector3)recordNodeXPtr[pair.Key];
 
-                // update position
+                // get position
                 Vector3 newLocalPosition = new Vector3(-fXLocal.y, -fXLocal.z, -fXLocal.x);
+                
+
+                // get orientation
+                Quaternion sQ = new Quaternion(-fQ.y, -fQ.z, -fQ.x, fQ.w);
+                
+                
+
 
                 //offset
-                if(initFlag)
+                if (initFlag)
                 {
                     TranslationOffset = -newLocalPosition + initPoint.transform.position;
                     initFlag = false;
                 }
+
                 this.fingersGO[pair.Key].transform.localPosition = newLocalPosition + TranslationOffset;
 
-                // update orientation
-                Quaternion sQ = new Quaternion(-fQ.y, -fQ.z, -fQ.x, fQ.w);
                 Quaternion newSq = Quaternion.Euler(sQ.eulerAngles + RotationOffset);
                 this.fingersGO[pair.Key].transform.localRotation = newSq * this.cQ[pair.Key];  // with finger calibration
 
-                // apply finger height
-                float offset = 0.0f;
-                switch (pair.Key)
-                {
-                    case 0: offset = this.sensorOffset1; break;
-                    case 1: offset = this.sensorOffset2; break;
-                    case 2: offset = this.sensorOffset3; break;
-                    case 3: offset = this.sensorOffset4; break;
-                };
-                Vector3 qmy;
-                Quaternion currQ;
-                currQ = this.fingersGO[pair.Key].transform.localRotation;
-                qmy.x = 2.0f * (currQ.x * currQ.y - currQ.w * currQ.z);
-                qmy.y = 1.0f - 2.0f * (currQ.x * currQ.x + currQ.z * currQ.z);
-                qmy.z = 2.0f * (currQ.y * currQ.z + currQ.w * currQ.x);
-                this.fingersGO[pair.Key].transform.position = this.fingersGO[pair.Key].transform.position - offset * qmy;
+
 
                 // UI
                 float force = (this.recordNodeTsPtr[pair.Key].w);

@@ -101,6 +101,7 @@ public class DataSaveAndPlay : MonoBehaviour {
 
 
         //replay
+        //once reading flag is on and there is a file to read
         if (isReplaying && readFile)
         {
             

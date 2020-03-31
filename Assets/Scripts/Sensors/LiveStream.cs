@@ -21,6 +21,10 @@
 	In collaboration with: 
 		* Nanyang Technological University (Singapore)
 		* Lee Kong Chian School of Medicine (Singapore)
+    
+
+    Modifed by Myeongjin Kim (Myeongjin.kim@imperial.ac.uk)
+
 */
 
 using UnityEngine;
@@ -31,6 +35,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using HoloToolkit.Unity;
+
+
+
+public struct sensorData
+{
+    public bool positionSensorUsingFlag;
+    public int forceSensorIndex;
+    public float forceData;
+    public bool sensorInitFlag;
+    public GameObject trackingObject;
+}
+
 
 public class LiveStream : Singleton<LiveStream>
 {
@@ -73,13 +89,19 @@ public class LiveStream : Singleton<LiveStream>
     public static extern void Recording_GetRecordNode(IntPtr tsPtr, IntPtr xPtr, IntPtr qPtr);
 
 
+    
+
 
 
     /**
 	 * Public members
 	 */
-    public Vector3 TranslationOffset = new Vector3(0.00f, 0.00f, 0.00f);
-    public Vector3 RotationOffset;
+
+    public List<sensorData> sensorDataArray;
+
+    public Vector3 initRotationOffset= new Vector3(0,0,0);
+    public Vector3[] TranslationOffset;
+    public Vector3[] RotationOffset;
     public bool sensorTS1 = false;
     public bool sensorTS2 = false;
     public bool sensorTS3 = false;
@@ -121,7 +143,8 @@ public class LiveStream : Singleton<LiveStream>
 
     // position initialization
     public GameObject initPoint;
-    public bool initFlag = false;
+    public bool initFlag1 = false;
+    public bool initFlag2 = false;
     public Vector3[] fingerTransOffset;
 
 
@@ -266,6 +289,11 @@ public class LiveStream : Singleton<LiveStream>
             Debug.Log("Sensors: pid=" + sensorsPtr[i].x + " fid=" + sensorsPtr[i].y);
         }
 
+
+        // init array
+        TranslationOffset = new Vector3[sensorNum];
+        RotationOffset = new Vector3[sensorNum];
+
         // initialise sensors
         this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
         Debug.Log("Recording_Initialise ends");
@@ -365,16 +393,32 @@ public class LiveStream : Singleton<LiveStream>
 
 
                 //offset
-                if (initFlag)
+                if (pair.Key == 0 && initFlag1)
                 {
-                    TranslationOffset = -newLocalPosition + initPoint.transform.position;
-                    initFlag = false;
+                    //set translational offset
+                    TranslationOffset[pair.Key] = -newLocalPosition + initPoint.transform.position;
+                    //set rotational offset
+                    RotationOffset[pair.Key] = -sQ.eulerAngles + initPoint.transform.rotation.eulerAngles;
+                    initFlag1 = false;
                 }
 
-                this.fingersGO[pair.Key].transform.localPosition = newLocalPosition + TranslationOffset;
+                if (pair.Key == 1 && initFlag2)
+                {
+                    //set translational offset
+                    TranslationOffset[pair.Key] = -newLocalPosition + initPoint.transform.position;
+                    //set rotational offset
+                    RotationOffset[pair.Key] = -sQ.eulerAngles;// + initPoint.transform.rotation.eulerAngles;
+                    initFlag2 = false;
+                }
 
-                Quaternion newSq = Quaternion.Euler(sQ.eulerAngles + RotationOffset);
-                this.fingersGO[pair.Key].transform.localRotation = newSq * this.cQ[pair.Key];  // with finger calibration
+                this.fingersGO[pair.Key].transform.localPosition = newLocalPosition + TranslationOffset[pair.Key];
+
+                //apply rotation offset
+                Quaternion newSq = Quaternion.Euler(sQ.eulerAngles + RotationOffset[pair.Key]+ initRotationOffset);
+                //modification of sensor data
+                //newSq = Quaternion.Euler(new Vector3(newSq.eulerAngles.x, newSq.eulerAngles.y, -newSq.eulerAngles.z));
+
+                this.fingersGO[pair.Key].transform.localRotation = newSq;// * this.cQ[pair.Key];  // with finger calibration
 
 
 

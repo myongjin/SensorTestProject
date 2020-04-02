@@ -27,7 +27,7 @@ public class RecordDRE : MonoBehaviour
         IsRecording = !IsRecording;
 
         // set button appearance
-        recordingButton.IsRecordingButton(IsRecording);
+        //recordingButton.IsRecordingButton(IsRecording);
 
         // start record the finger movement
         recordAnimation1.record = IsRecording;

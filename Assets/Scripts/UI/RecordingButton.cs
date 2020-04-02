@@ -25,22 +25,11 @@ public class RecordingButton : MonoBehaviour
 
     }
 
-    public void IsRecordingButton(bool isButtonClicked)
-    {
-        isClicked = isButtonClicked;
-        ChangeButtonColour(isClicked);
-    }
 
     public void ToggleButton()
     {
         isClicked = !isClicked;
-        IsRecordingButton(isClicked);
-
-    }
-
-    private void ChangeButtonColour(bool isButtonClicked)
-    {
-        if (isButtonClicked)
+        if (isClicked)
         {
             image.color = Color.red;
             text.text = "Stop Recording";
@@ -49,8 +38,11 @@ public class RecordingButton : MonoBehaviour
         else
         {
             image.color = Color.white;
-            text.text = "Start Recording";
+            text.text = "Record";
             text.color = Color.black;
         }
+
     }
+
+
 }

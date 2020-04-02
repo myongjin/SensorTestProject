@@ -10,11 +10,15 @@ public class DataSaveAndPlay : MonoBehaviour {
 
     public bool isRecording = false;
     public bool isReplaying = false;
+    public bool isPasuing = false;
     private bool setWritefile = false;
     private bool readFile = false;
 
     public string recordText;
     public string replayText;
+    public float replayDeltaTime;
+    public int replayFrame;
+    private int localFrame = 0;
 
     //for replay
     private string[] lines;
@@ -37,24 +41,22 @@ public class DataSaveAndPlay : MonoBehaviour {
         //set the number of finger tip
         nbOfFinger = fingerObj.Length;
         Debug.Log(nbOfFinger);
-
-      
+        Time.fixedDeltaTime = replayDeltaTime;
     }
 	
 
 
 	// Update is called once per frame
 	void LateUpdate () {
-        //Check flag
+        //when replay is on, read text file
         if(isReplaying)
         {
             isRecording = false;
+            //if no file has been read
             if(!readFile)
             {
                 //read file
-                lines = File.ReadAllLines(@"Data/" + replayText + ".txt");
-                readFile = true;
-                Debug.Log("Read file");
+                ReadTextFile(replayText);
             } 
         }
 
@@ -63,12 +65,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         if(isRecording && !setWritefile)
         {
             //make a text file if there is the same file, then delete it and create new one
-            FileStream fs = new FileStream(@"Data/" + recordText + ".txt", FileMode.Create);
-            outputFile = new StreamWriter(fs);
-
-            Debug.Log("Make a text file for recording");
-
-            setWritefile = true;
+            SetTextFile(recordText);
         }
 
         //write down data
@@ -104,49 +101,77 @@ public class DataSaveAndPlay : MonoBehaviour {
         //once reading flag is on and there is a file to read
         if (isReplaying && readFile)
         {
-            
-            Vector3 pos;
-            Quaternion ori;
-            float[] forces = new float[2];
-
             if (indexRead < lines.Length)
             {
-                for (int j = 0; j < 2; j++)
+                ReplayData();
+                //to Next frame
+                if(!isPasuing)
                 {
-                    var pt = lines[indexRead++].Split(" "[0]); // gets 3 parts of the vector into separate strings
-                    var x = float.Parse(pt[0 + 8 * j]);
-                    var y = float.Parse(pt[1 + 8 * j]);
-                    var z = float.Parse(pt[2 + 8 * j]);
-                    pos = new Vector3(x, y, z);
-                    //Debug.Log(pos);
-
-                    x = float.Parse(pt[3 + 8 * j]);
-                    y = float.Parse(pt[4 + 8 * j]);
-                    z = float.Parse(pt[5 + 8 * j]);
-                    var w = float.Parse(pt[6 + 8 * j]);
-                    ori = new Quaternion(x, y, z, w);
-                    //Debug.Log(ori);
-
-                    x = float.Parse(pt[7 + 8 * j]);
-                    forces[j] = x;
-
-                    //Debug.Log(forces[j]);
-
-                    fingerObj[j].transform.position = pos;
-                    fingerObj[j].transform.rotation = ori;
-                }
-
-                forceSender.Force1 = forces[0];
-                forceSender.Force2 = forces[1];
+                    indexRead++;
+                }    
             }
             else
             {
                 indexRead = 0;
                 isReplaying = false;
-            }   
-        }    
-	}
+            }
 
+        }
+    }
+
+    private void ReplayData()
+    {
+        Vector3 pos;
+        Quaternion ori;
+        float[] forces = new float[2];
+
+        for (int j = 0; j < 2; j++)
+        {
+            var pt = lines[indexRead].Split(" "[0]); // gets 3 parts of the vector as separated strings
+            var x = float.Parse(pt[0 + 8 * j]);
+            var y = float.Parse(pt[1 + 8 * j]);
+            var z = float.Parse(pt[2 + 8 * j]);
+            pos = new Vector3(x, y, z);
+            //Debug.Log(pos);
+
+            x = float.Parse(pt[3 + 8 * j]);
+            y = float.Parse(pt[4 + 8 * j]);
+            z = float.Parse(pt[5 + 8 * j]);
+            var w = float.Parse(pt[6 + 8 * j]);
+            ori = new Quaternion(x, y, z, w);
+            //Debug.Log(ori);
+
+            x = float.Parse(pt[7 + 8 * j]);
+            forces[j] = x;
+
+            //Set position and orientation
+            //Debug.Log(forces[j]);
+            fingerObj[j].transform.position = pos;
+            fingerObj[j].transform.rotation = ori;
+
+            //increase local frame
+        }
+
+        forceSender.Force1 = forces[0];
+        forceSender.Force2 = forces[1];
+
+    }
+    private void SetTextFile(string name)
+    {
+        //make a text file if there is the same file, then delete it and create new one
+        FileStream fs = new FileStream(@"Data/" + name + ".txt", FileMode.Create);
+        outputFile = new StreamWriter(fs);
+        Debug.Log("Make a text file for recording");
+
+        setWritefile = true;
+    }
+
+    private void ReadTextFile(string name)
+    {
+        lines = File.ReadAllLines(@"Data/" + name + ".txt");
+        readFile = true;
+        Debug.Log("Read file");
+    }
 
     public void ToggleRecording()
     {

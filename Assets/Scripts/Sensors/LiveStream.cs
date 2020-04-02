@@ -398,7 +398,7 @@ public class LiveStream : Singleton<LiveStream>
                     //set translational offset
                     TranslationOffset[pair.Key] = -newLocalPosition + initPoint.transform.position;
                     //set rotational offset
-                    RotationOffset[pair.Key] = -sQ.eulerAngles + initPoint.transform.rotation.eulerAngles;
+                    RotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
                     initFlag1 = false;
                 }
 
@@ -407,14 +407,14 @@ public class LiveStream : Singleton<LiveStream>
                     //set translational offset
                     TranslationOffset[pair.Key] = -newLocalPosition + initPoint.transform.position;
                     //set rotational offset
-                    RotationOffset[pair.Key] = -sQ.eulerAngles;// + initPoint.transform.rotation.eulerAngles;
+                    RotationOffset[pair.Key] = -sQ.eulerAngles +initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
                     initFlag2 = false;
                 }
 
                 this.fingersGO[pair.Key].transform.localPosition = newLocalPosition + TranslationOffset[pair.Key];
 
                 //apply rotation offset
-                Quaternion newSq = Quaternion.Euler(sQ.eulerAngles + RotationOffset[pair.Key]+ initRotationOffset);
+                Quaternion newSq = Quaternion.Euler(sQ.eulerAngles + RotationOffset[pair.Key]);
                 //modification of sensor data
                 //newSq = Quaternion.Euler(new Vector3(newSq.eulerAngles.x, newSq.eulerAngles.y, -newSq.eulerAngles.z));
 
@@ -438,6 +438,16 @@ public class LiveStream : Singleton<LiveStream>
         }
     }
 
+
+    public void ToggleCalibrationFinger1()
+    {
+        initFlag1 = !initFlag1;
+    }
+
+    public void ToggleCalibrationFinger2()
+    {
+        initFlag2 = !initFlag2;
+    }
 
     // clean resources
     void OnApplicationQuit()

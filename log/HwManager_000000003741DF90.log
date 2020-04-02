@@ -1,0 +1,26 @@
+Log file F:\Unity projects\SensorTestProject\log\HwManager_000000003741DF90.log created on 2020-04-02 at 11:39:34 Creating Hardware Manager 000000003741DF90...
+Using Plugin folder of F:\Unity projects\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
+Building factory using searchPath F:\Unity projects\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\Hw*Lib.dll
+Loading HwArrayG2Lib.dll...success!
+Loading HwArrayG3Lib.dll...success!
+Loading HwD600Lib.dll...success!
+Loading HwDigiUsbLib.dll...success!
+Loading HWEmulatorLib.dll...success!
+Loading HWLoadstarLib.dll...success!
+Loading HwMensorLib.dll...success!
+Loading HwNidaqLib.dll...success!
+Loading HwOmegaTempLib.dll...success!
+Loading HwReferenceLib.dll...success!
+Loading HWTileLib.dll...success!
+Built factory for 11 plugins:
+ArrayG2 ArrayG3 D600 DigiUsb Emulator Loadstar Mensor Nidaq OmegaTemp Reference Tile 
+
+Attaching device type D600 from file F:\Unity projects\SensorTestProject\setup\Quadratec_FingerTPS-hw.txt
+2137488: Constructor found in factory.
+2137506: Device created.
+Resizing buffer to 10000 frames, recordsize = 12
+2137580: Starting acquisition threads...
+2137582: Device 0: Success. Done
+2226023: Stopping acquisition thread:Device 0: is alive. Terminating... done.
+Destroying Hardware Manager 000000003741DF90
+Factory is purged

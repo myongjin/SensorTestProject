@@ -104,6 +104,7 @@ public class LiveStream : Singleton<LiveStream>
 
     //Scale difference between real and virtual is too big. sensor data need to be scaled down 
     public float visualScale = 0.1f;
+    public Vector3 initTransOffset = new Vector3(0, 0, 0);
     public Vector3 initRotationOffset= new Vector3(0,0,0);
     public Vector3[] TranslationOffset;
     public Vector3[] RotationOffset;
@@ -421,6 +422,7 @@ public class LiveStream : Singleton<LiveStream>
 
                 //apply rotation offset
                 Quaternion newSq = Quaternion.Euler(sQ.eulerAngles + RotationOffset[pair.Key]);
+
                 //modification of sensor data
                 //newSq = Quaternion.Euler(new Vector3(newSq.eulerAngles.x, newSq.eulerAngles.y, -newSq.eulerAngles.z));
 

@@ -1,4 +1,6 @@
-﻿/**
+﻿
+
+/**
 	This plugin interfaces with position and pressure sensors for Unity 
 	with reference of previous work done for Qt. This version is x64 for VS2012
 
@@ -97,8 +99,11 @@ public class LiveStream : Singleton<LiveStream>
 	 * Public members
 	 */
 
+// test list class but it doesn't work
     public List<sensorData> sensorDataArray;
 
+    //Scale difference between real and virtual is too big. sensor data need to be scaled down 
+    public float visualScale = 0.1f;
     public Vector3 initRotationOffset= new Vector3(0,0,0);
     public Vector3[] TranslationOffset;
     public Vector3[] RotationOffset;
@@ -383,7 +388,7 @@ public class LiveStream : Singleton<LiveStream>
                 this.fXLocal = (Vector3)recordNodeXPtr[pair.Key];
 
                 // get position
-                Vector3 newLocalPosition = new Vector3(-fXLocal.y, -fXLocal.z, -fXLocal.x);
+                Vector3 newLocalPosition = new Vector3(-fXLocal.y, -fXLocal.z, -fXLocal.x)*visualScale;
                 
 
                 // get orientation
@@ -411,6 +416,7 @@ public class LiveStream : Singleton<LiveStream>
                     initFlag2 = false;
                 }
 
+                //apply offset and visual scaling
                 this.fingersGO[pair.Key].transform.localPosition = newLocalPosition + TranslationOffset[pair.Key];
 
                 //apply rotation offset

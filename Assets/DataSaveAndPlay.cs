@@ -40,7 +40,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         
         //set the number of finger tip
         nbOfFinger = fingerObj.Length;
-        Debug.Log(nbOfFinger);
+        //Debug.Log(nbOfFinger);
         Time.fixedDeltaTime = replayDeltaTime;
     }
 	

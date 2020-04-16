@@ -16,7 +16,6 @@ public class DataSaveAndPlay : MonoBehaviour {
 
     public string recordText;
     public string replayText;
-    public float replayDeltaTime;
     public int replayFrame;
     private int localFrame = 0;
 
@@ -41,7 +40,6 @@ public class DataSaveAndPlay : MonoBehaviour {
         //set the number of finger tip
         nbOfFinger = fingerObj.Length;
         //Debug.Log(nbOfFinger);
-        Time.fixedDeltaTime = replayDeltaTime;
     }
 	
 
@@ -224,14 +222,38 @@ public class DataSaveAndPlay : MonoBehaviour {
         return sb.ToString();
     }
 
-    public static string SerializeVector3(Vector3 v)
+    public static string AppendPos(string _data, GameObject obj)
+    {
+        StringBuilder sb = new StringBuilder();
+        string data = _data;
+
+        //position
+        data = SerializeVector3(data, obj.transform.position);
+
+
+        return sb.ToString();
+    }
+
+    public static string AppendOri(string _data, GameObject obj)
+    {
+        StringBuilder sb = new StringBuilder();
+        string data = _data;
+
+        //orientation
+        data = SerializeVector3(data, obj.transform.eulerAngles);
+
+        return sb.ToString();
+    }
+
+
+    private static string SerializeVector3(Vector3 v)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append(v.x).Append(" ").Append(v.y).Append(" ").Append(v.z);
         return sb.ToString();
     }
 
-    public static string SerializeVector3(string data, Vector3 v)
+    private static string SerializeVector3(string data, Vector3 v)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append(data);
@@ -239,7 +261,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         return sb.ToString();
     }
 
-    public static string SerializeVector3(string data, Quaternion v)
+    private static string SerializeVector3(string data, Quaternion v)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append(data);
@@ -247,5 +269,8 @@ public class DataSaveAndPlay : MonoBehaviour {
         return sb.ToString();
     }
 
-
+    public void WriteDownLine(string data)
+    {
+        outputFile.WriteLine(data);
+    }
 }

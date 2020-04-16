@@ -106,8 +106,10 @@ public class LiveStream : Singleton<LiveStream>
     public float visualScale = 0.1f;
     public Vector3 initTransOffset = new Vector3(0, 0, 0);
     public Vector3 initRotationOffset= new Vector3(0,0,0);
-    public Vector3[] TranslationOffset;
-    public Vector3[] RotationOffset;
+    public Vector3[] translationOffset;
+    public Vector3[] rotationOffset;
+    public Vector3[] relativePosition;
+    
     public bool sensorTS1 = false;
     public bool sensorTS2 = false;
     public bool sensorTS3 = false;
@@ -148,7 +150,8 @@ public class LiveStream : Singleton<LiveStream>
     public float forcePPS4;
 
     // position initialization
-    public GameObject initPoint;
+    public GameObject[] initPoint;
+    
     public bool initFlag1 = false;
     public bool initFlag2 = false;
     public Vector3[] fingerTransOffset;
@@ -158,6 +161,7 @@ public class LiveStream : Singleton<LiveStream>
     /**
 	 * Private Members
 	 */
+
 
     /// <summary>Memory structure for time shared between DLL and C#</summary>
     /// <value>(ts,,,force)</value>
@@ -297,8 +301,8 @@ public class LiveStream : Singleton<LiveStream>
 
 
         // init array
-        TranslationOffset = new Vector3[sensorNum];
-        RotationOffset = new Vector3[sensorNum];
+        translationOffset = new Vector3[sensorNum];
+        rotationOffset = new Vector3[sensorNum];
 
         // initialise sensors
         this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
@@ -402,26 +406,26 @@ public class LiveStream : Singleton<LiveStream>
                 if (pair.Key == 0 && initFlag1)
                 {
                     //set translational offset
-                    TranslationOffset[pair.Key] = -newLocalPosition + initPoint.transform.position;
+                    translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
                     //set rotational offset
-                    RotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
+                    rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
                     initFlag1 = false;
                 }
 
                 if (pair.Key == 1 && initFlag2)
                 {
                     //set translational offset
-                    TranslationOffset[pair.Key] = -newLocalPosition + initPoint.transform.position;
+                    translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
                     //set rotational offset
-                    RotationOffset[pair.Key] = -sQ.eulerAngles +initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
+                    rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
                     initFlag2 = false;
                 }
 
                 //apply offset and visual scaling
-                this.fingersGO[pair.Key].transform.localPosition = newLocalPosition + TranslationOffset[pair.Key];
+                this.fingersGO[pair.Key].transform.position = newLocalPosition + translationOffset[pair.Key];
 
                 //apply rotation offset
-                Quaternion newSq = Quaternion.Euler(sQ.eulerAngles + RotationOffset[pair.Key]);
+                Quaternion newSq = Quaternion.Euler(sQ.eulerAngles + rotationOffset[pair.Key]);
 
                 //modification of sensor data
                 //newSq = Quaternion.Euler(new Vector3(newSq.eulerAngles.x, newSq.eulerAngles.y, -newSq.eulerAngles.z));
@@ -446,6 +450,10 @@ public class LiveStream : Singleton<LiveStream>
         }
     }
 
+    public void saveCurrentRelativePos()
+    {
+
+    }
 
     public void ToggleCalibrationFinger1()
     {

@@ -65,20 +65,23 @@ public class CapturePosandOri : MonoBehaviour {
             zDirec = zDirec.normalized;
             Vector3 _zDirec = zDirec;
 
-            Debug.Log(zDirec);
+            //Debug.Log(zDirec);
             //Compute angle to each axis on a projected plan
             //x-y
             zDirec[2] = 0;
+            zDirec = zDirec.normalized;
             anglesToAxis[i][0] = Vector3.Angle(zDirec, new Vector3(1, 0, 0));
 
             //y-z
             zDirec = _zDirec;
             zDirec[0] = 0;
+            zDirec = zDirec.normalized;
             anglesToAxis[i][1] = Vector3.Angle(zDirec, new Vector3(0, 1, 0));
 
             //z-x
             zDirec = _zDirec;
             zDirec[1] = 0;
+            zDirec = zDirec.normalized;
             anglesToAxis[i][2] = Vector3.Angle(zDirec, new Vector3(0, 0, 1));
         }
 
@@ -93,8 +96,8 @@ public class CapturePosandOri : MonoBehaviour {
                 StringBuilder sb = new StringBuilder();
                 sb.Append(i).Append(" ");
                 string data = sb.ToString();
-                data = SerializeVector3(data, posCapture[i].transform.position);
-                data = SerializeVector3(data, oriCapture[i].transform.eulerAngles);
+                data = SerializeVector3(data, worldPos[i]);
+                data = SerializeVector3(data, worldOri[i]);
                 data = SerializeVector3(data, anglesToAxis[i]);
                 outputFile.WriteLine(data);
             }

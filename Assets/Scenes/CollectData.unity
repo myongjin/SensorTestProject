@@ -4098,16 +4098,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d940a0a844a434481ca2102f61361f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: 5th set
+  fileName: 30degree2
   posScale: 10
   posCapture:
-  - {fileID: 1290311256}
   - {fileID: 415159722}
   oriCapture:
-  - {fileID: 1290311256}
   - {fileID: 415159722}
   direcCapture:
-  - {fileID: 1916557934}
   - {fileID: 864194313}
   worldPos: []
   worldOri: []

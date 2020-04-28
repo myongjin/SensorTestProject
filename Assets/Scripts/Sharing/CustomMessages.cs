@@ -17,6 +17,7 @@ public class CustomMessages : Singleton<CustomMessages>
     {
         HeadTransform = MessageID.UserMessageIDStart,
         HandTransform,
+        HandTransform2,
         LaserTransform,
         BenchtopTransform,
         Force,

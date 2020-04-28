@@ -11,6 +11,7 @@ public class DataSaveAndPlay : MonoBehaviour {
     public bool isRecording = false;
     public bool isReplaying = false;
     public bool isPasuing = false;
+    public bool isRepeat = false;
     private bool setWritefile = false;
     private bool readFile = false;
 
@@ -112,6 +113,10 @@ public class DataSaveAndPlay : MonoBehaviour {
             {
                 indexRead = 0;
                 isReplaying = false;
+                if(isRepeat)
+                {
+                    isReplaying = true;
+                }
             }
 
         }

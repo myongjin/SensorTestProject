@@ -4024,9 +4024,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRecording: 0
-  isReplaying: 0
+  isReplaying: 1
   isPasuing: 0
-  isRepeat: 0
+  isRepeat: 1
   recordText: selfrecord
   replayText: selfrecord
   replayFrame: 0

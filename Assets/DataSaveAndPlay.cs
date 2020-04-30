@@ -41,6 +41,8 @@ public class DataSaveAndPlay : MonoBehaviour {
         //set the number of finger tip
         nbOfFinger = fingerObj.Length;
         //Debug.Log(nbOfFinger);
+
+        recordText = System.DateTime.Now.ToString("f");
     }
 	
 

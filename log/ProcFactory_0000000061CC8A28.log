@@ -1,4 +1,4 @@
-Log file D:\Myeongjin\SensorTestProject\log\ProcFactory_00000000437C8A28.log created on 2020-04-24 at 05:02:55 PM
+Log file D:\Myeongjin\SensorTestProject\log\ProcFactory_0000000061CC8A28.log created on 2020-04-30 at 01:56:10 PM
 System Logging Level = 2
 Searching D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\*.dll for processing plugins.
 Trying to load FilterBaselineDriftLib.dll...success.
@@ -46,8 +46,8 @@ Name = FilterExpDecay; Config = 2 12 0 1 2 3 4 5 6 7 8 9 10 11
 Getting builder...success.
 Building processor for FilterExpDecay...successfully built 12 nodes.
 After adding new ones, total processor list is 12
-Creating processor from ProcScale  00000000544EE730 0 2 0 1 
-Name = ProcScale; Config = 00000000544EE730 0 2 0 1 
+Creating processor from ProcScale  0000000055362390 0 2 0 1 
+Name = ProcScale; Config = 0000000055362390 0 2 0 1 
 Getting builder...success.
 Building processor for ProcScale...successfully built 2 nodes.
 After adding new ones, total processor list is 2
@@ -61,8 +61,53 @@ Name = FilterExpDecay; Config = 2 2 0 1
 Getting builder...success.
 Building processor for FilterExpDecay...successfully built 2 nodes.
 After adding new ones, total processor list is 2
-Creating processor from ProcNoScale  00000000544EE730 0 2 0 1 
-Name = ProcNoScale; Config = 00000000544EE730 0 2 0 1 
+Creating processor from FilterMedian 3 12 0 1 2 3 4 5 6 7 8 9 10 11
+Name = FilterMedian; Config = 3 12 0 1 2 3 4 5 6 7 8 9 10 11
 Getting builder...success.
-Building processor for ProcNoScale...successfully built 2 nodes.
+Building processor for FilterMedian...successfully built 12 nodes.
+After adding new ones, total processor list is 12
+Creating processor from FilterExpDecay 2 12 0 1 2 3 4 5 6 7 8 9 10 11
+Name = FilterExpDecay; Config = 2 12 0 1 2 3 4 5 6 7 8 9 10 11
+Getting builder...success.
+Building processor for FilterExpDecay...successfully built 12 nodes.
+After adding new ones, total processor list is 12
+Creating processor from ProcScale  000000006D4F9F10 0 2 0 1 
+Name = ProcScale; Config = 000000006D4F9F10 0 2 0 1 
+Getting builder...success.
+Building processor for ProcScale...successfully built 2 nodes.
+After adding new ones, total processor list is 2
+Creating processor from FilterMedian 3 2 0 1
+Name = FilterMedian; Config = 3 2 0 1
+Getting builder...success.
+Building processor for FilterMedian...successfully built 2 nodes.
+After adding new ones, total processor list is 2
+Creating processor from FilterExpDecay 2 2 0 1
+Name = FilterExpDecay; Config = 2 2 0 1
+Getting builder...success.
+Building processor for FilterExpDecay...successfully built 2 nodes.
+After adding new ones, total processor list is 2
+Creating processor from FilterMedian 3 12 0 1 2 3 4 5 6 7 8 9 10 11
+Name = FilterMedian; Config = 3 12 0 1 2 3 4 5 6 7 8 9 10 11
+Getting builder...success.
+Building processor for FilterMedian...successfully built 12 nodes.
+After adding new ones, total processor list is 12
+Creating processor from FilterExpDecay 2 12 0 1 2 3 4 5 6 7 8 9 10 11
+Name = FilterExpDecay; Config = 2 12 0 1 2 3 4 5 6 7 8 9 10 11
+Getting builder...success.
+Building processor for FilterExpDecay...successfully built 12 nodes.
+After adding new ones, total processor list is 12
+Creating processor from ProcScale  000000006D4FA4B0 0 2 0 1 
+Name = ProcScale; Config = 000000006D4FA4B0 0 2 0 1 
+Getting builder...success.
+Building processor for ProcScale...successfully built 2 nodes.
+After adding new ones, total processor list is 2
+Creating processor from FilterMedian 3 2 0 1
+Name = FilterMedian; Config = 3 2 0 1
+Getting builder...success.
+Building processor for FilterMedian...successfully built 2 nodes.
+After adding new ones, total processor list is 2
+Creating processor from FilterExpDecay 2 2 0 1
+Name = FilterExpDecay; Config = 2 2 0 1
+Getting builder...success.
+Building processor for FilterExpDecay...successfully built 2 nodes.
 After adding new ones, total processor list is 2

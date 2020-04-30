@@ -5,8 +5,8 @@ using UnityEngine;
 public class RecordDRE : MonoBehaviour
 {
     public bool IsRecording = false;
-    public RecordAnimation recordAnimation1;
-    public RecordAnimation recordAnimation2;
+  //  public RecordAnimation recordAnimation1;
+ //   public RecordAnimation recordAnimation2;
 
     private RecordingButton recordingButton;
 
@@ -30,7 +30,7 @@ public class RecordDRE : MonoBehaviour
         //recordingButton.IsRecordingButton(IsRecording);
 
         // start record the finger movement
-        recordAnimation1.record = IsRecording;
-        recordAnimation2.record = IsRecording;
+     //   recordAnimation1.record = IsRecording;
+      //  recordAnimation2.record = IsRecording;
     }
 }

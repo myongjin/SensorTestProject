@@ -114,7 +114,7 @@ public class CapturePosandOri : MonoBehaviour {
     }
 
 
-    void ToggleCapture()
+    public void ToggleCapture()
     {
         capture = !capture;
     }

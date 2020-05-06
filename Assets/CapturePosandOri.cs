@@ -15,13 +15,17 @@ public class CapturePosandOri : MonoBehaviour {
     public GameObject[] oriCapture;
     public GameObject[] direcCapture;
 
+    private bool[] InitFlag;
 
+    private Vector3[] offset;
     public Vector3[] worldPos;
     public Vector3[] worldOri;
     public Vector3[] anglesToAxis;
 
     private StreamWriter outputFile;
     private bool setWritefile;
+
+    
 
     public bool capture=false;
 
@@ -46,18 +50,57 @@ public class CapturePosandOri : MonoBehaviour {
         worldPos = new Vector3[posCapture.Length];
         worldOri = new Vector3[posCapture.Length];
         anglesToAxis = new Vector3[posCapture.Length];
+
+        offset = new Vector3[posCapture.Length];
+
+
+        InitFlag = new bool[posCapture.Length];
+        for (int i = 0; i < posCapture.Length; i++)
+        {
+            InitFlag[i] = false;
+        }
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-		//update variavles;
+        //update variavles;
 
-        for(int i=0;i<worldPos.Length;i++)
+        
+        
+
+        
+        for (int i=0;i<worldPos.Length;i++)
         {
             worldPos[i] = posCapture[i].transform.position * posScale;
             worldOri[i] = oriCapture[i].transform.eulerAngles;
 
-            
+            if (i == 0)
+            {
+                InitFlag[i] = GetComponent<LiveStream>().initFlag1;
+            }
+
+            if (i == 1)
+            {
+                InitFlag[i] = GetComponent<LiveStream>().initFlag2;
+            }
+
+            if (InitFlag[i])
+            {
+                Debug.Log("Offset " + i);
+                offset[i] = worldPos[i];
+                GetComponent<LiveStream>().ToggleCalibration(i);
+            }
+     
+
+            //apply offset
+            worldPos[i] = worldPos[i] - offset[i];
+
+
+
+
+
+
             //Compute new Z axis by a rotation matrix
             Matrix4x4 rot = oriCapture[i].transform.worldToLocalMatrix;
             Vector3 zDirec = rot.MultiplyVector(new Vector3(0, 0, 1));

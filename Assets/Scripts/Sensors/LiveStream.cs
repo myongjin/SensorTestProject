@@ -409,7 +409,7 @@ public class LiveStream : Singleton<LiveStream>
                     translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
                     //set rotational offset
                     rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
-                    initFlag1 = false;
+                    //initFlag1 = false;
                 }
 
                 if (pair.Key == 1 && initFlag2)
@@ -418,7 +418,7 @@ public class LiveStream : Singleton<LiveStream>
                     translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
                     //set rotational offset
                     rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
-                    initFlag2 = false;
+                    //initFlag2 = false;
                 }
 
                 //apply offset and visual scaling
@@ -458,11 +458,26 @@ public class LiveStream : Singleton<LiveStream>
     public void ToggleCalibrationFinger1()
     {
         initFlag1 = !initFlag1;
+        Debug.Log("Calibration 1");
     }
 
     public void ToggleCalibrationFinger2()
     {
         initFlag2 = !initFlag2;
+        Debug.Log("Calibration 2");
+    }
+
+    public void ToggleCalibration(int index)
+    {
+        if(index==0)
+        {
+            initFlag1 = !initFlag1;
+        }
+        if(index==1)
+        {
+            initFlag2 = !initFlag2;
+        }
+        Debug.Log("Calibration "+index);
     }
 
     // clean resources

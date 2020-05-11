@@ -23,7 +23,8 @@ public class CustomMessages : Singleton<CustomMessages>
         Force,
         Force2,
         Prostate,
-        Max
+        Max,
+        Offset
     }
 
     public enum UserMessageChannels

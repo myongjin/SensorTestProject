@@ -747,76 +747,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265103597}
   m_CullTransparentMesh: 0
---- !u!1 &267415004
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 267415005}
-  - component: {fileID: 267415007}
-  - component: {fileID: 267415006}
-  m_Layer: 0
-  m_Name: Sharing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &267415005
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267415004}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1565780763}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &267415006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267415004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af4ac91e9017f34c971bbf5e12948d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ClientRole: 0
-  ServerAddress: localhost
-  defaultSessionName: DefaultSession
-  defaultRoomName: DefaultRoom
-  KeepRoomAlive: 0
-  ServerPort: 20602
-  connectOnAwake: 1
-  AutoDiscoverServer: 0
-  PingIntervalSec: 2
-  IsAudioEndpoint: 1
-  ShowDetailedLogs: 0
---- !u!114 &267415007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267415004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ae3de54e484bf46a26fc8f28d3fff7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AnchorDebugText: {fileID: 0}
-  ShowDetailedLogs: 0
-  PersistentAnchors: 0
 --- !u!1 &354472300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1467,15 +1397,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 400000, guid: d6a45f3b4a55482489aa29db28b135cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 498.1
+      value: 497.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d6a45f3b4a55482489aa29db28b135cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 158.9
+      value: 164.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d6a45f3b4a55482489aa29db28b135cf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -562.5
+      value: -498.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d6a45f3b4a55482489aa29db28b135cf, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1860,7 +1790,7 @@ GameObject:
   - component: {fileID: 683198978}
   - component: {fileID: 683198982}
   m_Layer: 0
-  m_Name: FingerTip
+  m_Name: FingerTip (Blue)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2390,9 +2320,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 10
-  field of view: 55
+  near clip plane: 0.1
+  far clip plane: 1000
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2417,13 +2347,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777717581}
-  m_LocalRotation: {x: 0.097898416, y: -0.70029706, z: 0.097898446, w: 0.70029706}
-  m_LocalPosition: {x: 0.191, y: 0.063, z: -0.15}
+  m_LocalRotation: {x: -0.019744648, y: -0.7068311, z: -0.01974465, w: 0.7068311}
+  m_LocalPosition: {x: 29.4, y: 8.1, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15.916, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: -3.2, y: -90.00001, z: 0}
 --- !u!1 &788936516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2431,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825332036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fa5da1314a4aa745a5be3f0f6ab6bd6, type: 3}
   m_Name: 
@@ -2514,7 +2444,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825332036}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b30ea17b0e697344f8eea0e02f9f5e64, type: 3}
   m_Name: 
@@ -2753,7 +2683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &910659051
 Transform:
   m_ObjectHideFlags: 0
@@ -2979,7 +2909,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &970230879
 Transform:
   m_ObjectHideFlags: 0
@@ -3998,7 +3928,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1657166852}
-  - {fileID: 267415005}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4234,9 +4163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ec2f82122aa9347bb80d1090f79977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visualScale: 0.001
+  visualScale: 0.1
   initTransOffset: {x: 0, y: 0, z: 0}
-  initRotationOffset: {x: 0, y: 0, z: 0}
+  initRotationOffset: {x: 0, y: 90, z: 0}
   translationOffset: []
   rotationOffset: []
   relativePosition: []
@@ -4252,8 +4181,8 @@ MonoBehaviour:
   sensorOffset2: 0
   sensorOffset3: 0
   sensorOffset4: 0
-  sensorFinger1: {fileID: 2081422783}
-  sensorFinger2: {fileID: 515018304}
+  sensorFinger1: {fileID: 683198977}
+  sensorFinger2: {fileID: 1868939588}
   sensorFinger3: {fileID: 0}
   sensorFinger4: {fileID: 0}
   landmarks: {fileID: 0}
@@ -4263,8 +4192,8 @@ MonoBehaviour:
   forcePPS3: 0
   forcePPS4: 0
   initPoint:
-  - {fileID: 1626381786}
-  - {fileID: 1899296315}
+  - {fileID: 4349385}
+  - {fileID: 4349385}
   initFlag1: 0
   initFlag2: 0
   fingerTransOffset: []
@@ -4285,12 +4214,12 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: selfrecord
+  recordText: 
   replayText: selfrecord
   replayFrame: 0
   fingerObj:
-  - {fileID: 2081422783}
-  - {fileID: 515018304}
+  - {fileID: 683198977}
+  - {fileID: 1868939588}
   forceSender: {fileID: 1657166855}
 --- !u!114 &1657166855
 MonoBehaviour:
@@ -4330,13 +4259,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657166851}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6d940a0a844a434481ca2102f61361f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: New
-  posScale: 1000
+  posScale: 1
   posCapture:
   - {fileID: 2061497801}
   - {fileID: 415159722}
@@ -4346,8 +4275,6 @@ MonoBehaviour:
   direcCapture:
   - {fileID: 1220191181}
   - {fileID: 864194313}
-  onetimeFlag: 
-  offset: []
   worldPos: []
   worldOri: []
   anglesToAxis: []
@@ -4797,7 +4724,7 @@ GameObject:
   - component: {fileID: 1868939592}
   - component: {fileID: 1868939591}
   m_Layer: 0
-  m_Name: FingerTip2
+  m_Name: FingerTip (Red)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

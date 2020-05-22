@@ -109,6 +109,7 @@ public class LiveStream : Singleton<LiveStream>
     public Vector3[] translationOffset;
     public Vector3[] rotationOffset;
     public Vector3[] relativePosition;
+    public float[] forceOffset;
     
     public bool sensorTS1 = false;
     public bool sensorTS2 = false;
@@ -280,6 +281,7 @@ public class LiveStream : Singleton<LiveStream>
 
         //initialize the size of force value array
         //forceValues = new float[forceSize];
+        forceOffset = new float[numOfActivation];
 
         this.sensorsPtr = new Vector4[4];
         this.sensorsHndl = GCHandle.Alloc(this.sensorsPtr, GCHandleType.Pinned);
@@ -409,7 +411,8 @@ public class LiveStream : Singleton<LiveStream>
                     translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
                     //set rotational offset
                     rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
-                    //initFlag1 = false;
+                    forceOffset[pair.Key]= (this.recordNodeTsPtr[pair.Key].w);
+                    initFlag1 = false;
                 }
 
                 if (pair.Key == 1 && initFlag2)
@@ -418,7 +421,8 @@ public class LiveStream : Singleton<LiveStream>
                     translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
                     //set rotational offset
                     rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
-                    //initFlag2 = false;
+                    forceOffset[pair.Key] = (this.recordNodeTsPtr[pair.Key].w);
+                    initFlag2 = false;
                 }
 
                 //apply offset and visual scaling
@@ -435,7 +439,7 @@ public class LiveStream : Singleton<LiveStream>
 
 
                 // UI
-                float force = (this.recordNodeTsPtr[pair.Key].w);
+                float force = (this.recordNodeTsPtr[pair.Key].w)- forceOffset[pair.Key];
                 switch (pair.Key)
                 {
                     case 0: this.forcePPS1 = force; break;

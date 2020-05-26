@@ -43,13 +43,20 @@ public class DataSaveAndPlay : MonoBehaviour {
         nbOfFinger = fingerObj.Length;
         //Debug.Log(nbOfFinger);
 
-        recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm-ss");
+        recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm");
     }
 	
 
 
 	// Update is called once per frame
 	void LateUpdate () {
+        //Hot key
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            isRecording = !isRecording;
+        }
+
+
         //when replay is on, read text file
         if(isReplaying)
         {

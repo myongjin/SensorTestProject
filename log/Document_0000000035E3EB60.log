@@ -1,7 +1,7 @@
-Log file D:\Myeongjin\SensorTestProject\log\Document_0000000041CCB9D0.log created on 2020-05-22 at 02:09:29 PM
+Log file D:\Myeongjin\SensorTestProject\log\Document_0000000035E3EB60.log created on 2020-05-26 at 04:27:42 PM
 System Logging Level = 2
-Creating default base document 0000000041CCB9D0
-Creating new document 0000000041CCB9D0 from D:\Myeongjin\SensorTestProject\setup\Quadratec_FingerTPS.cfg
+Creating default base document 0000000035E3EB60
+Creating new document 0000000035E3EB60 from D:\Myeongjin\SensorTestProject\setup\Quadratec_FingerTPS.cfg
 Parameter::load returned 12
 Loading user settings from Quadratec_FingerTPS-set.txt...
 Starting hardware creation process for 1 devices
@@ -27,5 +27,5 @@ Adding filters to incoming data buffers...
 done.
 Starting data acquisition...done.
 Finished creating new Capture Document
-Destroying Capture document 0000000041CCB9D0
+Destroying Capture document 0000000035E3EB60
 Stopping all running hardware...done.

@@ -8,6 +8,7 @@ using System.Text;
 
 public class DataSaveAndPlay : MonoBehaviour {
 
+    public GameManager gameManager;
     public bool isRecording = false;
     public bool isReplaying = false;
     public bool isPasuing = false;
@@ -17,7 +18,7 @@ public class DataSaveAndPlay : MonoBehaviour {
 
     public string recordText;
     public string replayText;
-    public int replayFrame;
+    public int replayFrame =0;
     private int localFrame = 0;
 
     //for replay
@@ -26,7 +27,7 @@ public class DataSaveAndPlay : MonoBehaviour {
 
 
     private Vector3[] readVector;
-    public GameObject[] fingerObj = new GameObject[2];
+    public GameObject[] fingerObj;
     public ForceSender forceSender;
 
 
@@ -42,7 +43,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         nbOfFinger = fingerObj.Length;
         //Debug.Log(nbOfFinger);
 
-        recordText = System.DateTime.Now.ToString("f");
+        recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm-ss");
     }
 	
 
@@ -72,16 +73,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         //write down data
         if(isRecording && setWritefile)
         {
-            string data = "";
-
-            //data = AppendPosOriForce(data, fingerObj[0], Time.frameCount);
-
-            data = AppendPosOriForce(data, fingerObj[0], forceSender.Force1);
-            data = AppendPosOriForce(data, fingerObj[1], forceSender.Force2);
-
-
-            //Write down
-            outputFile.WriteLine(data);
+            WriteDownData();
         }
 
         //when recording is stopped and there is a file to save
@@ -102,18 +94,24 @@ public class DataSaveAndPlay : MonoBehaviour {
         //once reading flag is on and there is a file to read
         if (isReplaying && readFile)
         {
-            if (indexRead < lines.Length)
+            //Read Head Pose and Dialation first
+            if(replayFrame == 0)
+            {
+                ReadHeadandSet();
+                replayFrame++;
+            }
+            else if (replayFrame < lines.Length)
             {
                 ReplayData();
                 //to Next frame
                 if(!isPasuing)
                 {
-                    indexRead++;
+                    replayFrame++;
                 }    
             }
             else
             {
-                indexRead = 0;
+                replayFrame = 0;
                 isReplaying = false;
                 if(isRepeat)
                 {
@@ -124,15 +122,40 @@ public class DataSaveAndPlay : MonoBehaviour {
         }
     }
 
+    private void WriteDownData()
+    {
+        string data = "";
+
+        //data = AppendPosOriForce(data, fingerObj[0], Time.frameCount);
+
+        data = AppendPosOriForce(data, fingerObj[0], forceSender.Force1);
+        data = AppendPosOriForce(data, fingerObj[1], forceSender.Force2);
+
+
+        //Write down
+        outputFile.WriteLine(data);
+    }
+
+    private void ReadHeadandSet()
+    {
+        var pt = lines[replayFrame].Split(" "[0]); // gets 3 parts of the vector as separated strings
+        var head = int.Parse(pt[0]);
+        var dilation = float.Parse(pt[1]);
+
+        gameManager.headStation = head;
+        gameManager.dilation = dilation;
+        
+    }
+
     private void ReplayData()
     {
         Vector3 pos;
         Quaternion ori;
-        float[] forces = new float[2];
+        float[] forces = new float[nbOfFinger];
 
-        for (int j = 0; j < 2; j++)
+        for (int j = 0; j < nbOfFinger; j++)
         {
-            var pt = lines[indexRead].Split(" "[0]); // gets 3 parts of the vector as separated strings
+            var pt = lines[replayFrame].Split(" "[0]); // gets 3 parts of the vector as separated strings
             var x = float.Parse(pt[0 + 8 * j]);
             var y = float.Parse(pt[1 + 8 * j]);
             var z = float.Parse(pt[2 + 8 * j]);
@@ -168,6 +191,9 @@ public class DataSaveAndPlay : MonoBehaviour {
         outputFile = new StreamWriter(fs);
         Debug.Log("Make a text file for recording");
 
+        //Write down head info.
+        WriteDownHeadInfo();
+
         setWritefile = true;
     }
 
@@ -196,6 +222,13 @@ public class DataSaveAndPlay : MonoBehaviour {
             outputFile.Close();
         }
         
+    }
+
+    private void WriteDownHeadInfo()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append(gameManager.headStation).Append(" ").Append(gameManager.dilation);
+        outputFile.WriteLine(sb.ToString());
     }
 
     public static string SerializeVector3Array(Vector3[] aVectors)

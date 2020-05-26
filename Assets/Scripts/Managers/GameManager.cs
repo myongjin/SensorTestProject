@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int headStation;
+    public float dilation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void HeadSelected(int index)
+    {
+        headStation = index - 4;
     }
 }

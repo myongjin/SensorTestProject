@@ -92,6 +92,12 @@ public class DataSaveAndPlay : MonoBehaviour {
                 outputFile.Close();
             }
 
+            //Set replay text
+            replayText = recordText;
+
+            //Set new recording text
+            recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm");
+
             setWritefile = false;
         }
 

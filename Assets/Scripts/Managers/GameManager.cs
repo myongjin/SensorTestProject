@@ -5,12 +5,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int headStation;
-    public float dilation;
+    public int cervix;
+    public int angleIndex;
+
+    public ModelLocator modelLocator;
+    public ModelSelector modelSelector;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        modelSelector = GetComponent<ModelSelector>();
+        modelLocator = GetComponent<ModelLocator>();
     }
 
     // Update is called once per frame
@@ -19,8 +24,28 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void HeadSelected(int index)
+    public void SetModelInfo(int _headStation, int _cervix, int _angle)
     {
-        headStation = index - 4;
+        headStation = _headStation;
+        cervix = _cervix;
+        angleIndex = _angle;
+
+        modelSelector.SelectOne(cervix);
+        modelLocator.SelectTransform(headStation);
+        modelLocator.SelectAngle(angleIndex);
     }
+
+    public void SelectHeadStation(int index)
+    {
+        headStation = index;
+    }
+    public void SelectCervix(int index)
+    {
+        cervix = index;
+    }
+    public void SelectAngle(int index)
+    {
+        angleIndex = index;
+    }
+
 }

@@ -28,7 +28,8 @@ public class DataSaveAndPlay : MonoBehaviour {
 
     private Vector3[] readVector;
     public GameObject[] fingerObj;
-    public ForceSender forceSender;
+
+    public LiveStream liveStream;
 
 
     private StreamWriter outputFile;
@@ -38,7 +39,9 @@ public class DataSaveAndPlay : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+
+        liveStream = GetComponent<LiveStream>();
+
         //set the number of finger tip
         nbOfFinger = fingerObj.Length;
         //Debug.Log(nbOfFinger);
@@ -141,8 +144,8 @@ public class DataSaveAndPlay : MonoBehaviour {
 
         //data = AppendPosOriForce(data, fingerObj[0], Time.frameCount);
 
-        data = AppendPosOriForce(data, fingerObj[0], forceSender.Force1);
-        data = AppendPosOriForce(data, fingerObj[1], forceSender.Force2);
+        data = AppendPosOriForce(data, fingerObj[0], liveStream.forcePPS1);
+        data = AppendPosOriForce(data, fingerObj[1], liveStream.forcePPS2);
 
 
         //Write down
@@ -153,11 +156,10 @@ public class DataSaveAndPlay : MonoBehaviour {
     {
         var pt = lines[replayFrame].Split(" "[0]); // gets 3 parts of the vector as separated strings
         var head = int.Parse(pt[0]);
-        var dilation = float.Parse(pt[1]);
+        var cervix = int.Parse(pt[1]);
+        var angle = int.Parse(pt[2]);
 
-        gameManager.headStation = head;
-        gameManager.dilation = dilation;
-        
+        gameManager.SetModelInfo(head, cervix, angle);
     }
 
     private void ReplayData()
@@ -193,8 +195,8 @@ public class DataSaveAndPlay : MonoBehaviour {
             //increase local frame
         }
 
-        forceSender.Force1 = forces[0];
-        forceSender.Force2 = forces[1];
+        liveStream.forcePPS1 = forces[0];
+        liveStream.forcePPS2 = forces[1];
 
     }
     private void SetTextFile(string name)
@@ -240,7 +242,7 @@ public class DataSaveAndPlay : MonoBehaviour {
     private void WriteDownHeadInfo()
     {
         StringBuilder sb = new StringBuilder();
-        sb.Append(gameManager.headStation).Append(" ").Append(gameManager.dilation);
+        sb.Append(gameManager.headStation).Append(" ").Append(gameManager.cervix).Append(" ").Append(gameManager.angleIndex);
         outputFile.WriteLine(sb.ToString());
     }
 

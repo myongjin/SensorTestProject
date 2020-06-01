@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ModelLocator : MonoBehaviour
 {
+    private int currentStation = 0;
     public Transform transformTarget;
     public Transform rotateTarget;
 
@@ -23,6 +24,7 @@ public class ModelLocator : MonoBehaviour
         {
             if (index-1 < references.Length)
             {
+                currentStation = index - 1;
                 transformTarget.position = references[index-1].position;
                 transformTarget.rotation = references[index - 1].rotation;
             }
@@ -37,23 +39,9 @@ public class ModelLocator : MonoBehaviour
 
     public void SelectAngle(int index)
     {
-        if (index - 1 < references.Length)
-        {
-            rotateTarget.eulerAngles = refAngle + new Vector3(0, 0, (float)(index - 1) * 10f);
-        }
-        else
-        {
-            Debug.Log("Index is out of range");
-        }
+        
+        rotateTarget.eulerAngles = references[currentStation].eulerAngles + new Vector3(0, 0, (float)(index - 1) * 5f);
 
-        if (index < references.Length)
-        {
-            
-        }
-        else
-        {
-            Debug.Log("Index is out of range");
-        }
-
+        //Debug.Log("Index is out of range");
     }
 }

@@ -1,0 +1,100 @@
+Log file D:\Myeongjin\SensorTestProject\log\D600_000000003A699F80.log created on 2020-06-03 at 03:24:04 PM
+System Logging Level = 2
+4506749: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+4506794: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+4507439: Searching 1 ports
+Trying to open COM3 at 921600 baud
+Sending command +++AT
+Read "ERROR"  from port 3
+Matched ERROR, Connected to COM3 at 921600 baud
+4507757: Found port 921600 at baudrate 921600
+4507788: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 4507853
+696: Parsing string OK in state Reset
+730: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+824: Resetting setup timeout at 4508687 changing from Reset to Connect
+35:  Done parsing command in Reset
+85: Parsing string OK in state Connect
+Didn't find CONNECT in OK
+143:  Done parsing command in Connect
+864: Parsing string CONNECT 00019525DFD8 in state Connect
+907: Found "CONNECT"; trying to configure system
+935: Configuring system.
+ Queuing message 0x63 ackSize 1
+970: Sending stop scanning command
+ Queuing message 0x10 ackSize 2
+ Queuing message 0x20 ackSize 7
+1145: I2C scan list configured
+1161: Configuring Scan Lists
+ Queuing message 0x25 ackSize 3
+1203: Scan length lists set
+ Queuing message 0x33 ackSize 2
+1248: Setting up all of the passthru commands
+Device 0 (I2C Addr = 1): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 0
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 0
+ Queuing message 0x40 ackSize 6
+Device 1 (I2C Addr = 2): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 1
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 1 to 255
+ Queuing message 0x40 ackSize 5
+3207: Requested continuous frames
+ Queuing message 0x11 ackSize 3
+ Queuing message 0x10 ackSize 2
+3277: Resetting setup timeout at 4511973 changing from Connect to DAQ
+36:  Done parsing command in Connect
+Successfully sent message 0x63 with 1 bytes at 4512.1s (16 remain)
+Timeout waiting for ACK of 0x63 at 4512.34
+Successfully sent message 0x10 with 2 bytes at 4512.42s (15 remain)
+Timeout waiting for ACK of 0x10 at 4512.65
+Successfully sent message 0x20 with 7 bytes at 4512.74s (14 remain)
+Timeout waiting for ACK of 0x20 at 4512.97
+Successfully sent message 0x25 with 3 bytes at 4513.07s (13 remain)
+Timeout waiting for ACK of 0x25 at 4513.31
+Successfully sent message 0x33 with 2 bytes at 4513.39s (12 remain)
+Timeout waiting for ACK of 0x33 at 4513.63
+Successfully sent message 0x40 with 5 bytes at 4513.71s (11 remain)
+Timeout waiting for ACK of 0x40 at 4513.94
+Successfully sent message 0x40 with 6 bytes at 4514.02s (10 remain)
+Timeout waiting for ACK of 0x40 at 4514.26
+Successfully sent message 0x40 with 6 bytes at 4514.34s (9 remain)
+Timeout waiting for ACK of 0x40 at 4514.58
+Successfully sent message 0x40 with 6 bytes at 4514.66s (8 remain)
+Timeout waiting for ACK of 0x40 at 4514.9
+Successfully sent message 0x40 with 5 bytes at 4514.98s (7 remain)
+Timeout waiting for ACK of 0x40 at 4515.22
+Successfully sent message 0x40 with 6 bytes at 4515.31s (6 remain)
+Timeout waiting for ACK of 0x40 at 4515.56
+Successfully sent message 0x40 with 6 bytes at 4515.64s (5 remain)
+Timeout waiting for ACK of 0x40 at 4515.88
+Successfully sent message 0x40 with 6 bytes at 4515.96s (4 remain)
+4011: Timeout 4000 waiting for data from 4294967287 to 4037
+ERROR: Timeout waiting for new data. This is most likely due 
+to a Bluetooth connection issue due to interference, 
+a low battery, or being out of range. Check that the 
+battery is charged, and possibly try moving closer to the 
+computer.
+4080: Sending stop scanning command
+Successfully sent message 0x10 with 2 bytes at 4516.14s (3 remain)
+Sending command +++
+Finished escape sequence. Now disconnecting hardware
+Sending command ATH
+Successfully disconnected from Bluetooth
+5262: Deleting D600 Object

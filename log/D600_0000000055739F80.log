@@ -1,0 +1,133 @@
+Log file D:\Myeongjin\SensorTestProject\log\D600_0000000055739F80.log created on 2020-06-03 at 02:09:13 PM
+System Logging Level = 2
+15707: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+15746: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+17016: Searching 1 ports
+Trying to open COM3 at 921600 baud
+Sending command +++AT
+Read "O÷úhõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²xP	÷üEö÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²rQ	÷ýLô÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²l R	øÿ`õöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²f!S	÷þ^õ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²`"TöÿUôõÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²Z#UøüRõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@² T$V	øü:ööÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²!N%W÷ÿAõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²"H&X÷\ööÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²#B'Y÷üOôöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²$<(Z"  from port 3
+Possible sensor data detected; sending Reset command...
+Successfully sent message 0x12 with 1 bytes at 17.38s (0 remain)
+Possible sensor data detected; sending Scan Stop command...
+Successfully sent message 0x10 with 2 bytes at 17.47s (0 remain)
+Trying to flush the incoming buffer...Finished flushing buffer after 6 readsSending command +++
+18060: Found port 921600 at baudrate 921600
+18087: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 18152
+15: Parsing string øþUö÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²%6)[ in state Reset
+Didn't find Reset success message OK in øþUö÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²%6)[
+72:  Done parsing command in Reset
+96: Parsing string ÷NõøÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²&0*\øþUõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²'*+] in state Reset
+Didn't find Reset success message OK in ÷NõøÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²&0*\øþUõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²'*+]
+152:  Done parsing command in Reset
+176: Parsing string ÷ýbôöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²($,^	÷ÿGõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²)-_ in state Reset
+Didn't find Reset success message OK in ÷ýbôöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²($,^	÷ÿGõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²)-_
+232:  Done parsing command in Reset
+256: Parsing string öÿKõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²*.`÷üUôöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²+/a÷üXööÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²,0b÷ýSõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²-1oöÿööÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²9¸>p	øvö÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²:²?q÷dõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²;¬@røvöõÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²<¦As÷ÿ`ô÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²= Bt in state Reset
+Didn't find Reset success message OK in öÿKõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²*.`÷üUôöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²+/a÷üXööÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²,0b÷ýSõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²-1oöÿööÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²9¸>p	øvö÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²:²?q÷dõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²;¬@røvöõÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²<¦As÷ÿ`ô÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²= Bt
+320:  Done parsing command in Reset
+349: Parsing string ÷þvõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²>šCu	÷aô÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²?”Dv in state Reset
+Didn't find Reset success message OK in ÷þvõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²>šCu	÷aô÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²?”Dv
+414:  Done parsing command in Reset
+439: Parsing string ÷uõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²@ŽEƒ	ø<õ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²M@R„	÷WõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²N:S…÷`õøÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²O4T†÷YõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²P.U‡÷Jõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²Q(Vˆ	÷SõõÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²R"W‰öûLõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²SXŠ	÷ÿFõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²TY²_Îe—÷þRööÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'höþþþþþþþþþþþþþþÿÿÿÿ@²`Èf˜øTõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'höþþþþþþþþþþþþþþÿÿÿÿ@²aÂg™	ø\õ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'höþþþþþþþþþþþþþþÿÿÿÿ in state Reset
+Didn't find Reset success message OK in ÷uõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²@ŽEƒ	ø<õ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²M@R„	÷WõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²N:S…÷`õøÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²O4T†÷YõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²P.U‡÷Jõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²Q(Vˆ	÷SõõÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²R"W‰öûLõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²SXŠ	÷ÿFõöÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'köþþþþþþþþþþþþþþÿÿÿÿ@²TY²_Îe—÷þRööÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'höþþþþþþþþþþþþþþÿÿÿÿ@²`Èf˜øTõ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'höþþþþþþþþþþþþþþÿÿÿÿ@²aÂg™	ø\õ÷ÿÿÿÿÿÿÿÿÿÿÿÿÿÿtÅ'höþþþþþþþþþþþþþþÿÿÿÿ
+496:  Done parsing command in Reset
+521: Parsing string ERROR in state Reset
+Didn't find Reset success message OK in ERROR
+579:  Done parsing command in Reset
+909: Parsing string OK in state Reset
+942: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+1021: Resetting setup timeout at 19182 changing from Reset to Connect
+34:  Done parsing command in Reset
+87: Parsing string OK in state Connect
+Didn't find CONNECT in OK
+148:  Done parsing command in Connect
+1836: Parsing string CONNECT 00019525DFD8 in state Connect
+1873: Found "CONNECT"; trying to configure system
+1901: Configuring system.
+ Queuing message 0x63 ackSize 1
+1946: Sending stop scanning command
+ Queuing message 0x10 ackSize 2
+ Queuing message 0x20 ackSize 7
+2114: I2C scan list configured
+2129: Configuring Scan Lists
+ Queuing message 0x25 ackSize 3
+2168: Scan length lists set
+ Queuing message 0x33 ackSize 2
+2208: Setting up all of the passthru commands
+Device 0 (I2C Addr = 1): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 0
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 0
+ Queuing message 0x40 ackSize 6
+Device 1 (I2C Addr = 2): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 1
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 1 to 255
+ Queuing message 0x40 ackSize 5
+4150: Requested continuous frames
+ Queuing message 0x11 ackSize 3
+ Queuing message 0x10 ackSize 2
+4230: Resetting setup timeout at 23422 changing from Connect to DAQ
+37:  Done parsing command in Connect
+Timeout waiting for ACK of 0x10 at 23.496
+Successfully sent message 0x63 with 1 bytes at 23.572s (16 remain)
+Timeout waiting for ACK of 0x63 at 23.803
+Successfully sent message 0x10 with 2 bytes at 23.88s (15 remain)
+Timeout waiting for ACK of 0x10 at 24.113
+Successfully sent message 0x20 with 7 bytes at 24.19s (14 remain)
+Timeout waiting for ACK of 0x20 at 24.421
+Successfully sent message 0x25 with 3 bytes at 24.507s (13 remain)
+Timeout waiting for ACK of 0x25 at 24.74
+Successfully sent message 0x33 with 2 bytes at 24.817s (12 remain)
+Timeout waiting for ACK of 0x33 at 25.048
+Successfully sent message 0x40 with 5 bytes at 25.124s (11 remain)
+Timeout waiting for ACK of 0x40 at 25.356
+Successfully sent message 0x40 with 6 bytes at 25.434s (10 remain)
+Timeout waiting for ACK of 0x40 at 25.668
+Successfully sent message 0x40 with 6 bytes at 25.752s (9 remain)
+
+ --Protocol Rev change was:0 now: 4--
+ ACK Mismatch: Received 0x33 while waiting for 0x40
+Timeout waiting for ACK of 0x40 at 25.983
+Successfully sent message 0x40 with 6 bytes at 26.066s (8 remain)
+ ACKing cmd 0x40; 8 remain
+Successfully sent message 0x40 with 6 bytes at 26.195s (8 remain)
+ ACKing cmd 0x40; 7 remain
+Successfully sent message 0x40 with 5 bytes at 26.323s (7 remain)
+ ACKing cmd 0x40; 6 remain
+Successfully sent message 0x40 with 6 bytes at 26.453s (6 remain)
+ ACKing cmd 0x40; 5 remain
+Successfully sent message 0x40 with 6 bytes at 26.581s (5 remain)
+ ACKing cmd 0x40; 4 remain
+Successfully sent message 0x40 with 6 bytes at 26.707s (4 remain)
+ ACKing cmd 0x40; 3 remain
+Successfully sent message 0x40 with 5 bytes at 26.855s (3 remain)
+ ACKing cmd 0x40; 2 remain
+Successfully sent message 0x11 with 3 bytes at 27.043s (2 remain)
+ ACKing cmd 0x11; 1 remain
+Successfully sent message 0x10 with 2 bytes at 27.217s (1 remain)
+ ACKing cmd 0x10; 0 remain
+3856: 10 received, but 26 are needed for a full frame. Flushing.
+49883: Sending stop scanning command
+Successfully sent message 0x10 with 2 bytes at 73.397s (0 remain)
+Sending command +++
+Finished escape sequence. Now disconnecting hardware
+Sending command ATH
+Successfully disconnected from Bluetooth
+51019: Deleting D600 Object

@@ -142,7 +142,7 @@ public class DataSaveAndPlay : MonoBehaviour {
     {
         string data = "";
 
-        //data = AppendPosOriForce(data, fingerObj[0], Time.frameCount);
+        data = AppendPosOriForce(data, fingerObj[0], Time.realtimeSinceStartup);
 
         data = AppendPosOriForce(data, fingerObj[0], liveStream.forcePPS1);
         data = AppendPosOriForce(data, fingerObj[1], liveStream.forcePPS2);

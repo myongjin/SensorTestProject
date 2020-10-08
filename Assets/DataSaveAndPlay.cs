@@ -35,7 +35,10 @@ public class DataSaveAndPlay : MonoBehaviour {
     private StreamWriter outputFile;
     
     private int nbOfFinger;
+
+    private float startTime =0.0f;
     
+
 
     // Use this for initialization
     void Start () {
@@ -78,6 +81,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         {
             //make a text file if there is the same file, then delete it and create new one
             SetTextFile(recordText);
+            startTime = Time.realtimeSinceStartup;
         }
 
         //write down data
@@ -142,8 +146,8 @@ public class DataSaveAndPlay : MonoBehaviour {
     {
         string data = "";
 
-        data = AppendPosOriForce(data, fingerObj[0], Time.realtimeSinceStartup);
-
+ 
+        data = (Time.realtimeSinceStartup- startTime).ToString();
         data = AppendPosOriForce(data, fingerObj[0], liveStream.forcePPS1);
         data = AppendPosOriForce(data, fingerObj[1], liveStream.forcePPS2);
 

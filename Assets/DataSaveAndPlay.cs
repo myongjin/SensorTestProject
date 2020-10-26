@@ -97,6 +97,7 @@ public class DataSaveAndPlay : MonoBehaviour {
             if (setWritefile)
             {
                 outputFile.Close();
+                setWritefile = false;
             }
 
             //Set replay text
@@ -104,8 +105,6 @@ public class DataSaveAndPlay : MonoBehaviour {
 
             //Set new recording text
             recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm");
-
-            setWritefile = false;
         }
 
 
@@ -206,7 +205,11 @@ public class DataSaveAndPlay : MonoBehaviour {
     private void SetTextFile(string name)
     {
         //make a text file if there is the same file, then delete it and create new one
-        FileStream fs = new FileStream(@"Data/" + name + ".txt", FileMode.Create);
+
+        int examNumber = gameManager.exam;
+        FileStream fs = new FileStream(@"Data/" + "Exam " + examNumber + "_" + name + ".txt", FileMode.Create);
+
+
         outputFile = new StreamWriter(fs);
         Debug.Log("Make a text file for recording");
 
@@ -246,6 +249,7 @@ public class DataSaveAndPlay : MonoBehaviour {
     private void WriteDownHeadInfo()
     {
         StringBuilder sb = new StringBuilder();
+        sb.Append(gameManager.exam);
         sb.Append(gameManager.headStation).Append(" ").Append(gameManager.cervix).Append(" ").Append(gameManager.angleIndex);
         outputFile.WriteLine(sb.ToString());
     }

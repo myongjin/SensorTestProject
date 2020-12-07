@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int exam;
     public int headStation;
     public int cervix;
     public int angleIndex;
@@ -48,4 +49,8 @@ public class GameManager : MonoBehaviour
         angleIndex = index;
     }
 
+    public void SelectExam(int index)
+    {
+        exam = index;
+    }
 }

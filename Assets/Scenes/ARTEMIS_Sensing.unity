@@ -284,7 +284,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 589635851}
+      - m_Target: {fileID: 0}
         m_MethodName: SelectView
         m_Mode: 0
         m_Arguments:
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 589635850}
+      - m_Target: {fileID: 0}
         m_MethodName: SelectTransform
         m_Mode: 0
         m_Arguments:
@@ -2450,9 +2450,6 @@ GameObject:
   m_Component:
   - component: {fileID: 589635848}
   - component: {fileID: 589635847}
-  - component: {fileID: 589635849}
-  - component: {fileID: 589635850}
-  - component: {fileID: 589635851}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2472,6 +2469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52af89b9fc81b2848b847f2ae33a24c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exam: 0
   headStation: -4
   cervix: 0
   angleIndex: 0
@@ -2491,62 +2489,6 @@ Transform:
   m_Father: {fileID: 1565780763}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &589635849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589635846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee118e20718c5324ea46e1e98fcfcc79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &589635850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589635846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6345f8d074f76fc4db035571c66f03e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transformTarget: {fileID: 0}
-  rotateTarget: {fileID: 0}
-  references:
-  - {fileID: 1136249971}
-  - {fileID: 1252485514}
-  - {fileID: 361872089}
-  - {fileID: 1043873690}
-  - {fileID: 230963101}
-  - {fileID: 1655568214}
-  - {fileID: 1006231265}
---- !u!114 &589635851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 589635846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 530d03372c7c2994eadd963dac686893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameras:
-  - {fileID: 777717584}
-  - {fileID: 414258812}
 --- !u!1 &641149306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3119,7 +3061,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 589635849}
+      - m_Target: {fileID: 0}
         m_MethodName: SelectOne
         m_Mode: 0
         m_Arguments:
@@ -5551,7 +5493,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 589635850}
+      - m_Target: {fileID: 0}
         m_MethodName: SelectAngle
         m_Mode: 0
         m_Arguments:

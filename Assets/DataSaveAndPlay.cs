@@ -49,7 +49,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         nbOfFinger = fingerObj.Length;
         //Debug.Log(nbOfFinger);
 
-        recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm");
+        //recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm");
     }
 	
 
@@ -80,7 +80,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         if(isRecording && !setWritefile)
         {
             //make a text file if there is the same file, then delete it and create new one
-            SetTextFile(recordText);
+            SetTextFile(recordText + System.DateTime.Now.ToString("dd-MM-yyyy H-mm"));
             startTime = Time.realtimeSinceStartup;
         }
 
@@ -104,7 +104,7 @@ public class DataSaveAndPlay : MonoBehaviour {
             replayText = recordText;
 
             //Set new recording text
-            recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm");
+            //recordText = System.DateTime.Now.ToString("dd-MM-yyyy H-mm");
         }
 
 
@@ -214,7 +214,7 @@ public class DataSaveAndPlay : MonoBehaviour {
         Debug.Log("Make a text file for recording");
 
         //Write down head info.
-        WriteDownHeadInfo();
+        //WriteDownHeadInfo();
 
         setWritefile = true;
     }

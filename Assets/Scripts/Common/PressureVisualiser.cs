@@ -12,13 +12,14 @@ public class PressureVisualiser : MonoBehaviour
     {
         //get mesh of an object this script is attached to
         mesh = GetComponent<MeshFilter>().mesh;
-        Debug.Log( mesh.colors.Length);
+        Debug.Log(mesh.colors.Length);
         Debug.Log(mesh.vertexCount);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //you need to assign pressure value to color array
         List<Color> colors = new List<Color>();
 
         for(int i=0;i<mesh.vertexCount;i++)

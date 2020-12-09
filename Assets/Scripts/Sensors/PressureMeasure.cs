@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEngine;
@@ -11,13 +12,20 @@ public class PressureMeasure : MonoBehaviour
     public byte sensitivity = 100;
     private int preSensitivity = 0;
 
-
+    private GCHandle arrayHndl;
+    public int[] PressureArray;
 
     public byte[] test;
 
-
     [DllImport("PressurePad")]
     public static extern int Test(int a, int b);
+
+    [DllImport("PressurePad")]
+    public static extern int[] TestArray(int a, int b);
+
+    [DllImport("PressurePad")]
+    public static extern void TestArrayV2(IntPtr IntArray);
+
     [DllImport("PressurePad")]
     public static extern bool InitDevice();
 
@@ -25,7 +33,8 @@ public class PressureMeasure : MonoBehaviour
     public static extern bool SetSensitivity(byte value);
 
     [DllImport("PressurePad")]
-    public static extern byte[] GetPressureArray();
+    public static extern bool GetPressureArray(IntPtr array);
+
 
     [DllImport("PressurePad")]
     public static extern void CloseDevice();
@@ -37,7 +46,7 @@ public class PressureMeasure : MonoBehaviour
         if (InitDevice())
         {
             Debug.Log("Pressure pad was initialised successfully");
-            Debug.Log(Test(2, 3));
+            
             init = true;
             preSensitivity = sensitivity;
             SetSensitivity(sensitivity);
@@ -46,6 +55,11 @@ public class PressureMeasure : MonoBehaviour
         {
             Debug.Log("Failed to initialise the Pressure pad");
         }
+
+
+        //Set variables
+        PressureArray = new int[2288];
+        arrayHndl = GCHandle.Alloc(PressureArray, GCHandleType.Pinned);
     }
 
     // Update is called once per frame
@@ -59,8 +73,11 @@ public class PressureMeasure : MonoBehaviour
 
         if (init && getValue)
         {
-            test = GetPressureArray();
-            //Debug.Log(test);
+            if(!(GetPressureArray(arrayHndl.AddrOfPinnedObject())))
+            {
+                Debug.Log("Failed to get data from the pressure pad");
+            }
+            
             getValue = false;
         }
         

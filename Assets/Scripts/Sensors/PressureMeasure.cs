@@ -60,6 +60,8 @@ public class PressureMeasure : MonoBehaviour
         //Set variables
         PressureArray = new int[2288];
         arrayHndl = GCHandle.Alloc(PressureArray, GCHandleType.Pinned);
+
+        //RearrangePressure();
     }
 
     // Update is called once per frame
@@ -75,6 +77,10 @@ public class PressureMeasure : MonoBehaviour
         {
             if(!(GetPressureArray(arrayHndl.AddrOfPinnedObject())))
             {
+                //reArrange
+            }
+            else
+            {
                 Debug.Log("Failed to get data from the pressure pad");
             }
             
@@ -83,5 +89,57 @@ public class PressureMeasure : MonoBehaviour
         
 
         preSensitivity = sensitivity;
+    }
+
+    void RearrangePressure()
+    {
+        int[] tempArray = PressureArray;
+        int[] aRow = new int[44] {21, 22, 20, 23, 19, 24, 18, 25, 17, 26, 16, 27, 15, 28, 14, 29, 13, 30, 12, 31, 11, 32, 10, 33, 9, 34, 8, 35, 7, 36, 6, 37, 5, 38, 4, 39, 3, 40, 2, 41, 1, 42, 0, 43 };
+        int[] aCol = new int[52];
+
+        for(int i=0;i<26;i++)
+        {
+            aCol[i] = i * 2;
+        }
+        for(int i=26;i<52;i++)
+        {
+            aCol[i] = 53 - 2 * (i - 25);
+        }
+
+        for (int i = 0; i < 52; i++)
+        {
+            Debug.Log(aCol[i]);
+        }
+
+
+    }
+
+    void GeneratePlane(float width, float height, int nx, int ny, Vector3 Center)
+    {
+        //0      1      2     3 
+        //0+col 1+col  2+col  3+col
+        Vector3[] vetices = new Vector3[nx * ny];
+
+        float dx, dy;
+        dx = width / (float)nx;
+        dy = height / (float)ny;
+
+        for (int i = 0; i < nx; i++)
+        {
+            for (int j = 0; j < ny; j++)
+            {
+                vetices[i * ny + j] = new Vector3(i*dx,j*dy,0);
+            }
+        }
+
+        int[] tri = new int[6* (nx-1) * (ny-1)];
+        for (int i = 0; i < nx-1; i++)
+        {
+            for (int j = 0; j < ny-1; j++)
+            {
+                tri[i * (ny - 1) + j]=0;
+                
+            }
+        }
     }
 }

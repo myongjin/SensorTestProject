@@ -7,6 +7,7 @@ public class PressureVisualizer : MonoBehaviour
     public Gradient colorGradient;
     public Mesh mesh;
     public float testValue = 0;
+    public PressureMeasure pressureData;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +22,10 @@ public class PressureVisualizer : MonoBehaviour
     void Update()
     {
         List<Color> colors = new List<Color>();
-        float tvalue = testValue;
-        Color tc = colorGradient.Evaluate(tvalue);
-        Debug.Log(tc);
+        
         for (int i = 0; i < mesh.vertexCount; i++)
         {
-            float value = testValue;
+            float value = (float)i/ (float)mesh.vertexCount;
             Color c = colorGradient.Evaluate(value);
             colors.Add(c);
         }

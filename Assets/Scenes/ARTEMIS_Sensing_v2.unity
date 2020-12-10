@@ -2745,7 +2745,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691621047}
-  m_Mesh: {fileID: 4300000, guid: 9a31278384d346c428d4639d3a42f4ec, type: 3}
+  m_Mesh: {fileID: 0}
 --- !u!4 &691621050
 Transform:
   m_ObjectHideFlags: 0
@@ -2803,7 +2803,12 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   mesh: {fileID: 0}
   testValue: 0
-  pressureData: {fileID: 0}
+  pressureData: {fileID: 1322819943}
+  width: 10
+  height: 13
+  nx: 44
+  ny: 52
+  center: {x: 0, y: 0, z: 0}
 --- !u!114 &691621052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2811,7 +2816,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691621047}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e19777a982ef13f49af8599e974e3886, type: 3}
   m_Name: 
@@ -3250,7 +3255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &749040225
 Transform:
   m_ObjectHideFlags: 0
@@ -3259,7 +3264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749040224}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.8, z: 0}
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 825332037}
@@ -5726,9 +5731,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   getValue: 0
-  sensitivity: 100
+  sensitivity: 128
   PressureArray: 
-  test: 
 --- !u!1 &1349486656
 GameObject:
   m_ObjectHideFlags: 0

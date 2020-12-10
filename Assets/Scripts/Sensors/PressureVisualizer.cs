@@ -9,10 +9,19 @@ public class PressureVisualizer : MonoBehaviour
     public float testValue = 0;
     public PressureMeasure pressureData;
 
+    public float width;
+    public float height;
+    public int nx;
+    public int ny;
+    public Vector3 center;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         //get mesh of an object this script is attached to
+        GeneratePlane(width, height, nx, ny, center);
         mesh = GetComponent<MeshFilter>().mesh;
         Debug.Log(mesh.colors.Length);
         Debug.Log(mesh.vertexCount);
@@ -21,15 +30,81 @@ public class PressureVisualizer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         List<Color> colors = new List<Color>();
         
         for (int i = 0; i < mesh.vertexCount; i++)
         {
-            float value = (float)i/ (float)mesh.vertexCount;
+            float value = (float)pressureData.PressureArray[i]/ (float)255.0;
             Color c = colorGradient.Evaluate(value);
             colors.Add(c);
         }
 
         mesh.SetColors(colors);
+    }
+
+    void GeneratePlane(float width, float height, int nx, int ny, Vector3 center)
+    {
+        //0+col 1+col  2+col  3+col
+        //0      1      2     3 
+        Mesh mesh = new Mesh();
+        List<Vector3> verList = new List<Vector3>();
+        verList.Clear();
+        Vector3[] vetices = new Vector3[nx * ny];
+
+        float dx, dy;
+        dx = width / (float)nx;
+        dy = height / (float)ny;
+
+        for (int i = 0; i < nx; i++)
+        {
+            for (int j = 0; j < ny; j++)
+            {
+                verList.Add(new Vector3(i * dx,  0, j * dy));
+                vetices[i * ny + j] = new Vector3(i * dx, j * dy, 0);
+            }
+        }
+        
+        
+        //mesh.vertices = vetices;
+
+        //move center
+        Vector3 currentCenter=new Vector3(0,0,0);
+        foreach(Vector3 p in verList)
+        {
+            currentCenter += p;
+        }
+        currentCenter /= verList.Count;
+        
+
+        Vector3 move = center-currentCenter ;
+        for (int i=0;i<verList.Count;i++)
+        {
+            verList[i] += move;
+        }
+
+        mesh.SetVertices(verList);
+
+        List<int> triList = new List<int>();
+        triList.Clear();
+        int pointIndex = 0;
+        for (int i = 0; i < nx - 1; i++)
+        {
+            for (int j = 0; j < ny - 1; j++)
+            {
+                pointIndex = ny * i + j;
+                triList.Add(pointIndex);
+                triList.Add(pointIndex + ny + 1);
+                triList.Add(pointIndex + ny);
+                triList.Add(pointIndex);
+                triList.Add(pointIndex + 1);
+                triList.Add(pointIndex + ny + 1);
+            }
+        }
+
+        //mesh.SetTriangles(triList, 0);
+        mesh.triangles = triList.ToArray();
+        GetComponent<MeshFilter>().mesh = mesh;
+
     }
 }

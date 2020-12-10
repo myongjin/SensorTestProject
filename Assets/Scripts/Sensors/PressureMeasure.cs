@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PressureMeasure : MonoBehaviour
 {
+
+
     private bool init = false;
     public bool getValue = false;
 
@@ -13,9 +15,8 @@ public class PressureMeasure : MonoBehaviour
     private int preSensitivity = 0;
 
     private GCHandle arrayHndl;
-    public int[] PressureArray;
 
-    public byte[] test;
+    public int[] PressureArray;
 
     [DllImport("PressurePad")]
     public static extern int Test(int a, int b);
@@ -25,6 +26,12 @@ public class PressureMeasure : MonoBehaviour
 
     [DllImport("PressurePad")]
     public static extern void TestArrayV2(IntPtr IntArray);
+
+    [DllImport("PressurePad")]
+    public static extern void TestArrayV3(IntPtr IntArray);
+
+    [DllImport("PressurePad")]
+    public static extern void TestArrayV4(IntPtr IntArray);
 
     [DllImport("PressurePad")]
     public static extern bool InitDevice();
@@ -50,6 +57,7 @@ public class PressureMeasure : MonoBehaviour
             init = true;
             preSensitivity = sensitivity;
             SetSensitivity(sensitivity);
+            Debug.Log("Pressure pad sensitivity: " + sensitivity);
         }
         else
         {
@@ -71,20 +79,21 @@ public class PressureMeasure : MonoBehaviour
         if(preSensitivity!=sensitivity)
         {
             SetSensitivity(sensitivity);
+            Debug.Log("Pressure pad sensitivity: " + sensitivity);
         }
 
         if (init && getValue)
         {
-            if(!(GetPressureArray(arrayHndl.AddrOfPinnedObject())))
+            if (GetPressureArray(arrayHndl.AddrOfPinnedObject()))
             {
-                //reArrange
+                Debug.Log("Success to get data from the pressure pad");
             }
             else
             {
                 Debug.Log("Failed to get data from the pressure pad");
             }
             
-            getValue = false;
+            //getValue = false;
         }
         
 
@@ -114,32 +123,5 @@ public class PressureMeasure : MonoBehaviour
 
     }
 
-    void GeneratePlane(float width, float height, int nx, int ny, Vector3 Center)
-    {
-        //0      1      2     3 
-        //0+col 1+col  2+col  3+col
-        Vector3[] vetices = new Vector3[nx * ny];
-
-        float dx, dy;
-        dx = width / (float)nx;
-        dy = height / (float)ny;
-
-        for (int i = 0; i < nx; i++)
-        {
-            for (int j = 0; j < ny; j++)
-            {
-                vetices[i * ny + j] = new Vector3(i*dx,j*dy,0);
-            }
-        }
-
-        int[] tri = new int[6* (nx-1) * (ny-1)];
-        for (int i = 0; i < nx-1; i++)
-        {
-            for (int j = 0; j < ny-1; j++)
-            {
-                tri[i * (ny - 1) + j]=0;
-                
-            }
-        }
-    }
+   
 }

@@ -15,6 +15,8 @@ public class PressureMeasure : MonoBehaviour
     public string fileName;
 
     public string recordText;
+
+    public int[] PressureArray;
     private StreamWriter outputFile;
 
     // Start is called before the first frame update
@@ -42,7 +44,7 @@ public class PressureMeasure : MonoBehaviour
         if(initDevice)
         {
             //get pressure
-            float[] array=GetPressureArray();
+            PressureArray = GetPressureArray();
             //set text file
             if (setText && !recording)
             {
@@ -61,9 +63,9 @@ public class PressureMeasure : MonoBehaviour
                 //you need to put 
 
                 //write down pressure
-                for (int i = 0; i < array.Length; i++)
+                for (int i = 0; i < PressureArray.Length; i++)
                 {
-                    sb.Append(array[i]).Append(",");
+                    sb.Append(PressureArray[i]).Append(",");
                     outputFile.WriteLine(sb.ToString());
                 }
             }
@@ -111,7 +113,7 @@ public class PressureMeasure : MonoBehaviour
     {
         //DWORD devNum = GetDevicesNum();
 
-        return false;
+        return true;
     }
 
     //will be filled 
@@ -121,15 +123,15 @@ public class PressureMeasure : MonoBehaviour
     }
 
     //generate random pressure array for a test
-    private float[] GetPressureArray()
+    private int[] GetPressureArray()
     {
-        float[] array = new float[2288];
+        int[] array = new int[2288];
         Random r = new Random();
 
         //assign random values for a test
         for(int i=0;i< array.Length; i++)
         {
-            array[i] = Random.Range(0, 100);
+            array[i] = Random.Range(0, 255);
         }
         return array;
     }

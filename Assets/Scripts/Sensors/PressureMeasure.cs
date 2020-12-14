@@ -18,6 +18,8 @@ public class PressureMeasure : MonoBehaviour
 
     public int[] PressureArray;
 
+
+    //DLL Import
     [DllImport("PressurePad")]
     public static extern int Test(int a, int b);
 
@@ -69,6 +71,8 @@ public class PressureMeasure : MonoBehaviour
         PressureArray = new int[2288];
         arrayHndl = GCHandle.Alloc(PressureArray, GCHandleType.Pinned);
 
+
+        //Debuging
         //RearrangePressure();
     }
 
@@ -82,6 +86,7 @@ public class PressureMeasure : MonoBehaviour
             Debug.Log("Pressure pad sensitivity: " + sensitivity);
         }
 
+        //Get value
         if (init && getValue)
         {
             if (GetPressureArray(arrayHndl.AddrOfPinnedObject()))
@@ -92,8 +97,6 @@ public class PressureMeasure : MonoBehaviour
             {
                 Debug.Log("Failed to get data from the pressure pad");
             }
-            
-            //getValue = false;
         }
         
 

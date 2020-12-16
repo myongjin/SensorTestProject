@@ -16,26 +16,31 @@ public class PressureMeasure : MonoBehaviour
 
     public string recordText;
 
-    public int[] PressureArray;
+    public int[] PressureArray ;
+    public int[,] Pressure2Array ;
+
     private StreamWriter outputFile;
+    private int debugPressure = 1;
 
     // Start is called before the first frame update
     void Start()
     {
+        PressureArray = new int[2288];
+        Pressure2Array = new int[44, 52];
         //Initilise device
+
         if (InitDevice())
-        {
-            Debug.Log("Device successfully loaded");
-            initDevice = true;
-        }
-        else
-        {
-            Debug.Log("failed to load the device");
-        }
+            {
+                Debug.Log("Device successfully loaded");
+                initDevice = true;
+            }
+            else
+            {
+                Debug.Log("failed to load the device");
+            }
 
         //Set sensitivity of sensor
         SetSensitivity();
-
     }
 
     // Update is called once per frame
@@ -43,8 +48,13 @@ public class PressureMeasure : MonoBehaviour
     {
         if(initDevice)
         {
-            //get pressure
-            PressureArray = GetPressureArray();
+            //get pressure - two options
+            //GetPressureArray();
+            GetPressureArrayV2();
+
+            //filter data - Jessica
+            FilterData();
+
             //set text file
             if (setText && !recording)
             {
@@ -80,7 +90,10 @@ public class PressureMeasure : MonoBehaviour
                 saveData = false;
             }
         }
-        
+
+
+
+
     }
 
     private void SetTextFile(string name)
@@ -111,8 +124,7 @@ public class PressureMeasure : MonoBehaviour
     //device functions
     private bool InitDevice()
     {
-        //DWORD devNum = GetDevicesNum();
-
+        //For debug
         return true;
     }
 
@@ -123,17 +135,45 @@ public class PressureMeasure : MonoBehaviour
     }
 
     //generate random pressure array for a test
-    private int[] GetPressureArray()
-    {
-        int[] array = new int[2288];
+    private void GetPressureArray()
+    { 
         Random r = new Random();
 
         //assign random values for a test
-        for(int i=0;i< array.Length; i++)
+        for (int i = 0; i < PressureArray.Length; i++)
         {
-            array[i] = Random.Range(0, 255);
+            PressureArray[i] = Random.Range(0, 255);
         }
-        return array;
+
+        RearrangePressure();
+
+
+    }
+
+    private void GetPressureArrayV2()
+    {
+        int[,] original = Pressure2Array.Clone() as int[,];
+        for (int i = 0; i < 43; i++)
+        {
+            for (int j = 0; j < 52; j++)
+            {
+                Pressure2Array[i + 1, j] = original[i, j];
+            }
+        }
+
+        if (Pressure2Array[0, 0] >= 255)
+        {
+            debugPressure = -1;
+        }
+        if (Pressure2Array[0, 0] < 1)
+        {
+            debugPressure = 1;
+        }
+
+        for (int j = 0; j < 52; j++)
+        {
+            Pressure2Array[0, j] += debugPressure;
+        }
     }
 
     private void TurnOffSensor()
@@ -149,4 +189,23 @@ public class PressureMeasure : MonoBehaviour
         }
     }
 
+    void FilterData()
+    {
+        //Jessica
+    }
+
+    //Convert 1 dimensional array to 2 dimensional array
+    //if you need 2 dim array, use the below function
+    void RearrangePressure()
+    {
+        int index = 0;
+
+        for (int i = 0; i < 44; i++)
+        {
+            for (int j = 0; j < 52; j++)
+            {
+                Pressure2Array[i, j] = PressureArray[index++];
+            }
+        }
+    }
 }

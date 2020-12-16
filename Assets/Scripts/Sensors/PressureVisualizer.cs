@@ -40,16 +40,18 @@ public class PressureVisualizer : MonoBehaviour
     {
         
         List<Color> colors = new List<Color>();
-        
-        //Assign color 
-        for (int i = 0; i < mesh.vertexCount; i++)
-        {
-            //The value of pressure is from 0 to 255
-            float value = (float)pressureData.PressureArray[i]/ (float)255.0;
-            Color c = colorGradient.Evaluate(value);
-            colors.Add(c);
-        }
 
+        //Assign color 
+        for (int i = 0; i < pressureData.Pressure2Array.GetLength(0); i++)
+        {
+            for (int j = 0; j < pressureData.Pressure2Array.GetLength(1); j++)
+            {
+                //The value of pressure is from 0 to 255
+                float value = (float)pressureData.Pressure2Array[i, j] / (float)255.0;
+                Color c = colorGradient.Evaluate(value);
+                colors.Add(c);
+            }
+        }
         mesh.SetColors(colors);
     }
 

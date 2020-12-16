@@ -15,18 +15,30 @@ public class PressureMeasure : MonoBehaviour
     public bool debugFlag = false;
     private int debugPressure = 1;
 
-    public bool getValue = false;
+    public bool getValue = true;
 
     public byte sensitivity = 100;
     private int preSensitivity = 0;
 
-    private GCHandle arrayHndl;
+    public float totalWeight =0; //Kg
+    public float maximumPressure = 0; //Kg/(cm^2)
+    private Vector2Int maxIndex;
 
-    public float convertingUnit=0.0f;
+    public bool calibration = false;
+    public float referenceWeightKg = 0;
+    public float calibratedUnit = 1.0f;
+    private float totalUnit = 0;
+    private int numberOfCalibration=0;
+
+    public bool saveCalibratedValue=false;
+    public bool loadCalibrationFlag = false;
+    private string[] lines;
+
+    private GCHandle arrayHndl;
 
 
     public int[] PressureArray;
-    public int[,] Pressure2Array=new int[44,52];
+    public float[,] Pressure2Array=new float[44,52];
 
 
 
@@ -63,7 +75,8 @@ public class PressureMeasure : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(!debugFlag)
+        maxIndex = new Vector2Int(0, 0);
+        if (!debugFlag)
         {
             if (InitDevice())
             {
@@ -98,6 +111,36 @@ public class PressureMeasure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //
+        if(calibration)
+        {
+            if(numberOfCalibration==0)
+            {
+                calibratedUnit = Calibration(referenceWeightKg);
+            }
+            else
+            {
+                calibratedUnit += Calibration(referenceWeightKg);
+            }
+            if (numberOfCalibration < 2)
+                numberOfCalibration++;
+            calibratedUnit /= (float)(numberOfCalibration);
+            Debug.Log(numberOfCalibration);
+            calibration = false;
+        }
+
+        if(saveCalibratedValue)
+        {
+            SaveCalibration();
+            saveCalibratedValue = false;
+        }
+
+        if(loadCalibrationFlag)
+        {
+            LoadCalibration();
+            loadCalibrationFlag = false;
+        }
+
         //Update sensitivity when it changed
         if(preSensitivity!=sensitivity)
         {
@@ -111,11 +154,15 @@ public class PressureMeasure : MonoBehaviour
             if (GetPressureArray(arrayHndl.AddrOfPinnedObject()))
             {
                 RearrangePressure();
-                Debug.Log("Success to get data from the pressure pad");
+                totalWeight = calibratedUnit * TotalArray();
+                float singleArea = 30.0f * 36.0f / 2288.0f;
+                maximumPressure = MaxPressureValue()/ singleArea;
+                //Debug.Log("Success to get data from the pressure pad");
             }
             else
             {
                 Debug.Log("Failed to get data from the pressure pad");
+                getValue = false;
             }
         }
 
@@ -150,14 +197,43 @@ public class PressureMeasure : MonoBehaviour
         preSensitivity = sensitivity;
     }
 
+    void SaveCalibration()
+    {
+        SetTextFile();
+        StringBuilder sb = new StringBuilder();
+        sb.Append(sensitivity).Append(" ").Append(calibratedUnit);
+        outputFile.WriteLine(sb.ToString());
+        outputFile.Close();
+        Debug.Log("Save Calibration");
+    }
+
+    void LoadCalibration()
+    {
+        lines = File.ReadAllLines(@"Data/Calibration.txt");
+        var pt = lines[0].Split(" "[0]); // gets 3 parts of the vector as separated strings
+        var sens = byte.Parse(pt[0]);
+        var value = float.Parse(pt[1]);
+
+        sensitivity = sens;
+        calibratedUnit = value;
+
+
+        calibration = true;
+        Debug.Log("Load Calibration");
+    }
+
+    private void SetTextFile()
+    {
+        //make a text file if there is the same file, then delete it and create new one
+        FileStream fs = new FileStream(@"Data/Calibration.txt", FileMode.Create);
+        outputFile = new StreamWriter(fs);
+        Debug.Log("Save calibration");
+    }
 
     float Calibration(float reference)
     {
-        float singleArea = 1f;
-
-        float value=reference/TotalArray();
-
-        return value;
+        return reference / TotalArray();
+        
     }
 
     float TotalArray()
@@ -166,6 +242,28 @@ public class PressureMeasure : MonoBehaviour
         for(int i=0;i<PressureArray.Length;i++)
         {
             value += (float)PressureArray[i];
+        }
+
+        return value;
+    }
+
+    float MaxPressureValue()
+    {
+        float value = -1000000000000;
+        for (int i = 0; i < Pressure2Array.GetLength(0); i++)
+            
+        {
+            for(int j=0;j<Pressure2Array.GetLength(1);j++)
+            {
+                if (Pressure2Array[i,j]>value)
+                {
+                    value = Pressure2Array[i, j];
+
+                    maxIndex[0] = i;
+                    maxIndex[1] = j;
+                }
+            }
+            
         }
 
         return value;
@@ -189,13 +287,23 @@ public class PressureMeasure : MonoBehaviour
 
         int index = 0;
 
-        
 
-        for(int i=0;i<44;i++)
+        for (int j = 0; j < 52; j++)
+            
         {
-            for(int j=0;j<52;j++)
+            for (int i = 0; i < 44; i++)
             {
-                Pressure2Array[aRow[i], aCol[j]] = PressureArray[index++];
+                Pressure2Array[i, j] = (float)PressureArray[index++];
+            }
+        }
+
+        float[,] original = Pressure2Array.Clone() as float[,];
+
+        for (int i = 0; i < 44; i++)
+        {
+            for (int j = 0; j < 52; j++)
+            {
+                Pressure2Array[aRow[i], aCol[j]] = original[i, j]* calibratedUnit;
             }
         }
     }

@@ -58,7 +58,7 @@ public class PressureVisualizer : MonoBehaviour
             for (int j = 0; j < pressureData.Pressure2Array.GetLength(1); j++)
             {
                 //The value of pressure is from 0 to 255
-                float value = (float)pressureData.Pressure2Array[i,j] / (float)255.0;
+                float value = pressureData.Pressure2Array[i,j] / (float)(255.0* pressureData.calibratedUnit);
                 Color c = colorGradient.Evaluate(value);
                 colors.Add(c);
             }  

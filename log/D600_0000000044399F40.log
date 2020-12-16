@@ -1,0 +1,107 @@
+Log file D:\Myeongjin\SensorTestProject\log\D600_0000000044399F40.log created on 2020-12-16 at 03:45:16 PM
+System Logging Level = 2
+51223: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+51225: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+51248: Searching 1 ports
+Trying to open COM3 at 921600 baud
+Sending command +++AT
+Read "ERROR"  from port 3
+Matched ERROR, Connected to COM3 at 921600 baud
+51314: Found port 921600 at baudrate 921600
+51315: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 51317
+702: Parsing string OK in state Reset
+703: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+706: Resetting setup timeout at 52024 changing from Reset to Connect
+1:  Done parsing command in Reset
+108: Parsing string OK in state Connect
+Didn't find CONNECT in OK
+109:  Done parsing command in Connect
+1283: Parsing string CONNECT 00019525DFD8 in state Connect
+1284: Found "CONNECT"; trying to configure system
+1285: Configuring system.
+ Queuing message 0x63 ackSize 1
+1286: Sending stop scanning command
+ Queuing message 0x10 ackSize 2
+ Queuing message 0x20 ackSize 7
+1388: I2C scan list configured
+1389: Configuring Scan Lists
+ Queuing message 0x25 ackSize 3
+1390: Scan length lists set
+ Queuing message 0x33 ackSize 2
+1391: Setting up all of the passthru commands
+Device 0 (I2C Addr = 1): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 0
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 0
+ Queuing message 0x40 ackSize 6
+Device 1 (I2C Addr = 2): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 1
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 1 to 255
+ Queuing message 0x40 ackSize 5
+2715: Requested continuous frames
+ Queuing message 0x11 ackSize 3
+ Queuing message 0x10 ackSize 2
+2717: Resetting setup timeout at 54741 changing from Connect to DAQ
+1:  Done parsing command in Connect
+Successfully sent message 0x63 with 1 bytes at 54.744s (16 remain)
+Timeout waiting for ACK of 0x63 at 54.946
+Successfully sent message 0x10 with 2 bytes at 54.949s (15 remain)
+Timeout waiting for ACK of 0x10 at 55.15
+Successfully sent message 0x20 with 7 bytes at 55.152s (14 remain)
+Timeout waiting for ACK of 0x20 at 55.354
+Successfully sent message 0x25 with 3 bytes at 55.355s (13 remain)
+Timeout waiting for ACK of 0x25 at 55.557
+Successfully sent message 0x33 with 2 bytes at 55.56s (12 remain)
+Timeout waiting for ACK of 0x33 at 55.761
+Successfully sent message 0x40 with 5 bytes at 55.764s (11 remain)
+Timeout waiting for ACK of 0x40 at 55.966
+Successfully sent message 0x40 with 6 bytes at 55.969s (10 remain)
+Timeout waiting for ACK of 0x40 at 56.17
+Successfully sent message 0x40 with 6 bytes at 56.172s (9 remain)
+Timeout waiting for ACK of 0x40 at 56.374
+Successfully sent message 0x40 with 6 bytes at 56.377s (8 remain)
+Timeout waiting for ACK of 0x40 at 56.578
+Successfully sent message 0x40 with 5 bytes at 56.581s (7 remain)
+Timeout waiting for ACK of 0x40 at 56.783
+Successfully sent message 0x40 with 6 bytes at 56.785s (6 remain)
+Timeout waiting for ACK of 0x40 at 56.987
+Successfully sent message 0x40 with 6 bytes at 56.989s (5 remain)
+Timeout waiting for ACK of 0x40 at 57.191
+Successfully sent message 0x40 with 6 bytes at 57.193s (4 remain)
+Timeout waiting for ACK of 0x40 at 57.395
+Successfully sent message 0x40 with 5 bytes at 57.398s (3 remain)
+Timeout waiting for ACK of 0x40 at 57.6
+Successfully sent message 0x11 with 3 bytes at 57.603s (2 remain)
+Timeout waiting for ACK of 0x11 at 57.805
+Successfully sent message 0x10 with 2 bytes at 57.807s (1 remain)
+Timeout waiting for ACK of 0x10 at 58.009
+4001: Timeout 4000 waiting for data from 0 to 4001
+ERROR: Timeout waiting for new data. This is most likely due 
+to a Bluetooth connection issue due to interference, 
+a low battery, or being out of range. Check that the 
+battery is charged, and possibly try moving closer to the 
+computer.
+4002: Sending stop scanning command
+Successfully sent message 0x10 with 2 bytes at 58.745s (0 remain)
+Sending command +++
+Finished escape sequence. Now disconnecting hardware
+Sending command ATH
+Successfully disconnected from Bluetooth
+4800: Deleting D600 Object

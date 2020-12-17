@@ -6,6 +6,7 @@ using System.Text;
 
 public class PressureMeasure : MonoBehaviour
 {
+    public bool randomData = false;
     public bool setText = false;
     public bool recording = false;
     public bool saveData = false;
@@ -30,14 +31,12 @@ public class PressureMeasure : MonoBehaviour
         //Initilise device
 
         if (InitDevice())
-            {
-                Debug.Log("Device successfully loaded");
-                initDevice = true;
-            }
-            else
-            {
-                Debug.Log("failed to load the device");
-            }
+        {
+            Debug.Log("Device successfully loaded");
+            initDevice = true;
+        }else{
+            Debug.Log("failed to load the device");
+        }
 
         //Set sensitivity of sensor
         SetSensitivity();
@@ -49,8 +48,15 @@ public class PressureMeasure : MonoBehaviour
         if(initDevice)
         {
             //get pressure - two options
-            //GetPressureArray();
-            GetPressureArrayV2();
+            if(randomData)
+            {
+                GetPressureArray();
+            }
+            else
+            {
+                GetPressureArrayV2();
+            }
+            
 
             //filter data - Jessica
             FilterData();

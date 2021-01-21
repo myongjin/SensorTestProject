@@ -770,7 +770,7 @@ MonoBehaviour:
   isClicked: 0
   image: {fileID: 86872769}
   text: {fileID: 2097730042}
-  dataSaveAndPlay: {fileID: 1657166854}
+  dataSaveAndPlay: {fileID: 0}
 --- !u!1 &87270294
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +967,7 @@ MonoBehaviour:
   isClicked: 0
   image: {fileID: 265103601}
   text: {fileID: 1502688185}
-  dataSaveAndPlay: {fileID: 1657166854}
+  dataSaveAndPlay: {fileID: 0}
 --- !u!114 &265103600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4603,7 +4603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079169150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 19.1, y: 0.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 825332037}
@@ -5666,7 +5666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae61c97fb95e2340b706e6866fc48fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugFlag: 1
+  debugFlag: 0
   getValue: 1
   sensitivity: 128
   totalWeight: 0
@@ -6230,10 +6230,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1657166852}
   - component: {fileID: 1657166853}
-  - component: {fileID: 1657166854}
   - component: {fileID: 1657166855}
   - component: {fileID: 1657166856}
-  - component: {fileID: 1657166857}
+  - component: {fileID: 1657166854}
   m_Layer: 0
   m_Name: Sensor manager
   m_TagString: Untagged
@@ -6312,21 +6311,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1657166851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d2aefbf31bc93548b9e955b4783ca4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 92576d53973a54542af168feadca27ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   isRecording: 0
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: 
-  replayText: 27-05-2020 14-07
+  recordText: Test
+  replayText: Test 21-01-2021 12-45
   replayFrame: 0
   fingerObj:
   - {fileID: 683198977}
   - {fileID: 1868939588}
-  liveStream: {fileID: 0}
+  liveStream: {fileID: 1657166853}
+  pressureData: {fileID: 1322819943}
 --- !u!114 &1657166855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6361,33 +6360,6 @@ MonoBehaviour:
   liveStream: {fileID: 0}
   force1: 0
   force2: 0
---- !u!114 &1657166857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657166851}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d940a0a844a434481ca2102f61361f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fileName: New
-  posScale: 1
-  posCapture:
-  - {fileID: 0}
-  - {fileID: 0}
-  oriCapture:
-  - {fileID: 0}
-  - {fileID: 0}
-  direcCapture:
-  - {fileID: 0}
-  - {fileID: 0}
-  worldPos: []
-  worldOri: []
-  anglesToAxis: []
-  capture: 0
 --- !u!1 &1686355180
 GameObject:
   m_ObjectHideFlags: 0
@@ -8175,7 +8147,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1657166854}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleRecording
         m_Mode: 1
         m_Arguments:
@@ -8540,7 +8512,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1657166857}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleCapture
         m_Mode: 1
         m_Arguments:

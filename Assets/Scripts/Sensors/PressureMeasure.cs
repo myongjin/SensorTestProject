@@ -30,6 +30,8 @@ public class PressureMeasure : MonoBehaviour
     private float totalUnit = 0;
     private int numberOfCalibration=0;
 
+    public int filterRange = 1;
+
     public bool saveCalibratedValue=false;
     public bool loadCalibrationFlag = false;
     private string[] lines;
@@ -168,7 +170,7 @@ public class PressureMeasure : MonoBehaviour
 
         if(debugFlag)
         {
-            int[,] original = Pressure2Array.Clone() as int[,];
+            float[,] original = Pressure2Array.Clone() as float[,];
 
             for (int i = 0; i < 43; i++)
             {
@@ -193,8 +195,48 @@ public class PressureMeasure : MonoBehaviour
             }
         }
 
+        FilterData();
 
         preSensitivity = sensitivity;
+    }
+
+
+    void FilterData()
+    {
+        //Jessica
+        float[,] newPressure2Array = new float[44, 52];
+        
+
+        // iterate through all cells in Pressure2Array
+        for (int a = 0; a < 44; a++)
+        {
+            for (int b = 0; b < 52; b++)
+            {
+                float summation = 0;
+                int count = 0;
+
+                //find average of cells within filterRange distance
+                for (int i = a - filterRange; i <= a + filterRange; i++)
+                {
+                    for (int j = b - filterRange; j <= b + filterRange; j++)
+                    {
+                        // if within limits
+                        if (i >= 0 & i < 44 & j >= 0 & j < 52)
+                        {
+                            //sum of the values surrounding the actual value
+                            summation += Pressure2Array[i, j];
+                            count += 1;
+                        }
+                    }
+                }
+
+                float average = summation / (float)count;
+                newPressure2Array[a, b] = average;
+            }
+        }
+
+        // overwrite Pressure2Array with filtered version
+        Pressure2Array = newPressure2Array;
     }
 
     void SaveCalibration()

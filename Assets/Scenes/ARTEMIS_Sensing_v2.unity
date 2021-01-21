@@ -5668,7 +5668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debugFlag: 0
   getValue: 1
-  sensitivity: 128
+  sensitivity: 255
   totalWeight: 0
   maximumPressure: 0
   calibration: 0
@@ -5676,7 +5676,7 @@ MonoBehaviour:
   calibratedUnit: 1
   filterRange: 1
   saveCalibratedValue: 0
-  loadCalibrationFlag: 0
+  loadCalibrationFlag: 1
   PressureArray: 
 --- !u!1 &1349486656
 GameObject:

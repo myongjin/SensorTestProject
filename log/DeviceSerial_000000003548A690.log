@@ -1,0 +1,14 @@
+Log file D:\Myeongjin\SensorTestProject\log\DeviceSerial_000000003548A690.log created on 2021-01-27 at 10:56:21 AM
+System Logging Level = 2
+Trying to open COM3 at 921600 (3, 0, 0, 8)
+Successfully opened port 3
+Writing 6:2b 2b 2b 41 54 0d (+++AT ) done.
+Writing 4:41 54 5a 0d (ATZ ) done.
+Writing 16:41 54 44 30 30 30 31 39 35 32 35 64 66 64 38 0d (ATD00019525dfd8 ) done.
+Trying to open COM3 at 921600 (3, 0, 0, 8)
+Successfully opened port 3
+Writing 3:2b 2b 2b (+++) done.
+Writing 3:2b 2b 2b (+++) done.
+Writing 3:2b 2b 2b (+++) done.
+Writing 3:2b 2b 2b (+++) done.
+Writing 3:2b 2b 2b (+++) done.

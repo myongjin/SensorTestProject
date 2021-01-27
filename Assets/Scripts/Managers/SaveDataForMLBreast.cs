@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Text;
+using System;
 
 public class SaveDataForMLBreast : MonoBehaviour
 {
@@ -10,14 +11,21 @@ public class SaveDataForMLBreast : MonoBehaviour
     public bool isReplaying = false;
     public bool isPasuing = false;
     public bool isRepeat = false;
+
     private bool setWritefile = false;
     private bool readFile = false;
+
+    
 
 
     public string recordText;
     public string replayText;
     public int replayFrame = 0;
+    public int replaySlower = 1;
+    private int innerFrame = 0;
     private int localFrame = 0;
+
+  
 
     //for replay
     private string[] lines;
@@ -25,6 +33,8 @@ public class SaveDataForMLBreast : MonoBehaviour
 
     private Vector3[] readVector;
     public GameObject[] fingerObj;
+
+
 
     //Get force and pos
     public LiveStream liveStream;
@@ -37,6 +47,13 @@ public class SaveDataForMLBreast : MonoBehaviour
     private int nbOfFinger;
 
     private float startTime = 0.0f;
+
+    //predict data
+    public bool isPredicting = false;
+    public string predictText;
+    private string[] plines;
+    public GameObject predictedFinger;
+
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +82,11 @@ public class SaveDataForMLBreast : MonoBehaviour
             if (!readFile)
             {
                 //read file
-                ReadTextFile(replayText);
+                lines = ReadTextFile(replayText);
+                if(isPredicting)
+                {
+                    plines = ReadTextFile(predictText);
+                }
             }
         }
 
@@ -107,18 +128,14 @@ public class SaveDataForMLBreast : MonoBehaviour
         //once reading flag is on and there is a file to read
         if (isReplaying && readFile)
         {
-            //Read Head Pose and Dialation first
-            if (replayFrame == 0)
-            {
-                replayFrame++;
-            }
-            else if (replayFrame < lines.Length)
+            if (replayFrame < lines.Length)
             {
                 ReplayData();
                 //to Next frame
                 if (!isPasuing)
                 {
-                    replayFrame++;
+                    innerFrame++;
+                    replayFrame = (int)(Math.Truncate((double)(innerFrame / replaySlower)));
                 }
             }
             else
@@ -215,6 +232,27 @@ public class SaveDataForMLBreast : MonoBehaviour
             }
         }
 
+        if(isPredicting)
+        {
+            var pt3 = plines[replayFrame].Split(" "[0]);
+            Vector3 position = new Vector3(0, 0, 0);
+            Quaternion rot = new Quaternion(0, 0, 0, 0);
+            for (int i=0;i<3;i++)
+            {
+                var x = float.Parse(pt3[i]);
+                position[i] = x;
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                var x = float.Parse(pt3[i] + 3);
+                rot[i] = x;
+            }
+            predictedFinger.transform.position = position;
+            predictedFinger.transform.rotation = rot;
+        }
+        
+
 
     }
     private void SetTextFile(string name)
@@ -232,11 +270,12 @@ public class SaveDataForMLBreast : MonoBehaviour
         setWritefile = true;
     }
 
-    private void ReadTextFile(string name)
+    private string[] ReadTextFile(string name)
     {
-        lines = File.ReadAllLines(@"Data/" + name + ".txt");
         readFile = true;
         Debug.Log("Read file");
+
+        return File.ReadAllLines(@"Data/" + name + ".txt");
     }
 
     public void ToggleRecording()

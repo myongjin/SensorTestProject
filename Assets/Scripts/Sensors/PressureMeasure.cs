@@ -244,7 +244,9 @@ public class PressureMeasure : MonoBehaviour
         SetTextFile();
         StringBuilder sb = new StringBuilder();
         sb.Append(sensitivity).Append(" ").Append(calibratedUnit);
-        outputFile.WriteLine(sb.ToString());
+        String str;
+        str = String.Format("{0:F10}", sb.ToString());
+        outputFile.WriteLine(str);
         outputFile.Close();
         Debug.Log("Save Calibration");
     }
@@ -259,8 +261,6 @@ public class PressureMeasure : MonoBehaviour
         sensitivity = sens;
         calibratedUnit = value;
 
-
-        calibration = true;
         Debug.Log("Load Calibration");
     }
 

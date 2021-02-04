@@ -22,6 +22,7 @@ public class PressureMeasure : MonoBehaviour
 
     public float totalWeight =0; //Kg
     public float maximumPressure = 0; //Kg/(cm^2)
+    public float maximumWeight = 0; //Kg
     private Vector2Int maxIndex;
 
     public bool calibration = false;
@@ -33,7 +34,10 @@ public class PressureMeasure : MonoBehaviour
     public int filterRange = 1;
 
     public bool saveCalibratedValue=false;
+    public string saveName = "Calibration";
     public bool loadCalibrationFlag = false;
+    public string loadName = "Calibration";
+
     private string[] lines;
 
     private GCHandle arrayHndl;
@@ -139,7 +143,7 @@ public class PressureMeasure : MonoBehaviour
 
         if(loadCalibrationFlag)
         {
-            LoadCalibration();
+            LoadCalibration(loadName);
             loadCalibrationFlag = false;
         }
 
@@ -159,6 +163,7 @@ public class PressureMeasure : MonoBehaviour
                 //Get sum of raw values and then muliply by calibared unit
                 totalWeight = calibratedUnit * TotalArray();
                 float singleArea = 30.0f * 36.0f / 2288.0f;
+                maximumWeight = MaxPressureValue();
                 maximumPressure = MaxPressureValue()/ singleArea;
                 //Debug.Log("Success to get data from the pressure pad");
             }
@@ -242,7 +247,7 @@ public class PressureMeasure : MonoBehaviour
 
     void SaveCalibration()
     {
-        SetTextFile();
+        SetTextFile(saveName);
         StringBuilder sb = new StringBuilder();
         sb.Append(sensitivity).Append(" ").Append(calibratedUnit);
         String str;
@@ -252,9 +257,9 @@ public class PressureMeasure : MonoBehaviour
         Debug.Log("Save Calibration");
     }
 
-    void LoadCalibration()
+    void LoadCalibration(string name)
     {
-        lines = File.ReadAllLines(@"Data/Calibration.txt");
+        lines = File.ReadAllLines(@"Data/" + name + ".txt");
         var pt = lines[0].Split(" "[0]); // gets 3 parts of the vector as separated strings
         var sens = byte.Parse(pt[0]);
         var value = float.Parse(pt[1]);
@@ -265,10 +270,11 @@ public class PressureMeasure : MonoBehaviour
         Debug.Log("Load Calibration");
     }
 
-    private void SetTextFile()
+    private void SetTextFile(string name)
     {
         //make a text file if there is the same file, then delete it and create new one
-        FileStream fs = new FileStream(@"Data/Calibration.txt", FileMode.Create);
+        FileStream fs = new FileStream(@"Data/" + name + ".txt", FileMode.Create);
+
         outputFile = new StreamWriter(fs);
         Debug.Log("Save calibration");
     }

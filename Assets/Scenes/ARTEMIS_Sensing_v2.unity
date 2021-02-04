@@ -2343,12 +2343,15 @@ MonoBehaviour:
   sensitivity: 200
   totalWeight: 0
   maximumPressure: 0
+  maximumWeight: 0
   calibration: 0
   referenceWeightKg: 0.617
   calibratedUnit: 1
   filterRange: 1
   saveCalibratedValue: 0
+  saveName: SimpleBreastCalibration
   loadCalibrationFlag: 1
+  loadName: SimpleBreastCalibration
   PressureArray: 
 --- !u!1 &1349486656
 GameObject:
@@ -2941,7 +2944,7 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: 
+  recordText: PalpationOneFinger_Test
   replayText: BreastTumour_Test 27-01-2021 11-23
   replayFrame: 0
   replaySlower: 4
@@ -2950,7 +2953,7 @@ MonoBehaviour:
   - {fileID: 1868939588}
   liveStream: {fileID: 1657166853}
   pressureData: {fileID: 1322819943}
-  isPredicting: 1
+  isPredicting: 0
   predictText: 400TrainData
   predictedFinger: {fileID: 1650144333}
 --- !u!114 &1657166855

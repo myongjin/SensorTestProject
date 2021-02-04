@@ -156,6 +156,7 @@ public class PressureMeasure : MonoBehaviour
             if (GetPressureArray(arrayHndl.AddrOfPinnedObject()))
             {
                 RearrangePressure();
+                //Get sum of raw values and then muliply by calibared unit
                 totalWeight = calibratedUnit * TotalArray();
                 float singleArea = 30.0f * 36.0f / 2288.0f;
                 maximumPressure = MaxPressureValue()/ singleArea;

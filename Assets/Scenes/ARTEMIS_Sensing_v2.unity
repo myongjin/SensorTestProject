@@ -653,7 +653,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -382.07, y: 204.6}
+  m_AnchoredPosition: {x: -318, y: 147}
   m_SizeDelta: {x: 100.87, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &397722607
@@ -1017,7 +1017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.5, y: 379.21204}
+  m_AnchoredPosition: {x: 41, y: 115}
   m_SizeDelta: {x: 183.9, y: 30.375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517714927
@@ -1792,7 +1792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -542, y: 546}
+  m_AnchoredPosition: {x: -452.43, y: 224.18796}
   m_SizeDelta: {x: 138, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001223054
@@ -2168,7 +2168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1286252973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2185,7 +2185,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.974976, y: 34.81}
+  m_AnchoredPosition: {x: 41.54, y: 115}
   m_SizeDelta: {x: 183.95, y: 30.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286252974
@@ -2737,7 +2737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -382.07, y: 166.6}
+  m_AnchoredPosition: {x: -318, y: 109}
   m_SizeDelta: {x: 100.87, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1650144333
@@ -2944,7 +2944,7 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: PalpationOneFinger_Test
+  recordText: PalpationTwoFinger_Train
   replayText: BreastTumour_Test 27-01-2021 11-23
   replayFrame: 0
   replaySlower: 4
@@ -3104,7 +3104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -516, y: 239}
+  m_AnchoredPosition: {x: -451.93, y: 181.4}
   m_SizeDelta: {x: 137, y: 31.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744249677

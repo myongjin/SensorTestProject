@@ -1,0 +1,129 @@
+Log file D:\Myeongjin\SensorTestProject\log\D600_000000003A55A090.log created on 2021-02-10 at 10:59:19 AM
+System Logging Level = 2
+62817: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+62855: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+63401: Searching 1 ports
+Trying to open COM3 at 921600 baud
+Sending command +++AT
+Read "CONNECT 00019525DFD8"  from port 3
+Trying to open COM3 at 9600 baud
+Sending command +++AT
+Read "Please Enter Password"  from port 3
+64276: Searching 1 ports
+Trying to open COM3 at 921600 baud
+Sending command +++AT
+Read "OK"  from port 3
+Matched OK, Connected to COM3 at 921600 baud
+64546: Found port 921600 at baudrate 921600
+64573: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 64637
+13: Parsing string ERROR in state Reset
+Didn't find Reset success message OK in ERROR
+68:  Done parsing command in Reset
+913: Parsing string OK in state Reset
+951: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+1046: Resetting setup timeout at 65694 changing from Reset to Connect
+35:  Done parsing command in Reset
+80: Parsing string OK in state Connect
+Didn't find CONNECT in OK
+146:  Done parsing command in Connect
+796: Parsing string CONNECT 00019525DFD8 in state Connect
+829: Found "CONNECT"; trying to configure system
+852: Configuring system.
+ Queuing message 0x63 ackSize 1
+887: Sending stop scanning command
+ Queuing message 0x10 ackSize 2
+ Queuing message 0x20 ackSize 7
+1057: I2C scan list configured
+1078: Configuring Scan Lists
+ Queuing message 0x25 ackSize 3
+1120: Scan length lists set
+ Queuing message 0x33 ackSize 2
+1159: Setting up all of the passthru commands
+Device 0 (I2C Addr = 1): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 0
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 0
+ Queuing message 0x40 ackSize 6
+Device 1 (I2C Addr = 2): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 1
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 1 to 255
+ Queuing message 0x40 ackSize 5
+3055: Requested continuous frames
+ Queuing message 0x11 ackSize 3
+ Queuing message 0x10 ackSize 2
+3118: Resetting setup timeout at 68822 changing from Connect to DAQ
+35:  Done parsing command in Connect
+Successfully sent message 0x63 with 1 bytes at 68.942s (16 remain)
+Timeout waiting for ACK of 0x63 at 69.173
+Successfully sent message 0x10 with 2 bytes at 69.249s (15 remain)
+Timeout waiting for ACK of 0x10 at 69.479
+Successfully sent message 0x20 with 7 bytes at 69.553s (14 remain)
+
+ --Protocol Rev change was:0 now: 4--
+ ACK Mismatch: Received 0x63 while waiting for 0x20
+Timeout waiting for ACK of 0x20 at 69.784
+Successfully sent message 0x20 with 7 bytes at 69.86s (13 remain)
+ ACKing cmd 0x20; 13 remain
+Successfully sent message 0x25 with 3 bytes at 70.006s (13 remain)
+ ACKing cmd 0x25; 12 remain
+Successfully sent message 0x33 with 2 bytes at 70.151s (12 remain)
+ ACKing cmd 0x33; 11 remain
+Successfully sent message 0x40 with 5 bytes at 70.268s (11 remain)
+ ACKing cmd 0x40; 10 remain
+Successfully sent message 0x40 with 6 bytes at 70.389s (10 remain)
+ ACKing cmd 0x40; 9 remain
+Successfully sent message 0x40 with 6 bytes at 70.519s (9 remain)
+ ACKing cmd 0x40; 8 remain
+Successfully sent message 0x40 with 6 bytes at 70.651s (8 remain)
+ ACKing cmd 0x40; 7 remain
+Successfully sent message 0x40 with 5 bytes at 70.802s (7 remain)
+ ACKing cmd 0x40; 6 remain
+Successfully sent message 0x40 with 6 bytes at 70.939s (6 remain)
+ ACKing cmd 0x40; 5 remain
+Successfully sent message 0x40 with 6 bytes at 71.063s (5 remain)
+ ACKing cmd 0x40; 4 remain
+Successfully sent message 0x40 with 6 bytes at 71.19s (4 remain)
+ ACKing cmd 0x40; 3 remain
+Successfully sent message 0x40 with 5 bytes at 71.348s (3 remain)
+ ACKing cmd 0x40; 2 remain
+Successfully sent message 0x11 with 3 bytes at 71.477s (2 remain)
+ ACKing cmd 0x11; 1 remain
+Successfully sent message 0x10 with 2 bytes at 71.609s (1 remain)
+ ACKing cmd 0x10; 0 remain
+2849: 10 received, but 26 are needed for a full frame. Flushing.
+Connection Lost: found 1
+DISCONNECT
+
+ERROR: The Bluetooth connection to the PPS electronics was lost.
+Check that the electronics is powered on and that the battery is charged.
+87414: Sending stop scanning command
+Successfully sent message 0x10 with 2 bytes at 156.33s (0 remain)
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Error receiving escape sequence confirmation!
+213022: Deleting D600 Object

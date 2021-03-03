@@ -160,29 +160,25 @@ public class SaveDataForMLBreast : MonoBehaviour
         data = (Time.realtimeSinceStartup - startTime).ToString();
         sb.Append(data).Append(" ");
         data = sb.ToString();
-        //sb.Clear();
-        sb.Remove(0, sb.Length);
+        sb.Clear();
 
         //write pos and force of finger1
         data = AppendPosOriForce(data, fingerObj[0], liveStream.forcePPS1);
         //write pos and force of finger2
         data = AppendPosOriForce(data, fingerObj[1], liveStream.forcePPS2);
         //wirte pressure 
-
-        StringBuilder sb2 = new StringBuilder();
-        //write time
-
-        sb2.Append(data);
+        
+        sb.Append(data);
 
         float[,] pressure= pressureData.Pressure2Array;
         for (int i=0;i< pressure.GetLength(0);i++)
         {
             for(int j=0;j<pressure.GetLength(1);j++)
             {
-                sb2.Append(pressure[i,j]).Append(" ");
+                sb.Append(pressure[i,j]).Append(" ");
             }
         }
-        data = sb2.ToString();
+        data = sb.ToString();
 
         //Write down
         outputFile.WriteLine(data);

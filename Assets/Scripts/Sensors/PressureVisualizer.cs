@@ -76,8 +76,8 @@ public class PressureVisualizer : MonoBehaviour
         verList.Clear();
 
         float dx, dy;
-        dx = width / (float)nx;
-        dy = height / (float)ny;
+        dx =  height / (float)nx;
+        dy = width / (float)ny;
 
         //Generate plane
         for (int i = 0; i < nx; i++)

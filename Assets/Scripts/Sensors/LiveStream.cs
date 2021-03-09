@@ -103,7 +103,7 @@ public class LiveStream : Singleton<LiveStream>
     public List<sensorData> sensorDataArray;
 
     //Scale difference between real and virtual is too big. sensor data need to be scaled down 
-    public float visualScale = 0.1f;
+    public float visualScale = 0.1f; //why 0.1이지 ?
     public Vector3 initTransOffset = new Vector3(0, 0, 0);
     public Vector3 initRotationOffset= new Vector3(0,0,0);
     public Vector3[] translationOffset;
@@ -394,7 +394,7 @@ public class LiveStream : Singleton<LiveStream>
                 
                 this.fXLocal = (Vector3)recordNodeXPtr[pair.Key];
 
-                // get position
+                // get position (cm)
                 Vector3 newLocalPosition = new Vector3(-fXLocal.y, -fXLocal.z, -fXLocal.x)*visualScale;
                 
 

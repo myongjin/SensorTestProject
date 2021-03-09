@@ -1411,8 +1411,8 @@ MonoBehaviour:
     m_NumColorKeys: 6
     m_NumAlphaKeys: 2
   pressureData: {fileID: 1322819943}
-  width: 30
-  height: 36
+  width: 40
+  height: 33
   nx: 0
   ny: 0
   center: {x: 0, y: 0, z: 0}

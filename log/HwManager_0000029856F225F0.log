@@ -1,0 +1,84 @@
+Log file D:\Myeongjin\SensorTestProject\log\HwManager_0000029856F225F0.log created on 2021-03-11 at 12:48:16 PM
+System Logging Level = 2
+Creating Hardware Manager 0000029856F225F0...
+Using Plugin folder of D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
+Building factory using searchPath D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\Hw*Lib.dll
+Loading HwArrayG2Lib.dll...success!
+Loading HwArrayG3Lib.dll...success!
+Loading HwD600Lib.dll...success!
+Loading HwDigiUsbLib.dll...success!
+Loading HWEmulatorLib.dll...success!
+Loading HWLoadstarLib.dll...success!
+Loading HwMensorLib.dll...success!
+Loading HwNidaqLib.dll...success!
+Loading HwOmegaTempLib.dll...success!
+Loading HwReferenceLib.dll...success!
+Loading HWTileLib.dll...success!
+Built factory for 11 plugins:
+ArrayG2 ArrayG3 D600 DigiUsb Emulator Loadstar Mensor Nidaq OmegaTemp Reference Tile 
+
+Attaching device type D600 from file D:\Myeongjin\SensorTestProject\setup\Quadratec_FingerTPS-hw.txt
+543306: Constructor found in factory.
+543388: Device created.
+Resizing buffer to 10000 frames, recordsize = 12
+543892: Starting acquisition threads...
+543909: Device 0: Success. Done
+606746: Stopping acquisition thread:Device 0: is alive. Terminating... done.
+Destroying Hardware Manager 0000029856F225F0
+Factory is purged
+Log file D:\Myeongjin\SensorTestProject\log\HwManager_0000029856F225F0.log created on 2021-03-11 at 01:35:42 PM
+System Logging Level = 2
+Creating Hardware Manager 0000029856F225F0...
+Using Plugin folder of D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
+Building factory using searchPath D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\Hw*Lib.dll
+Loading HwArrayG2Lib.dll...success!
+Loading HwArrayG3Lib.dll...success!
+Loading HwD600Lib.dll...success!
+Loading HwDigiUsbLib.dll...success!
+Loading HWEmulatorLib.dll...success!
+Loading HWLoadstarLib.dll...success!
+Loading HwMensorLib.dll...success!
+Loading HwNidaqLib.dll...success!
+Loading HwOmegaTempLib.dll...success!
+Loading HwReferenceLib.dll...success!
+Loading HWTileLib.dll...success!
+Built factory for 11 plugins:
+ArrayG2 ArrayG3 D600 DigiUsb Emulator Loadstar Mensor Nidaq OmegaTemp Reference Tile 
+
+Attaching device type D600 from file D:\Myeongjin\SensorTestProject\setup\Quadratec_FingerTPS-hw.txt
+3389429: Constructor found in factory.
+3389516: Device created.
+Resizing buffer to 10000 frames, recordsize = 12
+3390123: Starting acquisition threads...
+3390138: Device 0: Success. Done
+3506133: Stopping acquisition thread:Device 0: is alive. Terminating... done.
+Destroying Hardware Manager 0000029856F225F0
+Factory is purged
+Log file D:\Myeongjin\SensorTestProject\log\HwManager_0000029856F225F0.log created on 2021-03-11 at 01:40:57 PM
+System Logging Level = 2
+Creating Hardware Manager 0000029856F225F0...
+Using Plugin folder of D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
+Building factory using searchPath D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\Hw*Lib.dll
+Loading HwArrayG2Lib.dll...success!
+Loading HwArrayG3Lib.dll...success!
+Loading HwD600Lib.dll...success!
+Loading HwDigiUsbLib.dll...success!
+Loading HWEmulatorLib.dll...success!
+Loading HWLoadstarLib.dll...success!
+Loading HwMensorLib.dll...success!
+Loading HwNidaqLib.dll...success!
+Loading HwOmegaTempLib.dll...success!
+Loading HwReferenceLib.dll...success!
+Loading HWTileLib.dll...success!
+Built factory for 11 plugins:
+ArrayG2 ArrayG3 D600 DigiUsb Emulator Loadstar Mensor Nidaq OmegaTemp Reference Tile 
+
+Attaching device type D600 from file D:\Myeongjin\SensorTestProject\setup\Quadratec_FingerTPS-hw.txt
+3704413: Constructor found in factory.
+3704510: Device created.
+Resizing buffer to 10000 frames, recordsize = 12
+3705090: Starting acquisition threads...
+3705107: Device 0: Success. Done
+3766097: Stopping acquisition thread:Device 0: is alive. Terminating... done.
+Destroying Hardware Manager 0000029856F225F0
+Factory is purged

@@ -103,7 +103,8 @@ public class LiveStream : Singleton<LiveStream>
     public List<sensorData> sensorDataArray;
 
     //Scale difference between real and virtual is too big. sensor data need to be scaled down 
-    public float visualScale = 0.1f; //why 0.1이지 ?
+    public float visualScale = 0.1f; //why 0.1을 곱하면 cm 단위로 쓸수 있다, 즉 센서에서 들어오는 값은 mm 
+    // visual scale을 안쓰려면 내부 유닛을 mm로 통일 하면 된다
     public Vector3 initTransOffset = new Vector3(0, 0, 0);
     public Vector3 initRotationOffset= new Vector3(0,0,0);
     public Vector3[] translationOffset;

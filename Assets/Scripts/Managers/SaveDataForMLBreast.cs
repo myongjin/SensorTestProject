@@ -162,10 +162,23 @@ public class SaveDataForMLBreast : MonoBehaviour
         data = sb.ToString();
         sb.Clear();
 
+        for(int i=0;i<nbOfFinger;i++)
+        {
+            float force = 0;
+            if(i==0)
+            {
+                force = liveStream.forcePPS1;
+            }
+            if(i==1)
+            {
+                force = liveStream.forcePPS2;
+            }
+            data = AppendPosOriForce(data, fingerObj[i], liveStream.forcePPS1);
+        }
         //write pos and force of finger1
-        data = AppendPosOriForce(data, fingerObj[0], liveStream.forcePPS1);
-        //write pos and force of finger2
-        data = AppendPosOriForce(data, fingerObj[1], liveStream.forcePPS2);
+        //data = AppendPosOriForce(data, fingerObj[0], liveStream.forcePPS1);
+        ////write pos and force of finger2
+        //data = AppendPosOriForce(data, fingerObj[1], liveStream.forcePPS2);
         //wirte pressure 
         
         sb.Append(data);

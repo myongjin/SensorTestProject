@@ -1,6 +1,6 @@
-Log file D:\Myeongjin\SensorTestProject\log\HwManager_000001CE743025F0.log created on 2021-03-18 at 02:22:17 PM
+Log file D:\Myeongjin\SensorTestProject\log\HwManager_000001EC065FCA80.log created on 2021-03-22 at 02:36:35 PM
 System Logging Level = 2
-Creating Hardware Manager 000001CE743025F0...
+Creating Hardware Manager 000001EC065FCA80...
 Using Plugin folder of D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
 Building factory using searchPath D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\Hw*Lib.dll
 Loading HwArrayG2Lib.dll...success!
@@ -18,11 +18,11 @@ Built factory for 11 plugins:
 ArrayG2 ArrayG3 D600 DigiUsb Emulator Loadstar Mensor Nidaq OmegaTemp Reference Tile 
 
 Attaching device type D600 from file D:\Myeongjin\SensorTestProject\setup\Quadratec_FingerTPS-hw.txt
-3143872: Constructor found in factory.
-3144009: Device created.
+187862: Constructor found in factory.
+187939: Device created.
 Resizing buffer to 10000 frames, recordsize = 12
-3144657: Starting acquisition threads...
-3144677: Device 0: Success. Done
-3284341: Stopping acquisition thread:Device 0: is alive. Terminating... done.
-Destroying Hardware Manager 000001CE743025F0
+188380: Starting acquisition threads...
+188393: Device 0: Success. Done
+409716: Stopping acquisition thread:Device 0: is alive. Terminating... done.
+Destroying Hardware Manager 000001EC065FCA80
 Factory is purged

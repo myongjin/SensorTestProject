@@ -1,5 +1,5 @@
 CfgBufferSizes	1 10000
-CfgDatalogInterval	25
+CfgDatalogInterval	0
 CfgUnitsAreaCal	"sq in."
 CfgUnitsAreaRaw	""
 CfgUnitsDistanceCal	"in."
@@ -8,7 +8,7 @@ CfgUnitsForceCal	"N"
 CfgUnitsForceRaw	""
 CfgUnitsPressureCal	"psi."
 CfgUnitsPressureRaw	""
-CfgViewScaleMaxCal	8.43076
+CfgViewScaleMaxCal	5.6205
 CfgViewScaleMaxRaw	32767
 CfgViewScaleMinCal	0
 CfgViewScaleMinRaw	0

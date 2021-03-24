@@ -716,6 +716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoPoly Rigged Hand Right
       objectReference: {fileID: 0}
+    - target: {fileID: 1404367628755344, guid: 2276723046d707c4f94d431ceb80ab92, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4111511758846408, guid: 2276723046d707c4f94d431ceb80ab92, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.5351684
@@ -1176,18 +1180,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 353922905}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &353922907 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114245269363414434, guid: 2276723046d707c4f94d431ceb80ab92,
-    type: 3}
-  m_PrefabInstance: {fileID: 353922905}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e0ed5922e911b343b8400997c95409c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &354472300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2601,14 +2593,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leapProvider: {fileID: 1090718577}
   ModelPool:
-  - GroupName: Capsule
+  - GroupName: 
     _handModelManager: {fileID: 0}
     LeftModel: {fileID: 1529717674}
     IsLeftToBeSpawned: 0
-    RightModel: {fileID: 353922907}
+    RightModel: {fileID: 0}
     IsRightToBeSpawned: 0
     IsEnabled: 1
-    CanDuplicate: 1
+    CanDuplicate: 0
 --- !u!1 &1001223052
 GameObject:
   m_ObjectHideFlags: 0
@@ -4323,7 +4315,7 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: LeapMotionAccuracyTest
+  recordText: index
   replayText: LeapMotionAccuracyTest 18-03-2021 14-22
   replayFrame: 0
   replaySlower: 4

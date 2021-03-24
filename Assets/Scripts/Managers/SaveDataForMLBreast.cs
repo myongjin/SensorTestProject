@@ -173,7 +173,7 @@ public class SaveDataForMLBreast : MonoBehaviour
             {
                 force = liveStream.forcePPS2;
             }
-            data = AppendPosOriForce(data, fingerObj[i], liveStream.forcePPS1);
+            data = AppendPosOriForce(data, fingerObj[i], force);
         }
         //write pos and force of finger1
         //data = AppendPosOriForce(data, fingerObj[0], liveStream.forcePPS1);

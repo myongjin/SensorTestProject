@@ -8,7 +8,7 @@ CfgUnitsForceCal	"N"
 CfgUnitsForceRaw	""
 CfgUnitsPressureCal	"psi."
 CfgUnitsPressureRaw	""
-CfgViewScaleMaxCal	5.6205
+CfgViewScaleMaxCal	2.81025
 CfgViewScaleMaxRaw	32767
 CfgViewScaleMinCal	0
 CfgViewScaleMinRaw	0

@@ -313,10 +313,15 @@ public class LiveStream : Singleton<LiveStream>
 
 
         //// start sensors
-        if (this.initOK)
-        {
+        if (this.initOK) { 
+
+            Debug.Log("LiveStream is initialised");
             LiveStream_Start();
-            //recordStart();
+
+        }
+        else
+        {
+            Debug.Log("LiveStream is not initialised");
         }
 
         Debug.Log("Awake Done");

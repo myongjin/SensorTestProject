@@ -1,4 +1,4 @@
-Log file D:\Myeongjin\SensorTestProject\log\MainAPI_Log_0000000000000000.log created on 2021-04-14 at 12:59:15 PM
+Log file D:\Myeongjin\SensorTestProject\log\MainAPI_Log_0000000000000000.log created on 2021-05-13 at 12:52:50 PM
 System Logging Level = 2
 Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
 HwPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
@@ -8,7 +8,7 @@ Local Root Folder: D:\Myeongjin\SensorTestProject
 Setup Folder: D:\Myeongjin\SensorTestProject\setup\
 Log Folder: D:\Myeongjin\SensorTestProject\log\
 Given Version: 1.0.0.0
-Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
+Error getting Capture Document: Could not open the configuration file D:\Myeongjin\SensorTestProject\setup\Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
 HwPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
 ProcPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\
 Given Local Root Folder: 
@@ -16,7 +16,7 @@ Local Root Folder: D:\Myeongjin\SensorTestProject
 Setup Folder: D:\Myeongjin\SensorTestProject\setup\
 Log Folder: D:\Myeongjin\SensorTestProject\log\
 Given Version: 1.0.0.0
-Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
+Error getting Capture Document: Could not open the configuration file D:\Myeongjin\SensorTestProject\setup\Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
 HwPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
 ProcPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\
 Given Local Root Folder: 
@@ -24,7 +24,7 @@ Local Root Folder: D:\Myeongjin\SensorTestProject
 Setup Folder: D:\Myeongjin\SensorTestProject\setup\
 Log Folder: D:\Myeongjin\SensorTestProject\log\
 Given Version: 1.0.0.0
-Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
+Error getting Capture Document: Could not open the configuration file D:\Myeongjin\SensorTestProject\setup\Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
 HwPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
 ProcPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\
 Given Local Root Folder: 
@@ -32,7 +32,7 @@ Local Root Folder: D:\Myeongjin\SensorTestProject
 Setup Folder: D:\Myeongjin\SensorTestProject\setup\
 Log Folder: D:\Myeongjin\SensorTestProject\log\
 Given Version: 1.0.0.0
-Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
+Error getting Capture Document: Could not open the configuration file D:\Myeongjin\SensorTestProject\setup\Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
 HwPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
 ProcPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\
 Given Local Root Folder: 
@@ -40,7 +40,7 @@ Local Root Folder: D:\Myeongjin\SensorTestProject
 Setup Folder: D:\Myeongjin\SensorTestProject\setup\
 Log Folder: D:\Myeongjin\SensorTestProject\log\
 Given Version: 1.0.0.0
-Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
+Error getting Capture Document: Could not open the configuration file D:\Myeongjin\SensorTestProject\setup\Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
 HwPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
 ProcPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\
 Given Local Root Folder: 
@@ -48,7 +48,7 @@ Local Root Folder: D:\Myeongjin\SensorTestProject
 Setup Folder: D:\Myeongjin\SensorTestProject\setup\
 Log Folder: D:\Myeongjin\SensorTestProject\log\
 Given Version: 1.0.0.0
-Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
+Error getting Capture Document: Could not open the configuration file D:\Myeongjin\SensorTestProject\setup\Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
 HwPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
 ProcPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\
 Given Local Root Folder: 
@@ -56,11 +56,4 @@ Local Root Folder: D:\Myeongjin\SensorTestProject
 Setup Folder: D:\Myeongjin\SensorTestProject\setup\
 Log Folder: D:\Myeongjin\SensorTestProject\log\
 Given Version: 1.0.0.0
-Root Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\
-HwPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\HwPlugins\
-ProcPlugins Folder: D:\Myeongjin\SensorTestProject\Assets\Plugins\x86_64\ProcPlugins\
-Given Local Root Folder: 
-Local Root Folder: D:\Myeongjin\SensorTestProject
-Setup Folder: D:\Myeongjin\SensorTestProject\setup\
-Log Folder: D:\Myeongjin\SensorTestProject\log\
-Given Version: 1.0.0.0
+Error getting Capture Document: Could not open the configuration file D:\Myeongjin\SensorTestProject\setup\

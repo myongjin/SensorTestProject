@@ -309,6 +309,7 @@ public class LiveStream : Singleton<LiveStream>
 
         // initialise sensors
         this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
+        this.initOK = true;
         Debug.Log("Recording_Initialise ends");
 
 

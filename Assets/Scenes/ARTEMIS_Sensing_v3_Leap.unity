@@ -3220,7 +3220,7 @@ MonoBehaviour:
   filterRange: 1
   saveCalibratedValue: 0
   saveName: SimpleBreastCalibration
-  loadCalibrationFlag: 0
+  loadCalibrationFlag: 1
   loadName: SimpleBreastCalibration
   PressureArray: 
 --- !u!1 &1349486656

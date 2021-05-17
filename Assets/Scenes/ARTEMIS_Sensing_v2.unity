@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691621047}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e05a04c72367914296569da28b7044e, type: 3}
   m_Name: 
@@ -2521,14 +2521,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1322819941}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ae61c97fb95e2340b706e6866fc48fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   debugFlag: 0
   getValue: 1
-  sensitivity: 200
+  sensitivity: 233
   totalWeight: 0
   maximumPressure: 0
   maximumWeight: 0
@@ -2538,7 +2538,7 @@ MonoBehaviour:
   filterRange: 1
   saveCalibratedValue: 0
   saveName: SimpleBreastCalibration
-  loadCalibrationFlag: 0
+  loadCalibrationFlag: 1
   loadName: SimpleBreastCalibration
   PressureArray: 
 --- !u!1 &1349486656
@@ -3083,7 +3083,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657166851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2ec2f82122aa9347bb80d1090f79977, type: 3}
   m_Name: 
@@ -3131,7 +3131,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657166851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92576d53973a54542af168feadca27ba, type: 3}
   m_Name: 
@@ -3140,7 +3140,7 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: Palpation_one_finger_Test
+  recordText: Palpation_twoFinger
   replayText: BreastTumour_Test 27-01-2021 11-23
   replayFrame: 0
   replaySlower: 4
@@ -3159,7 +3159,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657166851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7811ea06f62af7d4787c4f2775e3f3cc, type: 3}
   m_Name: 
@@ -3173,7 +3173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1657166851}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bdcac4dd7d667641872172a93e015a1, type: 3}
   m_Name: 

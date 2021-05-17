@@ -91,15 +91,24 @@ public class LiveStream : Singleton<LiveStream>
     public static extern void Recording_GetRecordNode(IntPtr tsPtr, IntPtr xPtr, IntPtr qPtr);
 
 
-    
+    //Test
+    [DllImport("SensorsPlugin")]
+    public static extern bool InitialisePositionSensor(IntPtr sensorsPtr);
 
+    [DllImport("SensorsPlugin")]
+    public static extern void TestFunction1();
+
+    [DllImport("SensorsPlugin")]
+    public static extern void TestFunction2(IntPtr sensorsPtr);
+    [DllImport("SensorsPlugin")]
+    public static extern void TestFunction3(IntPtr sensorsPtr);
 
 
     /**
 	 * Public members
 	 */
 
-// test list class but it doesn't work
+    // test list class but it doesn't work
     public List<sensorData> sensorDataArray;
 
     //Scale difference between real and virtual is too big. sensor data need to be scaled down 
@@ -308,21 +317,23 @@ public class LiveStream : Singleton<LiveStream>
         rotationOffset = new Vector3[sensorNum];
 
         // initialise sensors
-        this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
-        this.initOK = true;
+        this.initOK = InitialisePositionSensor(this.sensorsHndl.AddrOfPinnedObject());
+        //this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
+        //TestFunction3(this.sensorsHndl.AddrOfPinnedObject());
+        //this.initOK = true;
         Debug.Log("Recording_Initialise ends");
 
 
         //// start sensors
-        if (this.initOK) { 
-
-            Debug.Log("LiveStream is initialised");
-            LiveStream_Start();
-
+        if (this.initOK)
+        {
+            Debug.Log("Sensors are intialised successfully");
+            
+            //recordStart();
         }
         else
         {
-            Debug.Log("LiveStream is not initialised");
+            Debug.Log("Failed to initialise sensors");
         }
 
         Debug.Log("Awake Done");
@@ -331,8 +342,16 @@ public class LiveStream : Singleton<LiveStream>
 
     // Use this for initialization
     void Start()
-    {
-        Debug.Log("Start");
+    {  
+        if (this.initOK)
+        {
+            Debug.Log("LiveStream::Start LiveStream");
+            LiveStream_Start();
+        }
+        else
+        {
+            Debug.Log("LiveStream::Failed to start LiveStream due to failure of sensors");
+        }
     }
 
 

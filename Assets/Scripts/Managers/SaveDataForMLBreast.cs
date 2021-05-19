@@ -95,6 +95,7 @@ public class SaveDataForMLBreast : MonoBehaviour
         if (isRecording && !setWritefile)
         {
             //make a text file if there is the same file, then delete it and create new one
+            
             SetTextFile(recordText + " " + System.DateTime.Now.ToString("dd-MM-yyyy H-mm"));
             startTime = Time.realtimeSinceStartup;
         }
@@ -172,6 +173,16 @@ public class SaveDataForMLBreast : MonoBehaviour
             if(i==1)
             {
                 force = liveStream.forcePPS2;
+            }
+
+            if (i == 2)
+            {
+                force = liveStream.forcePPS3;
+            }
+
+            if (i == 3)
+            {
+                force = liveStream.forcePPS4;
             }
             data = AppendPosOriForce(data, fingerObj[i], force);
         }

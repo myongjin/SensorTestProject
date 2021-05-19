@@ -165,6 +165,10 @@ public class LiveStream : Singleton<LiveStream>
     
     public bool initFlag1 = false;
     public bool initFlag2 = false;
+    public bool initFlag3 = false;
+    public bool initFlag4 = false;
+    public bool[] initFlags;
+
     public Vector3[] fingerTransOffset;
 
 
@@ -227,6 +231,11 @@ public class LiveStream : Singleton<LiveStream>
 
     void Awake()
     {
+        initFlags = new bool[4];
+        for(int i=0;i<4;i++)
+        {
+            initFlags[i] = false;
+        }
         int numOfActivation =0;
         this.sensorOffset = Vector3.zero;
         Debug.Log("Awake");
@@ -288,7 +297,7 @@ public class LiveStream : Singleton<LiveStream>
             this.sensorFinger4.SetActive(true);
             this.sensors.Add(3, this.sensorPPS4);
         }
-
+        Debug.Log("The number of sensors: " + numOfActivation);
         //initialize the size of force value array
         //forceValues = new float[forceSize];
         forceOffset = new float[numOfActivation];
@@ -317,8 +326,8 @@ public class LiveStream : Singleton<LiveStream>
         rotationOffset = new Vector3[sensorNum];
 
         // initialise sensors
-        this.initOK = InitialisePositionSensor(this.sensorsHndl.AddrOfPinnedObject());
-        //this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
+        //this.initOK = InitialisePositionSensor(this.sensorsHndl.AddrOfPinnedObject());
+        this.initOK = Recording_Initialise(this.sensorsHndl.AddrOfPinnedObject());
         //TestFunction3(this.sensorsHndl.AddrOfPinnedObject());
         //this.initOK = true;
         Debug.Log("Recording_Initialise ends");
@@ -431,24 +440,33 @@ public class LiveStream : Singleton<LiveStream>
 
 
                 //offset
-                if (pair.Key == 0 && initFlag1)
-                {
-                    //set translational offset
-                    translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
-                    //set rotational offset
-                    rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
-                    forceOffset[pair.Key]= (this.recordNodeTsPtr[pair.Key].w);
-                    initFlag1 = false;
-                }
+                //if (pair.Key == 0 && initFlag1)
+                //{
+                //    //set translational offset
+                //    translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
+                //    //set rotational offset
+                //    rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
+                //    forceOffset[pair.Key]= (this.recordNodeTsPtr[pair.Key].w);
+                //    initFlag1 = false;
+                //}
 
-                if (pair.Key == 1 && initFlag2)
+                //if (pair.Key == 1 && initFlag2)
+                //{
+                //    //set translational offset
+                //    translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
+                //    //set rotational offset
+                //    rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
+                //    forceOffset[pair.Key] = (this.recordNodeTsPtr[pair.Key].w);
+                //    initFlag2 = false;
+                //}
+
+                if(initFlags[pair.Key])
                 {
-                    //set translational offset
                     translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
                     //set rotational offset
                     rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
                     forceOffset[pair.Key] = (this.recordNodeTsPtr[pair.Key].w);
-                    initFlag2 = false;
+                    initFlags[pair.Key] = false;
                 }
 
                 //apply offset and visual scaling
@@ -488,26 +506,28 @@ public class LiveStream : Singleton<LiveStream>
     public void ToggleCalibrationFinger1()
     {
         initFlag1 = !initFlag1;
+        initFlags[0] = !initFlags[0];
         Debug.Log("Calibration 1");
     }
 
     public void ToggleCalibrationFinger2()
     {
         initFlag2 = !initFlag2;
+        initFlags[1] = !initFlags[1];
         Debug.Log("Calibration 2");
+    }
+
+    public void ToggleCalibrationFinger3()
+    {
+        initFlag3 = !initFlag3;
+        initFlags[2] = !initFlags[2];
+        Debug.Log("Calibration 3");
     }
 
     public void ToggleCalibration(int index)
     {
-        if(index==0)
-        {
-            initFlag1 = !initFlag1;
-        }
-        if(index==1)
-        {
-            initFlag2 = !initFlag2;
-        }
-        Debug.Log("Calibration "+index);
+        initFlags[index] = !initFlags[index];
+        Debug.Log("Calibration: "+index);
     }
 
     // clean resources

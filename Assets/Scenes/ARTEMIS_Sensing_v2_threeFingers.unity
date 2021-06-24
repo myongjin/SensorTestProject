@@ -3862,7 +3862,7 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: Palpation_twoFinger
+  recordText: Test_2
   replayText: BreastTumour_Test 27-01-2021 11-23
   replayFrame: 0
   replaySlower: 4

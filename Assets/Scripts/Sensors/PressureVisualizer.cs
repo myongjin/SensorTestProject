@@ -16,6 +16,7 @@ public class PressureVisualizer : MonoBehaviour
 
     //parameters of a plane
     public float width;
+    public float length;
     public float height;
     public int nx;
     public int ny;
@@ -30,7 +31,8 @@ public class PressureVisualizer : MonoBehaviour
         nx = pressureData.Pressure2Array.GetLength(0);
         ny = pressureData.Pressure2Array.GetLength(1);
         //Generate mesh
-        GeneratePlane(width, height, nx, ny, center);
+        //GeneratePlane(width, height, nx, ny, center);
+        GenerateCurvedPlane(width, length, height, nx, ny, center);
         //Get Mesh
         mesh = GetComponent<MeshFilter>().mesh;
 
@@ -68,7 +70,7 @@ public class PressureVisualizer : MonoBehaviour
         mesh.SetColors(colors);
     }
 
-    void GeneratePlane(float width, float height, int nx, int ny, Vector3 center)
+    void GeneratePlane(float width, float length, int nx, int ny, Vector3 center)
     {
         //Empty mesh
         Mesh mesh = new Mesh();
@@ -76,7 +78,7 @@ public class PressureVisualizer : MonoBehaviour
         verList.Clear();
 
         float dx, dy;
-        dx =  height / (float)nx;
+        dx = length / (float)nx;
         dy = width / (float)ny;
 
         //Generate plane
@@ -99,6 +101,76 @@ public class PressureVisualizer : MonoBehaviour
 
         Vector3 move = center-currentCenter ;
         for (int i=0;i<verList.Count;i++)
+        {
+            verList[i] += move;
+        }
+
+        //Set vertices
+        mesh.SetVertices(verList);
+
+        //Generate triangle connectivity information
+        List<int> triList = new List<int>();
+        triList.Clear();
+        int pointIndex = 0;
+        for (int i = 0; i < nx - 1; i++)
+        {
+            for (int j = 0; j < ny - 1; j++)
+            {
+                pointIndex = ny * i + j;
+                //Tri1
+                triList.Add(pointIndex);
+                triList.Add(pointIndex + ny + 1);
+                triList.Add(pointIndex + ny);
+
+                //Tri2
+                triList.Add(pointIndex);
+                triList.Add(pointIndex + 1);
+                triList.Add(pointIndex + ny + 1);
+            }
+        }
+
+        //Set Triangle
+        mesh.triangles = triList.ToArray();
+
+        //Assign generated mesh to the mesh filter of an object that this script is attached to
+        GetComponent<MeshFilter>().mesh = mesh;
+
+    }
+
+    void GenerateCurvedPlane(float width, float length, float height, int nx, int ny, Vector3 center)
+    {
+        //Empty mesh
+        Mesh mesh = new Mesh();
+        List<Vector3> verList = new List<Vector3>();
+        verList.Clear();
+
+        // y is width
+        float dx, dy;
+        dx = length / (float)nx;
+        dy = width / (float)ny;
+
+
+        //Generate plane
+        for (int i = 0; i < nx; i++)
+        {
+            for (int j = 0; j < ny; j++)
+            {
+                float z = Mathf.Sin((float)j / (float)(ny-1) * Mathf.PI) * height;
+                verList.Add(new Vector3(i * dx, z, j * dy));
+            }
+        }
+
+        //Move the plane to the specified center
+        Vector3 currentCenter = new Vector3(0, 0, 0);
+        foreach (Vector3 p in verList)
+        {
+            currentCenter += p;
+        }
+        currentCenter /= verList.Count;
+
+
+        Vector3 move = center - currentCenter;
+        for (int i = 0; i < verList.Count; i++)
         {
             verList[i] += move;
         }

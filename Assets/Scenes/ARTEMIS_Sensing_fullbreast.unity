@@ -3155,8 +3155,9 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: Tanja
-  replayText: FB_test 24-06-2021 13-55
+  recordText: DataCollect
+  replayText: Tanja 24-06-2021 15-27
+  innerFrame: 0
   replayFrame: 0
   replaySlower: 4
   fingerObj:

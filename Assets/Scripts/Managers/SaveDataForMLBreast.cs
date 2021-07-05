@@ -20,9 +20,10 @@ public class SaveDataForMLBreast : MonoBehaviour
 
     public string recordText;
     public string replayText;
+    public int innerFrame = 0;
     public int replayFrame = 0;
     public int replaySlower = 1;
-    private int innerFrame = 0;
+    
     private int localFrame = 0;
 
   
@@ -141,6 +142,7 @@ public class SaveDataForMLBreast : MonoBehaviour
             }
             else
             {
+                innerFrame = 0;
                 replayFrame = 0;
                 isReplaying = false;
                 if (isRepeat)

@@ -1380,7 +1380,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691621047}
-  m_LocalRotation: {x: 0, y: 0, z: 0.13052616, w: 0.9914449}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.43, y: 0.3, z: -0.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1388,7 +1388,7 @@ Transform:
   - {fileID: 2088174375}
   m_Father: {fileID: 825332037}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &691621051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1998,7 +1998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079169150}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 177, y: 119, z: 0}
+  m_LocalPosition: {x: 174.5, y: 56.4, z: -16.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 825332037}
@@ -3155,7 +3155,7 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: DataCollect
+  recordText: train_onehands
   replayText: Tanja 24-06-2021 15-27
   innerFrame: 0
   replayFrame: 0

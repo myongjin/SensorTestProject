@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ForceVisualiser : MonoBehaviour
 {
 
-    private int NbofForce;
     [SerializeField]
     private Image foregroundImage1;
     [SerializeField]

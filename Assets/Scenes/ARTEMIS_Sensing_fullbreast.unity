@@ -684,7 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 397349659}
   m_Layer: 5
-  m_Name: Force bar
+  m_Name: Force bar 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -708,7 +708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -318, y: 147}
+  m_AnchoredPosition: {x: -318, y: 209}
   m_SizeDelta: {x: 100.87, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &397722607
@@ -1871,7 +1871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -452.43, y: 224.18796}
+  m_AnchoredPosition: {x: -452.43, y: 196.18796}
   m_SizeDelta: {x: 138, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001223054
@@ -2359,7 +2359,7 @@ GameObject:
   - component: {fileID: 1286252975}
   - component: {fileID: 1286252974}
   m_Layer: 5
-  m_Name: Forcebar
+  m_Name: Forcebar 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2433,7 +2433,7 @@ GameObject:
   - component: {fileID: 1297527145}
   - component: {fileID: 1297527144}
   m_Layer: 5
-  m_Name: Forcebar
+  m_Name: Forcebar 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2919,7 +2919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1621187995}
   m_Layer: 5
-  m_Name: Force bar (1)
+  m_Name: Force bar 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2943,7 +2943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -318, y: 109}
+  m_AnchoredPosition: {x: -318, y: 81}
   m_SizeDelta: {x: 100.87, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1650144333
@@ -3111,8 +3111,8 @@ MonoBehaviour:
   sensorTS2: 1
   sensorTS3: 0
   sensorTS4: 0
-  sensorPPS1: 0
-  sensorPPS2: 3
+  sensorPPS1: 8
+  sensorPPS2: 0
   sensorPPS3: -1
   sensorPPS4: -1
   sensorOffset1: 0
@@ -3198,8 +3198,8 @@ MonoBehaviour:
   foregroundImage2: {fileID: 1286252974}
   forceText1: {fileID: 1744249677}
   forceText2: {fileID: 1001223054}
-  forceMax: 10
-  liveStream: {fileID: 0}
+  forceMax: 20
+  liveStream: {fileID: 1657166853}
   force1: 0
   force2: 0
 --- !u!1 &1686355180
@@ -3317,7 +3317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -451.93, y: 181.4}
+  m_AnchoredPosition: {x: -451.93, y: 243.4}
   m_SizeDelta: {x: 137, y: 31.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744249677

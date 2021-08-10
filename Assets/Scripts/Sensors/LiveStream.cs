@@ -483,7 +483,7 @@ public class LiveStream : Singleton<LiveStream>
 
 
                 // UI
-                float force = (this.recordNodeTsPtr[pair.Value].w)- forceOffset[pair.Key];
+                float force = (this.recordNodeTsPtr[pair.Key].w)- forceOffset[pair.Key];
                 switch (pair.Key)
                 {
                     case 0: this.forcePPS1 = force; break;

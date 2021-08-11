@@ -3112,7 +3112,7 @@ MonoBehaviour:
   sensorTS3: 0
   sensorTS4: 0
   sensorPPS1: 8
-  sensorPPS2: 0
+  sensorPPS2: 1
   sensorPPS3: -1
   sensorPPS4: -1
   sensorOffset1: 0
@@ -3155,7 +3155,7 @@ MonoBehaviour:
   isReplaying: 0
   isPasuing: 0
   isRepeat: 0
-  recordText: train_onehands
+  recordText: twohands_force_train
   replayText: Tanja 24-06-2021 15-27
   innerFrame: 0
   replayFrame: 0

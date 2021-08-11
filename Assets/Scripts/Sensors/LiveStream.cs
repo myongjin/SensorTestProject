@@ -309,6 +309,8 @@ public class LiveStream : Singleton<LiveStream>
             this.sensorsPtr[s].x = -1;
         }
         int sensorNum = 0;
+
+        //which position sensor (Key) is connected to which force sensor (Value)
         foreach (KeyValuePair<int, int> pair in sensors)
         {
             this.sensorsPtr[sensorNum].x = pair.Key;

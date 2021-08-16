@@ -1,0 +1,148 @@
+Log file D:\Myeongjin\SensorTestProject\log\D600_00000200FCEE9FB0.log created on 2021-08-11 at 02:33:20 PM
+System Logging Level = 2
+81154049: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+81154051: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+81154072: Searching 1 ports
+Trying to open COM3 at 921600 baud
+Sending command +++AT
+Read "ERROR"  from port 3
+Matched ERROR, Connected to COM3 at 921600 baud
+81154175: Found port 921600 at baudrate 921600
+81154175: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 81154178
+700: Parsing string OK in state Reset
+702: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+704: Resetting setup timeout at 81154882 changing from Reset to Connect
+1:  Done parsing command in Reset
+108: Parsing string OK in state Connect
+Didn't find CONNECT in OK
+110:  Done parsing command in Connect
+1368: Parsing string CONNECT 00019525DFD8 in state Connect
+1369: Found "CONNECT"; trying to configure system
+1370: Configuring system.
+ Queuing message 0x63 ackSize 1
+1372: Sending stop scanning command
+ Queuing message 0x10 ackSize 2
+ Queuing message 0x20 ackSize 7
+1475: I2C scan list configured
+1475: Configuring Scan Lists
+ Queuing message 0x25 ackSize 3
+1476: Scan length lists set
+ Queuing message 0x33 ackSize 2
+1478: Setting up all of the passthru commands
+Device 0 (I2C Addr = 1): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 0
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 0
+ Queuing message 0x40 ackSize 6
+Device 1 (I2C Addr = 2): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 1
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 1 to 255
+ Queuing message 0x40 ackSize 5
+2806: Requested continuous frames
+ Queuing message 0x11 ackSize 3
+ Queuing message 0x10 ackSize 2
+2809: Resetting setup timeout at 81157691 changing from Connect to DAQ
+2:  Done parsing command in Connect
+Successfully sent message 0x63 with 1 bytes at 81157.7s (16 remain)
+Timeout waiting for ACK of 0x63 at 81157.9
+Successfully sent message 0x10 with 2 bytes at 81157.9s (15 remain)
+Timeout waiting for ACK of 0x10 at 81158.1
+Successfully sent message 0x20 with 7 bytes at 81158.1s (14 remain)
+Timeout waiting for ACK of 0x20 at 81158.3
+Successfully sent message 0x25 with 3 bytes at 81158.3s (13 remain)
+Timeout waiting for ACK of 0x25 at 81158.5
+Successfully sent message 0x33 with 2 bytes at 81158.5s (12 remain)
+Timeout waiting for ACK of 0x33 at 81158.7
+Successfully sent message 0x40 with 5 bytes at 81158.7s (11 remain)
+Timeout waiting for ACK of 0x40 at 81158.9
+Successfully sent message 0x40 with 6 bytes at 81158.9s (10 remain)
+Timeout waiting for ACK of 0x40 at 81159.1
+Successfully sent message 0x40 with 6 bytes at 81159.1s (9 remain)
+Timeout waiting for ACK of 0x40 at 81159.3
+Successfully sent message 0x40 with 6 bytes at 81159.3s (8 remain)
+Timeout waiting for ACK of 0x40 at 81159.5
+Successfully sent message 0x40 with 5 bytes at 81159.5s (7 remain)
+Timeout waiting for ACK of 0x40 at 81159.7
+Successfully sent message 0x40 with 6 bytes at 81159.7s (6 remain)
+Timeout waiting for ACK of 0x40 at 81159.9
+Successfully sent message 0x40 with 6 bytes at 81159.9s (5 remain)
+Timeout waiting for ACK of 0x40 at 81160.1
+Successfully sent message 0x40 with 6 bytes at 81160.2s (4 remain)
+Timeout waiting for ACK of 0x40 at 81160.4
+Successfully sent message 0x40 with 5 bytes at 81160.4s (3 remain)
+Timeout waiting for ACK of 0x40 at 81160.6
+Successfully sent message 0x11 with 3 bytes at 81160.6s (2 remain)
+Timeout waiting for ACK of 0x11 at 81160.8
+Successfully sent message 0x10 with 2 bytes at 81160.8s (1 remain)
+Timeout waiting for ACK of 0x10 at 81161
+4001: Timeout 4000 waiting for data from 0 to 4002
+ERROR: Timeout waiting for new data. This is most likely due 
+to a Bluetooth connection issue due to interference, 
+a low battery, or being out of range. Check that the 
+battery is charged, and possibly try moving closer to the 
+computer.
+4004: Sending stop scanning command
+Successfully sent message 0x10 with 2 bytes at 81161.7s (0 remain)
+Sending command +++
+Finished escape sequence. Now disconnecting hardware
+Sending command ATH
+Successfully disconnected from Bluetooth
+4775: Deleting D600 Object
+Log file D:\Myeongjin\SensorTestProject\log\D600_00000200FCEE9FB0.log created on 2021-08-16 at 03:21:26 PM
+System Logging Level = 2
+516040058: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+516040060: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+516040101: Searching 1 ports
+Trying to open COM3 at 921600 baud
+Sending command +++AT
+Read "ERROR"  from port 3
+Matched ERROR, Connected to COM3 at 921600 baud
+516040174: Found port 921600 at baudrate 921600
+516040175: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 516040178
+699: Parsing string OK in state Reset
+700: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+704: Resetting setup timeout at 516040882 changing from Reset to Connect
+1:  Done parsing command in Reset
+107: Parsing string OK in state Connect
+Didn't find CONNECT in OK
+110:  Done parsing command in Connect
+6001: Timeout waiting to change state: 0 bytes in FIFO. ()
+ERROR: Timeout connecting to the PPS electronics module over Bluetooth.
+Check that the module is powered on, in range, that the battery is charged,
+and that the Bluetooth address is 00019525dfd8
+(The Bluetooth address is printed on the back of the electronics.)
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Sending command +++
+Failed reading a string from COM port after 21 tries. FIFO size = 0
+Error receiving escape sequence confirmation!
+9033: Deleting D600 Object

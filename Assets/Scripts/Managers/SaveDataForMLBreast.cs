@@ -12,6 +12,7 @@ public class SaveDataForMLBreast : MonoBehaviour
     public bool isPasuing = false;
     public bool isRepeat = false;
 
+    private bool csvSave = false;
     private bool setWritefile = false;
     private bool readFile = false;
 
@@ -83,10 +84,25 @@ public class SaveDataForMLBreast : MonoBehaviour
             if (!readFile)
             {
                 //read file
-                lines = ReadTextFile(replayText);
+                if (csvSave)
+                {
+                    lines = ReadCSVFile(replayText);
+                }
+                else
+                {
+                    lines = ReadTextFile(replayText);
+                }
+                
                 if(isPredicting)
                 {
-                    plines = ReadTextFile(predictText);
+                    if (csvSave)
+                    {
+                        plines = ReadCSVFile(predictText);
+                    }
+                    else
+                    {
+                        plines = ReadTextFile(predictText);
+                    }
                 }
             }
         }
@@ -97,7 +113,7 @@ public class SaveDataForMLBreast : MonoBehaviour
         {
             //make a text file if there is the same file, then delete it and create new one
             
-            SetTextFile(recordText + " " + System.DateTime.Now.ToString("dd-MM-yyyy H-mm"));
+            SetCSVFile(recordText + " " + System.DateTime.Now.ToString("dd-MM-yyyy H-mm"));
             startTime = Time.realtimeSinceStartup;
         }
 
@@ -161,7 +177,7 @@ public class SaveDataForMLBreast : MonoBehaviour
         //write time
         
         data = (Time.realtimeSinceStartup - startTime).ToString();
-        sb.Append(data).Append(" ");
+        sb.Append(data).Append(",");
         data = sb.ToString();
         sb.Clear();
 
@@ -201,7 +217,7 @@ public class SaveDataForMLBreast : MonoBehaviour
         {
             for(int j=0;j<pressure.GetLength(1);j++)
             {
-                sb.Append(pressure[i,j]).Append(" ");
+                sb.Append(pressure[i,j]).Append(",");
             }
         }
         data = sb.ToString();
@@ -219,22 +235,47 @@ public class SaveDataForMLBreast : MonoBehaviour
 
         for (int j = 0; j < nbOfFinger; j++)
         {
-            var pt = lines[replayFrame].Split(" "[0]); // gets 3 parts of the vector as separated strings
-            var x = float.Parse(pt[1 + 8 * j]);
-            var y = float.Parse(pt[2 + 8 * j]);
-            var z = float.Parse(pt[3 + 8 * j]);
-            pos = new Vector3(x, y, z);
-            //Debug.Log(pos);
+            
 
-            x = float.Parse(pt[4 + 8 * j]);
-            y = float.Parse(pt[5 + 8 * j]);
-            z = float.Parse(pt[6 + 8 * j]);
-            var w = float.Parse(pt[7 + 8 * j]);
-            ori = new Quaternion(x, y, z, w);
-            //Debug.Log(ori);
+            if (csvSave)
+            {
+                var pt = lines[replayFrame].Split(","[0]); // gets 3 parts of the vector as separated strings
+                var x = float.Parse(pt[1 + 8 * j]);
+                var y = float.Parse(pt[2 + 8 * j]);
+                var z = float.Parse(pt[3 + 8 * j]);
+                pos = new Vector3(x, y, z);
+                //Debug.Log(pos);
 
-            x = float.Parse(pt[8 + 8 * j]);
-            forces[j] = x;
+                x = float.Parse(pt[4 + 8 * j]);
+                y = float.Parse(pt[5 + 8 * j]);
+                z = float.Parse(pt[6 + 8 * j]);
+                var w = float.Parse(pt[7 + 8 * j]);
+                ori = new Quaternion(x, y, z, w);
+                //Debug.Log(ori);
+
+                x = float.Parse(pt[8 + 8 * j]);
+                forces[j] = x;
+            }
+            else
+            {
+                var pt = lines[replayFrame].Split(" "[0]); // gets 3 parts of the vector as separated strings
+                var x = float.Parse(pt[1 + 8 * j]);
+                var y = float.Parse(pt[2 + 8 * j]);
+                var z = float.Parse(pt[3 + 8 * j]);
+                pos = new Vector3(x, y, z);
+                //Debug.Log(pos);
+
+                x = float.Parse(pt[4 + 8 * j]);
+                y = float.Parse(pt[5 + 8 * j]);
+                z = float.Parse(pt[6 + 8 * j]);
+                var w = float.Parse(pt[7 + 8 * j]);
+                ori = new Quaternion(x, y, z, w);
+                //Debug.Log(ori);
+
+                x = float.Parse(pt[8 + 8 * j]);
+                forces[j] = x;
+            }
+            
 
             //Set position and orientation
             //Debug.Log(forces[j]);
@@ -296,12 +337,36 @@ public class SaveDataForMLBreast : MonoBehaviour
         setWritefile = true;
     }
 
+    private void SetCSVFile(string name)
+    {
+        //make a text file if there is the same file, then delete it and create new one
+        FileStream fs = new FileStream(@"Data/" + name + ".csv", FileMode.Create);
+
+
+        outputFile = new StreamWriter(fs);
+        Debug.Log("Make a text file for recording");
+
+        //Write down head info.
+        //WriteDownHeadInfo();
+
+        setWritefile = true;
+        csvSave = true;
+    }
+
     private string[] ReadTextFile(string name)
     {
         readFile = true;
         Debug.Log("Read file");
 
         return File.ReadAllLines(@"Data/" + name + ".txt");
+    }
+
+    private string[] ReadCSVFile(string name)
+    {
+        readFile = true;
+        Debug.Log("Read file");
+
+        return File.ReadAllLines(@"Data/" + name + ".csv");
     }
 
     public void ToggleRecording()
@@ -325,7 +390,7 @@ public class SaveDataForMLBreast : MonoBehaviour
     }
 
 
-    public static string SerializeVector3Array(Vector3[] aVectors)
+    public string SerializeVector3Array(Vector3[] aVectors)
     {
         StringBuilder sb = new StringBuilder();
         foreach (Vector3 v in aVectors)
@@ -338,7 +403,7 @@ public class SaveDataForMLBreast : MonoBehaviour
     }
 
 
-    public static string AppendPosOriForce(string _data, GameObject obj, float force)
+    public string AppendPosOriForce(string _data, GameObject obj, float force)
     {
         StringBuilder sb = new StringBuilder();
         string data = _data;
@@ -350,13 +415,13 @@ public class SaveDataForMLBreast : MonoBehaviour
         data = SerializeVector3(data, obj.transform.rotation);
 
         //Force
-        sb.Append(data).Append(force).Append(" ");
+        sb.Append(data).Append(force).Append(",");
 
 
         return sb.ToString();
     }
 
-    public static string AppendPos(string _data, GameObject obj)
+    public string AppendPos(string _data, GameObject obj)
     {
         StringBuilder sb = new StringBuilder();
         string data = _data;
@@ -368,7 +433,7 @@ public class SaveDataForMLBreast : MonoBehaviour
         return sb.ToString();
     }
 
-    public static string AppendOri(string _data, GameObject obj)
+    public string AppendOri(string _data, GameObject obj)
     {
         StringBuilder sb = new StringBuilder();
         string data = _data;
@@ -387,19 +452,36 @@ public class SaveDataForMLBreast : MonoBehaviour
         return sb.ToString();
     }
 
-    private static string SerializeVector3(string data, Vector3 v)
+    private string SerializeVector3(string data, Vector3 v)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append(data);
-        sb.Append(v.x).Append(" ").Append(v.y).Append(" ").Append(v.z).Append(" ");
+        if (csvSave)
+        {
+            sb.Append(v.x).Append(",").Append(v.y).Append(",").Append(v.z).Append(",");
+        }
+        else
+        {
+            sb.Append(v.x).Append(" ").Append(v.y).Append(" ").Append(v.z).Append(" ");
+        }
+        
         return sb.ToString();
     }
 
-    private static string SerializeVector3(string data, Quaternion v)
+
+    private string SerializeVector3(string data, Quaternion v)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append(data);
-        sb.Append(v.x).Append(" ").Append(v.y).Append(" ").Append(v.z).Append(" ").Append(v.w).Append(" ");
+        if (csvSave)
+        {
+            sb.Append(v.x).Append(",").Append(v.y).Append(",").Append(v.z).Append(",").Append(v.w).Append(",");
+        }
+        else
+        {
+            sb.Append(v.x).Append(" ").Append(v.y).Append(" ").Append(v.z).Append(" ").Append(v.w).Append(" ");
+        }
+
         return sb.ToString();
     }
 

@@ -1,0 +1,107 @@
+Log file D:\Myeongjin\SensorTestProject\log\D600_0000027F86EE9FB0.log created on 2021-08-24 at 01:43:50 PM
+System Logging Level = 2
+4166257: RecordSize = 12 (2 I2C dev, 0 SPI dev)
+4166259: Mapped RecordSize = 12
+Trying to connect to Bluetooth Serial Device
+Currently in state 1, so releasing existing hardware...done.
+4166282: Searching 1 ports
+Trying to open COM3 at 921600 baud
+Sending command +++AT
+Read "ERROR"  from port 3
+Matched ERROR, Connected to COM3 at 921600 baud
+4166371: Found port 921600 at baudrate 921600
+4166371: Configuring: sending reset command
+Sending command ATZ
+Start configuring at 4166377
+702: Parsing string OK in state Reset
+703: Found "OK"
+Baudrate is correct, entering bypass mode for DAQ
+Sending command ATD00019525dfd8
+706: Resetting setup timeout at 4167083 changing from Reset to Connect
+0:  Done parsing command in Reset
+107: Parsing string OK in state Connect
+Didn't find CONNECT in OK
+109:  Done parsing command in Connect
+838: Parsing string CONNECT 00019525DFD8 in state Connect
+839: Found "CONNECT"; trying to configure system
+839: Configuring system.
+ Queuing message 0x63 ackSize 1
+841: Sending stop scanning command
+ Queuing message 0x10 ackSize 2
+ Queuing message 0x20 ackSize 7
+945: I2C scan list configured
+945: Configuring Scan Lists
+ Queuing message 0x25 ackSize 3
+946: Scan length lists set
+ Queuing message 0x33 ackSize 2
+948: Setting up all of the passthru commands
+Device 0 (I2C Addr = 1): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 0
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 0
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 0
+ Queuing message 0x40 ackSize 6
+Device 1 (I2C Addr = 2): DacCurrent = 50, ScanCount = 20, AveLength = 3
+Passing through cmd 8 to 1
+ Queuing message 0x40 ackSize 5
+Passing through cmd 5 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 6 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 7 to 1
+ Queuing message 0x40 ackSize 6
+Passing through cmd 1 to 255
+ Queuing message 0x40 ackSize 5
+2273: Requested continuous frames
+ Queuing message 0x11 ackSize 3
+ Queuing message 0x10 ackSize 2
+2275: Resetting setup timeout at 4169358 changing from Connect to DAQ
+1:  Done parsing command in Connect
+Successfully sent message 0x63 with 1 bytes at 4169.36s (16 remain)
+Timeout waiting for ACK of 0x63 at 4169.56
+Successfully sent message 0x10 with 2 bytes at 4169.57s (15 remain)
+Timeout waiting for ACK of 0x10 at 4169.77
+Successfully sent message 0x20 with 7 bytes at 4169.77s (14 remain)
+
+ --Protocol Rev change was:0 now: 4--
+ ACK Mismatch: Received 0x63 while waiting for 0x20
+Timeout waiting for ACK of 0x20 at 4169.97
+Successfully sent message 0x20 with 7 bytes at 4169.97s (13 remain)
+ ACKing cmd 0x20; 13 remain
+Successfully sent message 0x25 with 3 bytes at 4170.05s (13 remain)
+ ACKing cmd 0x25; 12 remain
+Successfully sent message 0x33 with 2 bytes at 4170.12s (12 remain)
+ ACKing cmd 0x33; 11 remain
+Successfully sent message 0x40 with 5 bytes at 4170.18s (11 remain)
+ ACKing cmd 0x40; 10 remain
+Successfully sent message 0x40 with 6 bytes at 4170.24s (10 remain)
+ ACKing cmd 0x40; 9 remain
+Successfully sent message 0x40 with 6 bytes at 4170.32s (9 remain)
+ ACKing cmd 0x40; 8 remain
+Successfully sent message 0x40 with 6 bytes at 4170.41s (8 remain)
+ ACKing cmd 0x40; 7 remain
+Successfully sent message 0x40 with 5 bytes at 4170.47s (7 remain)
+ ACKing cmd 0x40; 6 remain
+Successfully sent message 0x40 with 6 bytes at 4170.55s (6 remain)
+ ACKing cmd 0x40; 5 remain
+Successfully sent message 0x40 with 6 bytes at 4170.65s (5 remain)
+ ACKing cmd 0x40; 4 remain
+Successfully sent message 0x40 with 6 bytes at 4170.73s (4 remain)
+ ACKing cmd 0x40; 3 remain
+Successfully sent message 0x40 with 5 bytes at 4170.79s (3 remain)
+ ACKing cmd 0x40; 2 remain
+Successfully sent message 0x11 with 3 bytes at 4170.87s (2 remain)
+ ACKing cmd 0x11; 1 remain
+Successfully sent message 0x10 with 2 bytes at 4170.93s (1 remain)
+ ACKing cmd 0x10; 0 remain
+1637: 10 received, but 26 are needed for a full frame. Flushing.
+7562: Sending stop scanning command
+Successfully sent message 0x10 with 2 bytes at 4176.92s (0 remain)
+Sending command +++
+Finished escape sequence. Now disconnecting hardware
+Sending command ATH
+Successfully disconnected from Bluetooth
+8369: Deleting D600 Object

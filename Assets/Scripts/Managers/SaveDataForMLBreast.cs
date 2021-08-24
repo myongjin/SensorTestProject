@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 using System.Text;
 using System;
@@ -16,9 +17,9 @@ public class SaveDataForMLBreast : MonoBehaviour
     private bool setWritefile = false;
     private bool readFile = false;
 
-    
 
 
+    public InputField recordFileName;
     public string recordText;
     public string replayText;
     public int innerFrame = 0;
@@ -112,7 +113,7 @@ public class SaveDataForMLBreast : MonoBehaviour
         if (isRecording && !setWritefile)
         {
             //make a text file if there is the same file, then delete it and create new one
-            
+            recordText = recordFileName.text;
             SetCSVFile(recordText + " " + System.DateTime.Now.ToString("dd-MM-yyyy H-mm"));
             startTime = Time.realtimeSinceStartup;
         }

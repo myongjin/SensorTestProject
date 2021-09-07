@@ -163,11 +163,13 @@ public class LiveStream : Singleton<LiveStream>
     // position initialization
     public GameObject[] initPoint;
     
-    public bool initFlag1 = false;
-    public bool initFlag2 = false;
-    public bool initFlag3 = false;
-    public bool initFlag4 = false;
+    //public bool initFlag1 = false;
+    //public bool initFlag2 = false;
+    //public bool initFlag3 = false;
+    //public bool initFlag4 = false;
     public bool[] initFlags;
+    public bool[] initForceFlags;
+    public int nbInitilisation = 0;
 
     public Vector3[] fingerTransOffset;
 
@@ -232,9 +234,11 @@ public class LiveStream : Singleton<LiveStream>
     void Awake()
     {
         initFlags = new bool[4];
+        initForceFlags = new bool[4];
         for(int i=0;i<4;i++)
         {
             initFlags[i] = false;
+            initForceFlags[i] = false;
         }
         int numOfActivation =0;
         this.sensorOffset = Vector3.zero;
@@ -403,9 +407,23 @@ public class LiveStream : Singleton<LiveStream>
 	 */
     void Update()
     {
+
+
         //if initilization of sensors are sucessful
         if (this.initOK)
         {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                if (nbInitilisation++ == 0)
+                {
+                    ToggleCalibration(0);
+                }
+                else if(nbInitilisation == 1)
+                {
+                    ToggleCalibration(1);
+                    nbInitilisation = 0;
+                }
+            }
 
             // get last recorded node
             Recording_GetRecordNode(this.rnTsHndl.AddrOfPinnedObject(), this.rnXHndl.AddrOfPinnedObject(), this.rnQHndl.AddrOfPinnedObject());
@@ -420,7 +438,7 @@ public class LiveStream : Singleton<LiveStream>
             ///////////////////////////////////
             foreach (KeyValuePair<int, int> pair in sensors)
             {
-                Debug.Log("Pair.Key: " + pair.Key + " Pair.Value: " + pair.Value);
+                //Debug.Log("Pair.Key: " + pair.Key + " Pair.Value: " + pair.Value);
 
                 this.fQ.x = this.recordNodeQPtr[pair.Key].x;
                 this.fQ.y = this.recordNodeQPtr[pair.Key].y;
@@ -441,27 +459,6 @@ public class LiveStream : Singleton<LiveStream>
                 
 
 
-                //offset
-                //if (pair.Key == 0 && initFlag1)
-                //{
-                //    //set translational offset
-                //    translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
-                //    //set rotational offset
-                //    rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
-                //    forceOffset[pair.Key]= (this.recordNodeTsPtr[pair.Key].w);
-                //    initFlag1 = false;
-                //}
-
-                //if (pair.Key == 1 && initFlag2)
-                //{
-                //    //set translational offset
-                //    translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
-                //    //set rotational offset
-                //    rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
-                //    forceOffset[pair.Key] = (this.recordNodeTsPtr[pair.Key].w);
-                //    initFlag2 = false;
-                //}
-
                 if(initFlags[pair.Key])
                 {
                     translationOffset[pair.Key] = -newLocalPosition + initPoint[pair.Key].transform.position;
@@ -469,6 +466,12 @@ public class LiveStream : Singleton<LiveStream>
                     rotationOffset[pair.Key] = -sQ.eulerAngles + initRotationOffset;// + initPoint.transform.rotation.eulerAngles;
                     forceOffset[pair.Key] = (this.recordNodeTsPtr[pair.Key].w);
                     initFlags[pair.Key] = false;
+                }
+
+                if (initForceFlags[pair.Key])
+                {
+                    forceOffset[pair.Key] = (this.recordNodeTsPtr[pair.Key].w);
+                    initForceFlags[pair.Key] = false;
                 }
 
                 //apply offset and visual scaling
@@ -507,21 +510,21 @@ public class LiveStream : Singleton<LiveStream>
 
     public void ToggleCalibrationFinger1()
     {
-        initFlag1 = !initFlag1;
+        //initFlag1 = !initFlag1;
         initFlags[0] = !initFlags[0];
         Debug.Log("Calibration 1");
     }
 
     public void ToggleCalibrationFinger2()
     {
-        initFlag2 = !initFlag2;
+        //initFlag2 = !initFlag2;
         initFlags[1] = !initFlags[1];
         Debug.Log("Calibration 2");
     }
 
     public void ToggleCalibrationFinger3()
     {
-        initFlag3 = !initFlag3;
+        //initFlag3 = !initFlag3;
         initFlags[2] = !initFlags[2];
         Debug.Log("Calibration 3");
     }
@@ -530,6 +533,12 @@ public class LiveStream : Singleton<LiveStream>
     {
         initFlags[index] = !initFlags[index];
         Debug.Log("Calibration: "+index);
+    }
+
+    public void ToggleForceCalibration(int index)
+    {
+        initForceFlags[index] = !initForceFlags[index];
+        Debug.Log("Calibration: " + index);
     }
 
     // clean resources

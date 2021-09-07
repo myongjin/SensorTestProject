@@ -77,12 +77,13 @@ public class CapturePosandOri : MonoBehaviour {
 
             if (i == 0)
             {
-                InitFlag[i] = GetComponent<LiveStream>().initFlag1;
+                InitFlag[i] = GetComponent<LiveStream>().initFlags[0];
             }
 
             if (i == 1)
             {
-                InitFlag[i] = GetComponent<LiveStream>().initFlag2;
+
+                InitFlag[i] = GetComponent<LiveStream>().initFlags[1];
             }
 
             if (InitFlag[i])

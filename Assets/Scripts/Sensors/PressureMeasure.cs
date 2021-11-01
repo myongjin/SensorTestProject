@@ -285,7 +285,7 @@ public class PressureMeasure : MonoBehaviour
         
     }
 
-    float TotalArray()
+    public float TotalArray()
     {
         float value = 0;
         for(int i=0;i<PressureArray.Length;i++)

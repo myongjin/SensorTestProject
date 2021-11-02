@@ -27,7 +27,7 @@ public class PressureMeasure : MonoBehaviour
 
     public bool calibration = false;
     public float referenceWeightKg = 0;
-    public float calibratedUnit = 1.0f;
+    public float calibratedUnit = 1.0f; //Kg
     private float totalUnit = 0;
     private int numberOfCalibration=0;
 
